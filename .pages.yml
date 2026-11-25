@@ -3,7 +3,7 @@
 settings:
   hide: true
   commit:
-    identity: user
+    identity: app
     templates:
       create: "Ajoute {path} par {userName}"
       update: "Modifie {path} par {userName}"

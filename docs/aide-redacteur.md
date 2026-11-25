@@ -30,5 +30,6 @@ Cliquez sur **Horaires et contact de la mairie**. Pour chaque jour, ajoutez une 
 
 ## À retenir
 - Ne mettez jamais dans un brouillon une information qui ne doit pas être publique : les brouillons ne sont pas confidentiels.
+- Votre nom apparaît dans l'historique public des modifications du site (pas votre adresse de courriel).
 - Vous ne pouvez pas publier seul·e : c'est voulu. Une seconde personne relit toujours.
 - Un souci ? Notez ce que vous voyez à l'écran et contactez l'administrateur du site.

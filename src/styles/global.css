@@ -361,3 +361,18 @@ address {
   font-weight: 600;
   text-decoration: none;
 }
+
+.plan,
+.plan ul {
+  padding-inline-start: 1.25rem;
+}
+
+.plan li {
+  padding-block: 0.15rem;
+}
+
+.plan a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+}

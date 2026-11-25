@@ -42,6 +42,10 @@ Réglages → Rules → Rulesets → nouvelle règle sur `main` :
 
 Dérouler `specs/001-site-mairie-ajat/quickstart.md` §3.
 
-## 7. Transfert à la mise en production
+## 7. Changer ou supprimer une adresse (redirections)
+
+GitHub Pages n'a pas de redirections serveur. Pour déplacer ou renommer une page, ne jamais laisser l'ancienne adresse sans réponse : ajouter une entrée dans `redirects` de `astro.config.mjs` (par exemple `'/ancienne-page/': '/nouvelle-page/'`). Astro génère une page de redirection à cette adresse.
+
+## 8. Transfert à la mise en production
 
 Le dépôt est d'abord sous un compte personnel. Au lancement, le transférer à une organisation GitHub de la mairie (Réglages → Transfer). Après transfert : mettre à jour le lien de `docs/aide-redacteur.md`, réinstaller l'application Pages CMS, recréer le secret `APERCU_DEPLOY_KEY` et déplacer le dépôt d'aperçu, vérifier la protection de `main` et `CODEOWNERS`. L'adresse publique du site ne change pas (domaine personnalisé).

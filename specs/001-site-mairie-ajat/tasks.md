@@ -177,18 +177,18 @@ description: "Liste des tâches : site web de la mairie d'Ajat"
 
 **Purpose**: conformité légale, qualité finale et mise en ligne
 
-- [ ] T061 [P] Rédiger `src/content/pages/mentions-legales.md` (`Page.kind` = `legal` : éditeur, directeur de la publication, hébergeur GitHub, contact) (FR-018)
-- [ ] T062 [P] Rédiger `src/content/pages/confidentialite.md` (`Page.kind` = `confidentialite` : aucun cookie ni traceur, aucune donnée collectée, hébergeur hors UE et journaux d'IP, droits des personnes, référent)
-- [ ] T063 [P] Rédiger `src/content/pages/accessibilite.md` (`Page.kind` = `accessibilite` : déclaration RGAA, état de conformité, contact, voies de recours)
-- [ ] T064 [P] Créer `src/pages/plan-du-site.astro` : toutes les rubriques et pages, sans JavaScript (FR-022)
-- [ ] T065 Configurer dans `astro.config.mjs` la table `redirects` (anciennes URL vers nouvelles, pages de redirection générées) et documenter la règle « tout déplacement crée une redirection » dans `docs/administration.md`
-- [ ] T066 Exécuter `npm run lhci` et corriger jusqu'à ≥ 0,9 sur les quatre catégories en mobile (images, CSS critique, aucun JavaScript inutile)
+- [X] T061 [P] Rédiger `src/content/pages/mentions-legales.md` (`Page.kind` = `legal` : éditeur, directeur de la publication, hébergeur GitHub, contact) (FR-018)
+- [X] T062 [P] Rédiger `src/content/pages/confidentialite.md` (`Page.kind` = `confidentialite` : aucun cookie ni traceur, aucune donnée collectée, hébergeur hors UE et journaux d'IP, droits des personnes, référent)
+- [X] T063 [P] Rédiger `src/content/pages/accessibilite.md` (`Page.kind` = `accessibilite` : déclaration RGAA, état de conformité, contact, voies de recours)
+- [X] T064 [P] Créer `src/pages/plan-du-site.astro` : toutes les rubriques et pages, sans JavaScript (FR-022)
+- [X] T065 Configurer dans `astro.config.mjs` la table `redirects` (anciennes URL vers nouvelles, pages de redirection générées) et documenter la règle « tout déplacement crée une redirection » dans `docs/administration.md`
+- [X] T066 Exécuter `npm run lhci` et corriger jusqu'à ≥ 0,9 sur les quatre catégories en mobile (images, CSS critique, aucun JavaScript inutile)
 - [ ] T067 Choisir et réserver le nom de domaine (décision en attente, `research.md` « Décisions ouvertes »), créer `public/CNAME` contenant uniquement ce domaine, et renseigner `site` dans `astro.config.mjs`
 - [ ] T068 Transférer le dépôt à l'organisation GitHub de la mairie (docs/administration.md §7), réactiver les workflows `deploy.yml` et `nightly.yml` (`gh workflow enable`), puis configurer le domaine personnalisé : enregistrements DNS vers GitHub Pages (A/AAAA pour l'apex, CNAME pour `www`), domaine saisi dans Settings → Pages, vérification du domaine au niveau du compte GitHub pour éviter une reprise par un tiers, puis activation de « Enforce HTTPS » une fois le certificat émis ; consigner la procédure dans `docs/administration.md`
 - [ ] T069 Vérifier le domaine : redirection HTTP vers HTTPS, apex et `www`, déploiement par `deploy.yml` sans perdre le `CNAME`, aucune erreur de contenu mixte
 - [ ] T070 Réaliser l'audit manuel RGAA (clavier seul, lecteur d'écran, zoom 200 %) et compléter l'état de conformité dans `src/content/pages/accessibilite.md`
 - [ ] T071 Exécuter l'intégralité de `quickstart.md` (§1 à §5) et cocher chaque critère SC-001 à SC-010
-- [ ] T072 Mettre à jour `.specify/memory/constitution.md` : retirer `TODO(EDITING_TOOL)` (Pages CMS retenu, avec branche `redaction`), passer la version à 1.0.1
+- [X] T072 Mettre à jour `.specify/memory/constitution.md` : retirer `TODO(EDITING_TOOL)` (Pages CMS retenu, avec branche `redaction`), passer la version à 1.0.1
 
 ---
 

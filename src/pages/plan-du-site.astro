@@ -1,0 +1,38 @@
+---
+import Base from '../layouts/Base.astro';
+import { navPrincipale, liensPied } from '../lib/nav';
+import { getPublies } from '../lib/published';
+import { url } from '../lib/url';
+
+const trier = <T extends { data: { title: string; order?: number | undefined } }>(liste: T[]) =>
+  liste.sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999) || a.data.title.localeCompare(b.data.title, 'fr'));
+
+const demarches = trier(await getPublies('demarches'));
+const associations = trier(await getPublies('associations'));
+const decouvrir = trier((await getPublies('pages')).filter((p) => p.id.startsWith('decouvrir/')));
+
+// Sous-pages par rubrique (clé = chemin de la rubrique dans la navigation)
+const sousPages: Record<string, { titre: string; href: string }[]> = {
+  '/demarches/': demarches.map((d) => ({ titre: d.data.title, href: `/demarches/${d.id}/` })),
+  '/associations/': associations.map((a) => ({ titre: a.data.title, href: `/associations/${a.id}/` })),
+  '/decouvrir/': decouvrir.map((p) => ({ titre: p.data.title, href: `/${p.data.slug ?? p.id}/` })),
+};
+---
+<Base titre="Plan du site" description="Toutes les rubriques et pages du site de la mairie d'Ajat.">
+  <h1>Plan du site</h1>
+  <ul class="plan">
+    {navPrincipale.map((rubrique) => (
+      <li>
+        <a href={url(rubrique.href)}>{rubrique.libelle}</a>
+        {(sousPages[rubrique.href] ?? []).length > 0 && (
+          <ul>
+            {sousPages[rubrique.href]!.map((s) => <li><a href={url(s.href)}>{s.titre}</a></li>)}
+          </ul>
+        )}
+      </li>
+    ))}
+    {liensPied.filter((l) => l.href !== '/plan-du-site/').map((l) => (
+      <li><a href={url(l.href)}>{l.libelle}</a></li>
+    ))}
+  </ul>
+</Base>

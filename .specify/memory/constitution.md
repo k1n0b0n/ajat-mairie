@@ -1,17 +1,3 @@
-<!--
-Sync Impact Report
-- Version change: (gabarit vierge) → 1.0.0
-- Principes ajoutés : I. Accessibilité (RGAA / WCAG AA), II. Mobile first, III. Performance,
-  IV. Aucun traceur, V. RGPD et mentions légales, VI. Site statique et maintenance quasi nulle,
-  VII. Contenu éditable sans compétence technique, avec relecture, VIII. Contenu ouvert en Markdown dans Git
-- Principes renommés / supprimés : aucun
-- Sections ajoutées : Contraintes techniques et de conformité ; Processus de développement et contrôles
-- Sections supprimées : aucune
-- TODO différés :
-  - TODO(GUIDANCE_FILE): aucun fichier de guidance runtime n'existe encore ; à créer si besoin.
-  - TODO(EDITING_TOOL): l'outil d'édition pour les agents est volontairement non choisi ici
-    (décision pour /speckit-plan), il devra respecter les principes VII et VIII.
--->
 # Constitution du site de la mairie d'Ajat
 
 Site public de la mairie d'Ajat (Dordogne), commune rurale. Les principes ci-dessous sont
@@ -111,8 +97,9 @@ pour le contenu ni pour sa publication.
 ## Contraintes techniques et de conformité
 
 - Les principes I à VIII s'appliquent à toute fonctionnalité, tout gabarit et tout contenu.
-- Le choix du générateur de site, de l'hébergeur et de l'outil d'édition relève du plan technique
-  (`/speckit-plan`) mais MUST être justifié au regard des principes ci-dessus.
+- Choix retenus (plan 001) : Astro en mode statique ; édition par Pages CMS (open source) sur une
+  branche de rédaction protégée ; hébergement GitHub Pages, hors UE, documenté dans la politique
+  de confidentialité. Tout changement de ces choix MUST être justifié au regard des principes ci-dessus.
 - Les documents téléchargeables (PDF, etc.) MUST être accessibles et accompagnés de leur titre,
   format et poids.
 - Les URL publiées MUST rester stables ; tout déplacement de page MUST créer une redirection.
@@ -142,4 +129,4 @@ Cette constitution prévaut sur toute autre pratique du projet. En cas de confli
 - **Revue périodique** : la constitution et la déclaration d'accessibilité sont relues au moins
   une fois par an.
 
-**Version**: 1.0.0 | **Ratified**: 2026-11-25 | **Last Amended**: 2026-11-25
+**Version**: 1.0.1 | **Ratified**: 2026-11-25 | **Last Amended**: 2026-11-25

@@ -1,6 +1,7 @@
 ---
 import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import ContactBlock from '../components/ContactBlock.astro';
 import { getPublies } from '../lib/published';
 
 // Pages de la collection « pages » (découverte du village, mentions légales, etc.).
@@ -16,4 +17,5 @@ const { Content } = await render(page);
   <h1>{page.data.title}</h1>
   {page.data.description && <p class="chapo">{page.data.description}</p>}
   <Content />
+  {['legal', 'confidentialite', 'accessibilite'].includes(page.data.kind) && <ContactBlock />}
 </Base>

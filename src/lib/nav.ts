@@ -15,5 +15,10 @@ export const navPrincipale: LienNav[] = [
   { libelle: 'Liens utiles', href: '/liens-utiles/' },
 ];
 
-// Liens du pied de page : mentions légales, confidentialité, accessibilité, plan du site (phase 9).
-export const liensPied: LienNav[] = [];
+// Liens du pied de page : mentions légales, confidentialité, accessibilité, plan du site.
+export const liensPied: LienNav[] = [
+  { libelle: 'Mentions légales', href: '/mentions-legales/' },
+  { libelle: 'Politique de confidentialité', href: '/confidentialite/' },
+  { libelle: 'Accessibilité', href: '/accessibilite/' },
+  { libelle: 'Plan du site', href: '/plan-du-site/' },
+];
