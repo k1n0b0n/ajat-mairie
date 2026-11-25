@@ -31,8 +31,8 @@ description: "Liste des tâches : identité visuelle du site de la mairie d'Ajat
 
 **Purpose**: dépendances et ressources de base
 
-- [ ] T001 Installer en versions exactes `@fontsource/fraunces` et `@fontsource/atkinson-hyperlegible` (5.3.0) dans `package.json` et committer `package-lock.json`
-- [ ] T002 [P] Préparer les ressources visuelles depuis Wikimedia Commons, téléchargées dans un dossier temporaire hors du dépôt (fichiers non fiables) : `src/assets/images/accueil-bourg.jpg` (de `Ajat_bourg.JPG`, recadrée et réduite à ≈ 1920 px, source ≤ 600 Ko), `src/assets/images/chateau-ajat.jpg` (de `Château_d'Ajat.jpg`, même traitement) et `src/assets/blason-ajat.svg` (de `Blason_ville_fr_Ajat_(Dordogne).svg`, après vérification : aucun `<script>`, aucun `onload`, aucune référence externe, ≤ 20 Ko) ; sources et licences dans `contracts/assets.md`
+- [X] T001 Installer en versions exactes `@fontsource/fraunces` et `@fontsource/atkinson-hyperlegible` (5.3.0) dans `package.json` et committer `package-lock.json`
+- [X] T002 [P] Préparer les ressources visuelles depuis Wikimedia Commons, téléchargées dans un dossier temporaire hors du dépôt (fichiers non fiables) : `src/assets/images/accueil-bourg.jpg` (de `Ajat_bourg.JPG`, recadrée et réduite à ≈ 1920 px, source ≤ 600 Ko), `src/assets/images/chateau-ajat.jpg` (de `Château_d'Ajat.jpg`, même traitement) et `src/assets/blason-ajat.svg` (de `Blason_ville_fr_Ajat_(Dordogne).svg`, après vérification : aucun `<script>`, aucun `onload`, aucune référence externe, ≤ 20 Ko) ; sources et licences dans `contracts/assets.md`
 
 ---
 
