@@ -1,7 +1,8 @@
 name: Nuit
 
-# Reconstruction quotidienne : fait apparaître les publications programmées et retire les
-# fermetures échues. Le lundi, vérification (non bloquante) des liens externes.
+# Reconstruction quotidienne, seulement si un contenu change de statut (actualité programmée qui devient
+# visible, fermeture exceptionnelle qui expire) : voir scripts/changement-du-jour.mjs. Un lancement
+# manuel reconstruit toujours. Le lundi, vérification (non bloquante) des liens externes.
 on:
   schedule:
     - cron: "17 2 * * *"
@@ -9,8 +10,26 @@ on:
   workflow_dispatch:
 
 jobs:
-  reconstruire:
+  verifier:
     if: github.event.schedule != '43 3 * * 1'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      a_faire: ${{ steps.changement.outputs.a_faire }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - id: changement
+        run: node scripts/changement-du-jour.mjs
+
+  reconstruire:
+    needs: verifier
+    if: github.event_name == 'workflow_dispatch' || needs.verifier.outputs.a_faire == 'true'
     permissions:
       contents: read
       pages: write

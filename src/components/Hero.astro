@@ -1,29 +1,58 @@
 ---
-import { Picture } from 'astro:assets';
+import { getImage } from 'astro:assets';
 import { getEntry } from 'astro:content';
 import CreditPhoto from './CreditPhoto.astro';
 import { resoudreImage } from '../lib/images';
 
 // Visuel d'accueil : aucun texte n'est posé sur la photo (le contraste ne dépend donc pas de l'image).
+// Direction artistique (RGESN, FR-024) : sous 48 rem, proportions 2:1 en petites largeurs ;
+// dès 48 rem, une variante recadrée en 3:1 plutôt que l'image entière, bien plus légère.
 const entree = await getEntry('visuels', 'accueil');
 const visuel = entree?.data;
 const credit = visuel?.credit;
+
+type Format = 'avif' | 'webp';
+const QUALITE = 50;
+
+async function jeu(src: ImageMetadata, largeurs: number[], ratio: number, format: Format) {
+  const images = await Promise.all(
+    largeurs.map((largeur) => getImage({ src, width: largeur, height: Math.round(largeur / ratio), fit: 'cover', format, quality: QUALITE })),
+  );
+  return { srcset: images.map((image, i) => `${image.src} ${largeurs[i]}w`).join(', '), repli: images[images.length - 1]! };
+}
+
+let variantes: Awaited<ReturnType<typeof jeu>>[] = [];
+let repli: Awaited<ReturnType<typeof jeu>>['repli'] | undefined;
+if (visuel) {
+  const source = resoudreImage(visuel.image);
+  const [bureauAvif, bureauWebp, mobileAvif, mobileWebp] = await Promise.all([
+    jeu(source, [1200, 1600], 3, 'avif'),
+    jeu(source, [1200, 1600], 3, 'webp'),
+    jeu(source, [480, 768], 2, 'avif'),
+    jeu(source, [480, 768], 2, 'webp'),
+  ]);
+  variantes = [bureauAvif, bureauWebp, mobileAvif, mobileWebp];
+  repli = mobileWebp.repli;
+}
+const [bureauAvif, bureauWebp, mobileAvif, mobileWebp] = variantes;
 ---
 <figure class="hero-visuel">
-  {visuel && (
-    <Picture
-      src={resoudreImage(visuel.image)}
-      alt={visuel.alt}
-      width={1200}
-      formats={['avif', 'webp']}
-      fallbackFormat="webp"
-      widths={[480, 768, 1200, 1600]}
-      sizes="100vw"
-      quality={60}
-      loading="eager"
-      fetchpriority="high"
-      decoding="async"
-    />
+  {visuel && repli && (
+    <picture>
+      <source media="(min-width: 48rem)" type="image/avif" srcset={bureauAvif!.srcset} sizes="100vw" />
+      <source media="(min-width: 48rem)" type="image/webp" srcset={bureauWebp!.srcset} sizes="100vw" />
+      <source type="image/avif" srcset={mobileAvif!.srcset} sizes="100vw" />
+      <source type="image/webp" srcset={mobileWebp!.srcset} sizes="100vw" />
+      <img
+        src={repli.src}
+        alt={visuel.alt}
+        width="768"
+        height="384"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </picture>
   )}
   <CreditPhoto credit={credit} />
 </figure>
