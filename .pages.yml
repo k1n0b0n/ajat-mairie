@@ -23,10 +23,10 @@ media:
     output: /images
     extensions: [jpg, jpeg, png, webp]
     rename: safe
-  - name: documents
-    label: Documents PDF
-    input: public/documents
-    output: /documents
+  - name: comptes-rendus
+    label: Comptes rendus (PDF)
+    input: public/documents/comptes-rendus
+    output: /documents/comptes-rendus
     extensions: [pdf]
     rename: safe
 
@@ -92,6 +92,46 @@ content:
           path: public/images
           extensions: [jpg, jpeg, png, webp]
           rename: safe
+
+  - name: comptes-rendus
+    label: Comptes rendus du conseil
+    type: collection
+    path: src/content/comptes-rendus
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    subfolders: false
+    view:
+      primary: title
+      sort: meetingDate
+      order: desc
+    fields:
+      - name: title
+        label: Titre (par exemple « Conseil municipal du 12 octobre 2026 »)
+        type: string
+        required: true
+        options:
+          minlength: 3
+          maxlength: 120
+      - name: meetingDate
+        label: Date de la séance
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: file
+        label: Fichier PDF du compte rendu
+        type: file
+        required: true
+        description: Un seul fichier PDF. Évitez les fichiers de plus de 3 Mo.
+        options:
+          media: comptes-rendus
+          extensions: [pdf]
+          rename: safe
+      - name: draft
+        label: Brouillon (ne pas publier)
+        type: boolean
+        default: true
+        description: Décochez cette case quand le compte rendu est prêt à être relu.
 
   - name: mairie
     label: Horaires et contact de la mairie

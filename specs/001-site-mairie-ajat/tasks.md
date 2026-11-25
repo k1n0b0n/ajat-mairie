@@ -126,11 +126,11 @@ description: "Liste des tâches : site web de la mairie d'Ajat"
 
 **Independent Test**: avec plusieurs comptes rendus, retrouver la séance voulue et l'ouvrir en moins d'une minute (SC-002)
 
-- [ ] T041 [US4] Déclarer la collection `comptes-rendus` dans `src/content.config.ts` selon `data-model.md` `CompteRendu.meetingDate` et `CompteRendu.file` ; `CompteRendu.fileSizeKb` est calculé, non saisi
-- [ ] T042 [P] [US4] Créer `src/lib/pdf-size.ts` qui calcule `CompteRendu.fileSizeKb` au build à partir du PDF de `public/documents/comptes-rendus/`
-- [ ] T043 [P] [US4] Créer `src/pages/comptes-rendus/index.astro` : tri par `meetingDate` décroissant, titre, date, format et poids affichés avant le lien de téléchargement, message si liste vide
+- [X] T041 [US4] Déclarer la collection `comptes-rendus` dans `src/content.config.ts` selon `data-model.md` `CompteRendu.meetingDate` et `CompteRendu.file` ; `CompteRendu.fileSizeKb` est calculé, non saisi
+- [X] T042 [P] [US4] Créer `src/lib/pdf-size.ts` qui calcule `CompteRendu.fileSizeKb` au build à partir du PDF de `public/documents/comptes-rendus/`
+- [X] T043 [P] [US4] Créer `src/pages/comptes-rendus/index.astro` : tri par `meetingDate` décroissant, titre, date, format et poids affichés avant le lien de téléchargement, message si liste vide
 - [ ] T044 [P] [US4] Ajouter les premiers comptes rendus fournis par la mairie : `src/content/comptes-rendus/*.md` et PDF dans `public/documents/comptes-rendus/`
-- [ ] T045 [US4] Ajouter la collection Comptes rendus à `.pages.yml` (champ fichier PDF, `CompteRendu.meetingDate` obligatoire)
+- [X] T045 [US4] Ajouter la collection Comptes rendus à `.pages.yml` (champ fichier PDF, `CompteRendu.meetingDate` obligatoire)
 
 **Checkpoint**: US4 testable seule
 

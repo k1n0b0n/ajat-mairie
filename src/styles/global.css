@@ -295,3 +295,25 @@ address {
   margin-block: 0 0.5rem;
   font-size: 0.95rem;
 }
+
+.liste-documents {
+  list-style: none;
+  padding: 0;
+}
+
+.liste-documents li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding-block: 0.75rem;
+  border-bottom: 1px solid var(--bordure);
+}
+
+.liste-documents a {
+  font-weight: 600;
+}
+
+.liste-documents .meta {
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+}

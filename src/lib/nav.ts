@@ -7,6 +7,7 @@ export interface LienNav {
 export const navPrincipale: LienNav[] = [
   { libelle: 'Accueil', href: '/' },
   { libelle: 'Actualités', href: '/actualites/' },
+  { libelle: 'Comptes rendus', href: '/comptes-rendus/' },
 ];
 
 // Liens du pied de page : mentions légales, confidentialité, accessibilité, plan du site (phase 9).

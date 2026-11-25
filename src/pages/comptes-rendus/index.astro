@@ -1,0 +1,42 @@
+---
+import Base from '../../layouts/Base.astro';
+import { formaterDate, dateIso } from '../../lib/dates';
+import { formaterTaille, tailleKo } from '../../lib/pdf-size';
+import { getPublies } from '../../lib/published';
+import { url } from '../../lib/url';
+
+const comptesRendus = (await getPublies('comptes-rendus')).sort(
+  (a, b) => b.data.meetingDate.getTime() - a.data.meetingDate.getTime(),
+);
+
+// Regroupement par année de séance, la plus récente d'abord
+const parAnnee = new Map<number, typeof comptesRendus>();
+for (const cr of comptesRendus) {
+  const annee = cr.data.meetingDate.getUTCFullYear();
+  parAnnee.set(annee, [...(parAnnee.get(annee) ?? []), cr]);
+}
+---
+<Base titre="Comptes rendus du conseil municipal" description="Les comptes rendus des séances du conseil municipal d'Ajat, au format PDF.">
+  <h1>Comptes rendus du conseil municipal</h1>
+  {comptesRendus.length === 0
+    ? <p>Aucun compte rendu pour le moment.</p>
+    : [...parAnnee].map(([annee, liste]) => (
+        <section aria-labelledby={`annee-${annee}`}>
+          <h2 id={`annee-${annee}`}>{annee}</h2>
+          <ul class="liste-documents">
+            {liste.map((cr) => (
+              <li>
+                <a href={url(cr.data.file)}>
+                  {cr.data.title}
+                  <span class="sr-only"> (PDF, {formaterTaille(tailleKo(cr.data.file))})</span>
+                </a>
+                <span class="meta" aria-hidden="true">
+                  Séance du <time datetime={dateIso(cr.data.meetingDate)}>{formaterDate(cr.data.meetingDate)}</time> · PDF · {formaterTaille(tailleKo(cr.data.file))}
+                </span>
+                <span class="sr-only">Séance du {formaterDate(cr.data.meetingDate)}.</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+</Base>

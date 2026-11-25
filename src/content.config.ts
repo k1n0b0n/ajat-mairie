@@ -68,4 +68,13 @@ const actualites = defineCollection({
   }),
 });
 
-export const collections = { mairie, actualites };
+// data-model.md : Compte rendu (meetingDate, file ; fileSizeKb est calculé au build, jamais saisi)
+const comptesRendus = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: 'src/content/comptes-rendus' }),
+  schema: schemaCommun.extend({
+    meetingDate: z.coerce.date(),
+    file: z.string().regex(/^\/documents\/comptes-rendus\/[^/]+\.pdf$/i, 'Chemin attendu : /documents/comptes-rendus/nom-du-fichier.pdf'),
+  }),
+});
+
+export const collections = { mairie, actualites, 'comptes-rendus': comptesRendus };
