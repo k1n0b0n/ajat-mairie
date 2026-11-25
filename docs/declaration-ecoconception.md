@@ -40,7 +40,7 @@ Test `tests/page-budget.spec.ts` (constitution, principe IX) : accueil 120 Ko au
 | 1.6, 4.4 | Pas de collecte ni de contenu tiers sans consentement | Tenu : aucun traceur, aucun tiers |
 | 1.8 | Code ouvert | Tenu : dépôt public |
 | 2.2, 2.3, 2.5 | Appareils anciens, faible débit, responsive | Tenu : zéro JavaScript, pages de 60 à 80 Ko, mobile d'abord |
-| 3.3 | HTTPS et protocoles à jour | En cours : certificat de `ajat.kobbo.fr` à confirmer |
+| 3.3 | HTTPS et protocoles à jour | Tenu : HTTPS obligatoire, certificat Let's Encrypt renouvelé automatiquement, redirection de HTTP vers HTTPS |
 | 4.1 | Pas d'animation ni de vidéo automatique | Tenu |
 | 4.2 | Pas de défilement infini | Tenu |
 | 4.5 | Composants natifs plutôt que surcouches | Tenu : menu `popover` sans JavaScript |

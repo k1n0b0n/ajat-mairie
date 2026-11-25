@@ -22,7 +22,7 @@ Cadre de bonnes pratiques, pas d'obligation légale ([research.md](../research.m
 | 1.6, 4.4 | Pas de collecte ni de contenu tiers sans consentement | conforme : aucun traceur, aucun tiers (test existant) |
 | 1.8 | Code ouvert | conforme : dépôt public |
 | 2.2, 2.3, 2.5 | Appareils anciens, faible débit, responsive | conforme : zéro JavaScript, pages de 60 à 80 Ko |
-| 3.3 | HTTPS et protocoles à jour | conforme sous réserve du certificat de `ajat.kobbo.fr` |
+| 3.3 | HTTPS et protocoles à jour | conforme : HTTPS obligatoire sur `ajat.kobbo.fr`, redirection de HTTP vers HTTPS |
 | 4.1 | Pas d'animation ni de vidéo automatique | conforme |
 | 4.2 | Pas de défilement infini | conforme |
 | 4.5 | Composants natifs plutôt que surcouches | conforme : menu `popover` sans JavaScript |

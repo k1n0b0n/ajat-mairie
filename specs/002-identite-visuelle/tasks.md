@@ -134,7 +134,7 @@ description: "Liste des tâches : identité visuelle du site de la mairie d'Ajat
 
 - [X] T034 [P] Mettre à jour `docs/contenus-a-fournir.md` : confirmer le blason ou fournir un logo, fournir une photo d'accueil de la mairie (remplacement par Pages CMS), vérifier les crédits
 - [X] T035 Exécuter `quickstart.md` en entier (§1 à §6) et cocher chaque critère SC-001 à SC-007 et SC-009 à SC-011 (résultats dans `validation.md` ; SC-008 : T038 ; SC-012 : T043)
-- [ ] T036 Pousser `main` et vérifier le site déployé sur `ajat.kobbo.fr` : accueil, menu téléphone, polices servies par le domaine, aucun domaine tiers, `noindex` toujours présent
+- [X] T036 Pousser `main` et vérifier le site déployé sur `ajat.kobbo.fr` : accueil, menu téléphone, polices servies par le domaine, aucun domaine tiers, `noindex` toujours présent
 - [ ] T037 Faire confirmer par la mairie le statut officiel du blason (ou récupérer son logo) et, selon la réponse, adapter `src/assets/blason-ajat.svg` et la section « Crédits »
 - [ ] T038 Réaliser le test de perception de SC-008 auprès de 5 habitants ou élus et noter les résultats
 
