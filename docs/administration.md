@@ -32,6 +32,19 @@ Réglages → Rules → Rulesets → nouvelle règle sur `main` :
 - Créer la branche `redaction` à partir de `main`. Après tout changement de `.pages.yml` sur `main`, la ramener dans `redaction` (Pages CMS lit la configuration par branche).
 - `.github/CODEOWNERS` : remplacer le compte provisoire par au moins deux relecteurs.
 
+### État appliqué (2026-11-25)
+
+Règle « Protection de main » (ruleset GitHub n° 28117604), active :
+
+- pull request obligatoire, 1 approbation, revue des propriétaires de code, approbation de la dernière modification, approbations obsolètes écartées ;
+- contrôle `controles` (CI) obligatoire, branche à jour avant fusion ;
+- suppression et réécriture de l'historique interdites ;
+- **contournement** : le rôle « admin » du dépôt peut fusionner **sa propre PR** sans l'approbation d'un autre relecteur (mode « via pull request » : jamais de push direct). Il est nécessaire tant que la mairie n'a pas deux relecteurs.
+
+**Contribuer** : travailler sur une branche, ouvrir une PR vers `main`, attendre le contrôle, puis fusionner (`gh pr merge --admin --merge` pour l'administrateur). Pages CMS écrit sur `redaction`, dont la PR s'ouvre toute seule.
+
+**Retirer le contournement** dès que deux relecteurs ont un compte : `gh api -X PUT repos/<propriétaire>/ajat-mairie/rulesets/28117604 --input règle.json` avec `"bypass_actors": []`, ou dans Réglages → Rules → Rulesets. Mettre aussi leurs comptes dans `.github/CODEOWNERS`.
+
 ## 5. Pages CMS
 
 1. Installer l'application GitHub « Pages CMS » sur le dépôt `ajat-mairie` uniquement.
