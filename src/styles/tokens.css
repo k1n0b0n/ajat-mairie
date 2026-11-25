@@ -27,10 +27,17 @@
   --h2: 1.5rem;
   --h3: 1.25rem;
 
-  /* Espacements et formes */
-  --espace: 1rem;
-  --espace-s: 0.5rem;
-  --espace-l: 2rem;
+  /* Espacements : échelle sur 4 px (spec 003, passe espacement) */
+  --e1: 0.25rem;
+  --e2: 0.5rem;
+  --e3: 0.75rem;
+  --e4: 1rem;
+  --e5: 1.5rem;
+  --e6: 2rem;
+  --e7: 3rem;
+  --espace: var(--e4);
+  --espace-s: var(--e2);
+  --espace-l: var(--e6);
   --rayon: 0.5rem;
   --largeur: 46rem;
   --cible: 2.75rem;

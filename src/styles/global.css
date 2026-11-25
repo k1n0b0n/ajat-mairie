@@ -43,7 +43,7 @@ h3 {
 
 h1 {
   font-size: var(--h1);
-  margin-top: 0.75rem;
+  margin-top: var(--e3);
 }
 
 h2 {
@@ -85,7 +85,7 @@ a:hover {
   top: -4rem;
   background: var(--chene);
   color: var(--chene-texte);
-  padding: 0.75rem 1rem;
+  padding: var(--e3) var(--e4);
   border-radius: var(--rayon);
   z-index: 10;
 }
@@ -97,7 +97,7 @@ a:hover {
 .bandeau-apercu {
   background: var(--alerte-fond);
   border-bottom: 3px solid var(--alerte-bord);
-  padding: 0.5rem var(--espace);
+  padding: var(--e2) var(--espace);
   text-align: center;
   font-weight: 700;
 }
@@ -121,7 +121,7 @@ a:hover {
 .marque {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: var(--e3);
   min-height: var(--cible);
   color: var(--texte);
   text-decoration: none;
@@ -142,9 +142,9 @@ a:hover {
 .bouton-menu {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--e2);
   min-height: var(--cible);
-  padding-inline: 1rem;
+  padding-inline: var(--e4);
   border: 1px solid var(--bordure-forte);
   border-radius: var(--rayon);
   background: var(--fond);
@@ -182,7 +182,7 @@ a:hover {
   display: flex;
   align-items: center;
   min-height: var(--cible);
-  padding: 0.5rem 0.75rem;
+  padding: var(--e2) var(--e3);
   border-radius: var(--rayon);
   background: var(--fond-doux);
   color: var(--texte);
@@ -196,7 +196,7 @@ a:hover {
 }
 
 .nav a[aria-current='page'] {
-  box-shadow: inset 0.3rem 0 0 var(--chene);
+  box-shadow: inset 0.25rem 0 0 var(--chene);
 }
 
 @media (min-width: 48rem) {
@@ -211,7 +211,7 @@ a:hover {
   .entete-ligne {
     flex-wrap: wrap;
     max-width: 72rem;
-    padding-block: 0.5rem;
+    padding-block: var(--e2);
   }
 
   .nav[popover] {
@@ -228,7 +228,7 @@ a:hover {
   .nav ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.25rem 0.5rem;
+    gap: var(--e1) var(--e2);
   }
 
   .nav a {
@@ -236,7 +236,7 @@ a:hover {
   }
 
   .nav a[aria-current='page'] {
-    box-shadow: inset 0 -0.2rem 0 var(--chene);
+    box-shadow: inset 0 -0.25rem 0 var(--chene);
     border-radius: 0;
   }
 }
@@ -261,7 +261,7 @@ a:hover {
 }
 
 .credit-photo {
-  padding: 0.35rem var(--espace);
+  padding: var(--e1) var(--espace);
   color: var(--texte-doux);
   font-size: 0.8rem;
   line-height: 1.4;
@@ -279,7 +279,7 @@ a:hover {
   grid-template-columns: repeat(3, 1fr);
   gap: var(--espace-s);
   list-style: none;
-  margin: 0.75rem 0;
+  margin: var(--e3) 0;
   padding: 0;
 }
 
@@ -288,10 +288,10 @@ a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
+  gap: var(--e1);
   min-height: 4.5rem;
   height: 100%;
-  padding: 0.5rem 0.25rem;
+  padding: var(--e2) var(--e1);
   border: 1px solid var(--bordure-forte);
   border-radius: var(--rayon);
   background: var(--fond-doux);
@@ -317,7 +317,7 @@ a:hover {
 @media (min-width: 48rem) {
   .tuiles a {
     flex-direction: row;
-    gap: 0.75rem;
+    gap: var(--e3);
     min-height: var(--cible);
     font-size: 1.05rem;
   }
@@ -328,22 +328,22 @@ a:hover {
 }
 
 .pied {
-  margin-top: 3rem;
+  margin-top: var(--e7);
   border-top: 1px solid var(--separateur);
   background: var(--fond-doux);
-  padding-block: 1.5rem;
+  padding-block: var(--e5);
   color: var(--texte-doux);
 }
 
 .pied-marque {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: var(--e3);
 }
 
 .pied-marque img {
   width: auto;
-  height: 1.875rem;
+  height: 2rem;
 }
 
 .pied-marque p {
@@ -355,7 +355,7 @@ a:hover {
 .pied ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem 1rem;
+  gap: var(--e1) var(--e4);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -372,7 +372,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   min-height: 2.75rem;
-  padding: 0.5rem 1.25rem;
+  padding: var(--e2) 1.25rem;
   border-radius: var(--rayon);
   background: var(--chene);
   color: var(--chene-texte);
@@ -402,7 +402,7 @@ a:hover {
 
 address {
   font-style: normal;
-  margin-block: 1rem;
+  margin-block: var(--e4);
 }
 
 .contact .bouton {
@@ -417,7 +417,7 @@ address {
 .horaires th,
 .horaires td {
   text-align: start;
-  padding: 0.6rem 0.5rem;
+  padding: var(--e3) var(--e2);
   border-bottom: 1px solid var(--separateur);
 }
 
@@ -434,18 +434,18 @@ address {
   background: var(--alerte-fond);
   border-inline-start: 6px solid var(--alerte-bord);
   border-radius: var(--rayon);
-  padding: 0.5rem 1rem;
-  margin-block: 1rem;
+  padding: var(--e2) var(--e4);
+  margin-block: var(--e4);
 }
 
 .fermeture p,
 .fermeture ul {
-  margin-block: 0.25rem;
+  margin-block: var(--e1);
 }
 
 .actualite {
   margin-block: var(--espace-s);
-  padding: 0.5rem var(--espace) 1rem;
+  padding: var(--e2) var(--espace) var(--e4);
   border: 1px solid var(--separateur);
   border-radius: var(--rayon);
   background: var(--fond-doux);
@@ -453,12 +453,12 @@ address {
 
 .actualite h2,
 .actualite h3 {
-  margin-block: 0.5rem 0.25rem;
+  margin-block: var(--e2) var(--e1);
 }
 
 .date {
   color: var(--texte-doux);
-  margin-block: 0 0.5rem;
+  margin-block: 0 var(--e2);
   font-size: 0.95rem;
 }
 
@@ -470,9 +470,9 @@ address {
 .liste-documents li {
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: var(--e1);
   margin-block: var(--espace-s);
-  padding: 0.75rem var(--espace);
+  padding: var(--e3) var(--espace);
   border: 1px solid var(--separateur);
   border-radius: var(--rayon);
   background: var(--fond-doux);
@@ -499,7 +499,7 @@ address {
 }
 
 .contacts li {
-  padding-block: 0.25rem;
+  padding-block: var(--e1);
 }
 
 .tarifs {
@@ -510,7 +510,7 @@ address {
 .tarifs th,
 .tarifs td {
   text-align: start;
-  padding: 0.6rem 0.5rem;
+  padding: var(--e3) var(--e2);
   border-bottom: 1px solid var(--separateur);
 }
 
@@ -518,14 +518,14 @@ address {
   list-style: none;
   padding: 0;
   display: grid;
-  gap: 0.5rem;
+  gap: var(--e2);
 }
 
 .acces-rapide a {
   display: flex;
   align-items: center;
   min-height: 2.75rem;
-  padding: 0.5rem 1rem;
+  padding: var(--e2) var(--e4);
   border: 1px solid var(--bordure-forte);
   border-radius: var(--rayon);
   font-weight: 700;
@@ -538,7 +538,7 @@ address {
 }
 
 .plan li {
-  padding-block: 0.15rem;
+  padding-block: var(--e1);
 }
 
 .plan a {
@@ -565,12 +565,12 @@ address {
 
   .nav a[aria-current='page'] {
     box-shadow: none;
-    border-inline-start-width: 0.3rem;
+    border-inline-start-width: 0.25rem;
   }
 
   .fermeture {
     border: 1px solid CanvasText;
-    border-inline-start-width: 0.4rem;
+    border-inline-start-width: 0.5rem;
   }
 
   .hero-visuel img {
@@ -584,7 +584,7 @@ main h1::after {
   display: block;
   width: 3rem;
   height: 0.25rem;
-  margin-top: 0.5rem;
+  margin-top: var(--e2);
   border-radius: 0.125rem;
   background: var(--ocre-deco);
 }
