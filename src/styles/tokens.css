@@ -1,0 +1,73 @@
+/* Jetons de style : palette « pierre et chaux », polices, espacements.
+   Source de vérité du contrat specs/002-identite-visuelle/contracts/design-tokens.md.
+   Aucune couleur en dur ailleurs : scripts/check-contrast.mjs le vérifie. */
+:root {
+  /* Couleurs, thème clair */
+  --fond: #fbf6ec;
+  --fond-doux: #efe6d4;
+  --texte: #2a241c;
+  --texte-doux: #5a5144;
+  --chene: #35542f;
+  --chene-texte: #fbf6ec;
+  --ocre-texte: #7a4a06;
+  --ocre-deco: #b9791f;
+  --alerte-fond: #f8e6ba;
+  --alerte-bord: #8a5a00;
+  --focus: #7a2e1a;
+  --bordure-forte: #8a7d63;
+  --separateur: #b9ac95;
+
+  /* Typographie */
+  --police-titre: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --police-texte: 'Atkinson Hyperlegible', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --taille-base: 1.0625rem;
+  --interligne: 1.6;
+  --interligne-titre: 1.2;
+  --h1: 2rem;
+  --h2: 1.5rem;
+  --h3: 1.25rem;
+
+  /* Espacements et formes */
+  --espace: 1rem;
+  --espace-s: 0.5rem;
+  --espace-l: 2rem;
+  --rayon: 0.5rem;
+  --largeur: 46rem;
+  --cible: 2.75rem;
+
+  color-scheme: light dark;
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --taille-base: 1.125rem;
+    --h1: 2.5rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fond: #1b1812;
+    --fond-doux: #26221a;
+    --texte: #f1eadb;
+    --texte-doux: #bdb3a0;
+    --chene: #a9c99b;
+    --chene-texte: #1b1812;
+    --ocre-texte: #e3b05a;
+    --ocre-deco: #e3b05a;
+    --alerte-fond: #3a2d12;
+    --alerte-bord: #e3b05a;
+    --focus: #ffb4a0;
+    --bordure-forte: #8f8570;
+    --separateur: #5a5242;
+  }
+}
+
+/* Contraste élevé du système : couleurs système, les bordures restent visibles */
+@media (forced-colors: active) {
+  :root {
+    --bordure-forte: CanvasText;
+    --separateur: CanvasText;
+    --focus: Highlight;
+  }
+}

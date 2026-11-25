@@ -10,7 +10,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "npm run build && node scripts/check-content.mjs && playwright test",
+    "check": "npm run build && node scripts/check-contrast.mjs && node scripts/check-images.mjs && node scripts/check-content.mjs && playwright test",
     "lhci": "node scripts/lhci.mjs"
   },
   "dependencies": {
