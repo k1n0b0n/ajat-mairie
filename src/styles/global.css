@@ -317,3 +317,47 @@ address {
   color: var(--texte-doux);
   font-size: 0.95rem;
 }
+
+.chapo {
+  font-size: 1.15em;
+  color: var(--texte-doux);
+}
+
+.contacts {
+  list-style: none;
+  padding: 0;
+}
+
+.contacts li {
+  padding-block: 0.25rem;
+}
+
+.tarifs {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tarifs th,
+.tarifs td {
+  text-align: start;
+  padding: 0.6rem 0.5rem;
+  border-bottom: 1px solid var(--bordure);
+}
+
+.acces-rapide {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.acces-rapide a {
+  display: flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  font-weight: 600;
+  text-decoration: none;
+}

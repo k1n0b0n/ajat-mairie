@@ -1,0 +1,38 @@
+---
+import { getEntry, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import ContactBlock from '../components/ContactBlock.astro';
+
+const entree = await getEntry('salle-des-fetes', 'salle');
+const salle = entree?.data ?? { rates: [] };
+const eur = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' });
+const renseignee = Boolean(salle.capacity || salle.description || salle.conditions || salle.rates.length > 0);
+---
+<Base titre="Salle des fêtes" description="Conditions et tarifs de location de la salle des fêtes d'Ajat.">
+  <h1>Salle des fêtes</h1>
+  {salle.description && <p class="chapo">{salle.description}</p>}
+  {!renseignee && <p>Les conditions et les tarifs de location seront publiés prochainement.</p>}
+  {salle.capacity && <p><strong>Capacité :</strong> {salle.capacity} personnes.</p>}
+  {salle.conditions && (
+    <section aria-labelledby="titre-conditions">
+      <h2 id="titre-conditions">Conditions de location</h2>
+      <p set:html={salle.conditions.replace(/\n\n/g, '</p><p>')} />
+    </section>
+  )}
+  {salle.rates.length > 0 && (
+    <section aria-labelledby="titre-tarifs">
+      <h2 id="titre-tarifs">Tarifs</h2>
+      <table class="tarifs">
+        <caption class="sr-only">Tarifs de location de la salle des fêtes</caption>
+        <thead><tr><th scope="col">Prestation</th><th scope="col">Tarif</th></tr></thead>
+        <tbody>
+          {salle.rates.map((r) => (
+            <tr><th scope="row">{r.label}</th><td>{eur.format(r.amount_eur)} {r.unit}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  )}
+  <p>La location ne se réserve pas en ligne : contactez la mairie, par téléphone ou aux horaires d'ouverture.</p>
+  <ContactBlock />
+</Base>

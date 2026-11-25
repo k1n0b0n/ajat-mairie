@@ -133,6 +133,184 @@ content:
         default: true
         description: Décochez cette case quand le compte rendu est prêt à être relu.
 
+  - name: demarches
+    label: Démarches
+    type: collection
+    path: src/content/demarches
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    subfolders: false
+    view:
+      primary: title
+      sort: order
+      order: asc
+    fields:
+      - name: title
+        label: Titre de la démarche
+        type: string
+        required: true
+        options:
+          minlength: 3
+          maxlength: 120
+      - name: summary
+        label: Résumé (une phrase)
+        type: text
+        required: true
+        options:
+          maxlength: 200
+      - name: officialUrl
+        label: Adresse de la fiche officielle (commence par https://)
+        type: string
+        required: true
+        pattern:
+          regex: "^https://.+"
+          message: "L'adresse doit commencer par https://"
+      - name: documents
+        label: Pièces utiles (facultatif)
+        type: string
+        list: true
+      - name: order
+        label: Ordre d'affichage (1 = en premier)
+        type: number
+      - name: draft
+        label: Brouillon (ne pas publier)
+        type: boolean
+        default: true
+      - name: body
+        label: Explications
+        type: rich-text
+        options:
+          format: markdown
+          media: images-texte
+          path: public/images
+          extensions: [jpg, jpeg, png, webp]
+          rename: safe
+
+  - name: associations
+    label: Associations
+    type: collection
+    path: src/content/associations
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    subfolders: false
+    view:
+      primary: title
+    fields:
+      - name: title
+        label: Nom de l'association
+        type: string
+        required: true
+      - name: activity
+        label: Activité (une phrase)
+        type: string
+        required: true
+      - name: contacts
+        label: Contacts (au moins un)
+        type: object
+        list: true
+        fields:
+          - name: type
+            label: Type
+            type: select
+            required: true
+            options:
+              values:
+                - { name: tel, label: Téléphone }
+                - { name: email, label: Courriel }
+                - { name: adresse, label: Adresse }
+                - { name: site, label: Site internet }
+          - name: value
+            label: Valeur
+            type: string
+            required: true
+      - name: consent
+        label: J'ai l'accord de l'association pour publier ces coordonnées
+        type: boolean
+        default: false
+        description: Obligatoire pour pouvoir publier. Ne cochez pas sans accord.
+      - name: draft
+        label: Brouillon (ne pas publier)
+        type: boolean
+        default: true
+      - name: body
+        label: Présentation (facultatif)
+        type: rich-text
+        options:
+          format: markdown
+          media: images-texte
+          path: public/images
+          extensions: [jpg, jpeg, png, webp]
+          rename: safe
+
+  - name: salle-des-fetes
+    label: Salle des fêtes
+    type: file
+    path: src/content/donnees/salle-des-fetes.yml
+    format: yaml
+    fields:
+      - name: salle
+        label: Salle des fêtes
+        type: object
+        fields:
+          - name: description
+            label: Présentation
+            type: text
+          - name: capacity
+            label: Capacité (nombre de personnes)
+            type: number
+          - name: conditions
+            label: Conditions de location
+            type: text
+            description: Séparez les paragraphes par une ligne vide.
+          - name: rates
+            label: Tarifs
+            type: object
+            list: true
+            fields:
+              - name: label
+                label: Prestation (par exemple « Week-end habitants »)
+                type: string
+                required: true
+              - name: amount_eur
+                label: Montant en euros
+                type: number
+                required: true
+              - name: unit
+                label: Unité (par exemple « par jour »)
+                type: string
+                required: true
+
+  - name: liens
+    label: Liens utiles
+    type: file
+    path: src/content/donnees/liens.yml
+    format: yaml
+    fields:
+      - name: liens
+        label: Liens
+        type: object
+        fields:
+          - name: items
+            label: Liens
+            type: object
+            list: true
+            fields:
+              - name: label
+                label: Texte du lien
+                type: string
+                required: true
+              - name: url
+                label: Adresse (commence par https://)
+                type: string
+                required: true
+                pattern:
+                  regex: "^https://.+"
+                  message: "L'adresse doit commencer par https://"
+              - name: theme
+                label: Thème (par exemple « Démarches »)
+                type: string
+                required: true
+
   - name: mairie
     label: Horaires et contact de la mairie
     type: file

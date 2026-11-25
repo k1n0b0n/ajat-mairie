@@ -77,4 +77,57 @@ const comptesRendus = defineCollection({
   }),
 });
 
-export const collections = { mairie, actualites, 'comptes-rendus': comptesRendus };
+const urlHttps = z.url().refine((u) => u.startsWith('https://'), { message: "L'adresse doit commencer par https://" });
+
+// data-model.md : Démarche (officialUrl en https, C2)
+const demarches = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: 'src/content/demarches' }),
+  schema: schemaCommun.extend({
+    summary: z.string().min(1).max(200),
+    documents: z.array(z.string().min(1)).default([]),
+    officialUrl: urlHttps,
+    order: z.number().int().optional(),
+  }),
+});
+
+// data-model.md : Association (≥ 1 contact, accord de publication obligatoire, C8)
+const associations = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: 'src/content/associations' }),
+  schema: schemaCommun.extend({
+    activity: z.string().min(1),
+    contacts: z
+      .array(z.object({ type: z.enum(['tel', 'email', 'adresse', 'site']), value: z.string().min(1) }))
+      .min(1, 'Au moins un contact est nécessaire.'),
+    consent: z.boolean().refine((v) => v === true, { message: "L'accord de l'association pour publier ses coordonnées est obligatoire." }),
+  }),
+});
+
+// data-model.md : Salle des fêtes. Champs facultatifs tant que la mairie ne les a pas fournis.
+const salleDesFetes = defineCollection({
+  loader: file('src/content/donnees/salle-des-fetes.yml'),
+  schema: z.object({
+    capacity: z.number().int().positive().optional(),
+    description: z.string().optional(),
+    conditions: z.string().optional(),
+    rates: z.array(z.object({ label: z.string().min(1), amount_eur: z.number().nonnegative(), unit: z.string().min(1) })).default([]),
+    contact: z.string().optional(),
+  }),
+});
+
+// data-model.md : Liens utiles
+const liens = defineCollection({
+  loader: file('src/content/donnees/liens.yml'),
+  schema: z.object({
+    items: z.array(z.object({ label: z.string().min(1), url: urlHttps, theme: z.string().min(1) })),
+  }),
+});
+
+export const collections = {
+  mairie,
+  actualites,
+  'comptes-rendus': comptesRendus,
+  demarches,
+  associations,
+  'salle-des-fetes': salleDesFetes,
+  liens,
+};

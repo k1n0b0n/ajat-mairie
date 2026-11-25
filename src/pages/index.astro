@@ -13,6 +13,15 @@ const dernieres = (await getPublies('actualites')).sort(parDateDecroissante).sli
   <h1>Mairie d'Ajat</h1>
   <ContactBlock />
   <Hours />
+  <section aria-labelledby="titre-pratique">
+    <h2 id="titre-pratique">Infos pratiques</h2>
+    <ul class="acces-rapide">
+      <li><a href={url('/demarches/')}>Démarches courantes</a></li>
+      <li><a href={url('/associations/')}>Associations et contacts</a></li>
+      <li><a href={url('/salle-des-fetes/')}>Salle des fêtes : conditions et tarifs</a></li>
+      <li><a href={url('/comptes-rendus/')}>Comptes rendus du conseil municipal</a></li>
+    </ul>
+  </section>
   <section aria-labelledby="titre-actualites">
     <h2 id="titre-actualites">Dernières actualités</h2>
     {dernieres.length === 0

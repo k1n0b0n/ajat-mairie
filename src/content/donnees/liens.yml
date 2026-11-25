@@ -1,0 +1,8 @@
+# Liens utiles : officiels uniquement, en https.
+liens:
+  items:
+    - { label: "Service-Public.fr : toutes les démarches administratives", url: "https://www.service-public.gouv.fr/", theme: Démarches }
+    - { label: "ANTS : carte d'identité, passeport, permis de conduire, carte grise", url: "https://ants.gouv.fr/", theme: Démarches }
+    - { label: "Impots.gouv.fr", url: "https://www.impots.gouv.fr/", theme: Démarches }
+    - { label: "Conseil départemental de la Dordogne", url: "https://www.dordogne.fr/", theme: Collectivités }
+    - { label: "Préfecture de la Dordogne", url: "https://www.dordogne.gouv.fr/", theme: Collectivités }

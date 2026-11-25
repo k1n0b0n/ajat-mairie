@@ -1,0 +1,31 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { getPublies } from '../../lib/published';
+import { url } from '../../lib/url';
+
+export async function getStaticPaths() {
+  const demarches = await getPublies('demarches');
+  return demarches.map((demarche) => ({ params: { slug: demarche.id }, props: { demarche } }));
+}
+
+const { demarche } = Astro.props;
+const { Content } = await render(demarche);
+---
+<Base titre={demarche.data.title} description={demarche.data.summary}>
+  <h1>{demarche.data.title}</h1>
+  <p class="chapo">{demarche.data.summary}</p>
+  {demarche.data.documents.length > 0 && (
+    <section aria-labelledby="titre-pieces">
+      <h2 id="titre-pieces">Pièces utiles</h2>
+      <ul>{demarche.data.documents.map((p) => <li>{p}</li>)}</ul>
+    </section>
+  )}
+  <Content />
+  <p>
+    <a class="bouton" href={demarche.data.officialUrl} rel="noopener">
+      Voir la fiche officielle<span class="sr-only"> : {demarche.data.title} (nouveau site)</span>
+    </a>
+  </p>
+  <p><a href={url('/demarches/')}>← Toutes les démarches</a></p>
+</Base>

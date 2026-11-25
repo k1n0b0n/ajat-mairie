@@ -1,0 +1,22 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getPublies } from '../../lib/published';
+import { url } from '../../lib/url';
+
+const associations = (await getPublies('associations')).sort((a, b) => a.data.title.localeCompare(b.data.title, 'fr'));
+---
+<Base titre="Associations" description="Les associations de la commune d'Ajat et leurs contacts.">
+  <h1>Associations</h1>
+  {associations.length === 0
+    ? <p>La liste des associations sera publiée prochainement. En attendant, la mairie peut vous renseigner aux horaires d'ouverture.</p>
+    : (
+      <ul class="liste-documents">
+        {associations.map((a) => (
+          <li>
+            <a href={url(`/associations/${a.id}/`)}>{a.data.title}</a>
+            <span class="meta">{a.data.activity}</span>
+          </li>
+        ))}
+      </ul>
+    )}
+</Base>

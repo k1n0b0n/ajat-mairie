@@ -1,0 +1,26 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getPublies } from '../../lib/published';
+import { url } from '../../lib/url';
+
+const demarches = (await getPublies('demarches')).sort(
+  (a, b) => (a.data.order ?? 999) - (b.data.order ?? 999) || a.data.title.localeCompare(b.data.title, 'fr'),
+);
+---
+<Base titre="Démarches" description="Les démarches administratives courantes et les liens vers les services officiels.">
+  <h1>Démarches</h1>
+  <p>Les démarches les plus courantes, avec le lien vers le service officiel. La mairie peut vous aider aux horaires d'ouverture.</p>
+  {demarches.length === 0
+    ? <p>Aucune démarche pour le moment.</p>
+    : (
+      <ul class="liste-documents">
+        {demarches.map((d) => (
+          <li>
+            <a href={url(`/demarches/${d.id}/`)}>{d.data.title}</a>
+            <span class="meta">{d.data.summary}</span>
+          </li>
+        ))}
+      </ul>
+    )}
+  <p><a href={url('/liens-utiles/')}>Voir aussi les liens utiles</a></p>
+</Base>

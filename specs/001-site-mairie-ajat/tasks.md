@@ -142,16 +142,16 @@ description: "Liste des tâches : site web de la mairie d'Ajat"
 
 **Independent Test**: depuis l'accueil, atteindre chacune de ces rubriques en deux appuis au plus (SC-009)
 
-- [ ] T046 [US5] Déclarer la collection `demarches` dans `src/content.config.ts` selon `data-model.md` `Démarche.summary`, `Démarche.documents`, `Démarche.officialUrl` (https, C2), `Démarche.order`
-- [ ] T047 [US5] Déclarer la collection `associations` dans `src/content.config.ts` selon `data-model.md` `Association.activity`, `Association.contacts` (≥ 1 entrée) et `Association.consent` (doit valoir `true`, C8)
-- [ ] T048 [US5] Déclarer les collections `salle-des-fetes` et `liens` (loader `file()`) dans `src/content.config.ts` selon `data-model.md` `Salle des fêtes.capacity`, `Salle des fêtes.description`, `Salle des fêtes.conditions`, `Salle des fêtes.rates`, `Salle des fêtes.contact` et `Liens utiles.label`, `Liens utiles.url`, `Liens utiles.theme`
-- [ ] T049 [P] [US5] Créer `src/pages/demarches/index.astro` et `src/pages/demarches/[...slug].astro` : explications, pièces utiles, lien vers le service officiel
-- [ ] T050 [P] [US5] Créer `src/pages/associations/index.astro` et `src/pages/associations/[...slug].astro` : activité et contacts
-- [ ] T051 [P] [US5] Créer `src/pages/salle-des-fetes.astro` : conditions, tarifs, capacité, et contact de la mairie pour demander la location (pas de réservation en ligne)
-- [ ] T052 [P] [US5] Créer `src/pages/liens-utiles.astro`, groupés par `Liens utiles.theme`
+- [X] T046 [US5] Déclarer la collection `demarches` dans `src/content.config.ts` selon `data-model.md` `Démarche.summary`, `Démarche.documents`, `Démarche.officialUrl` (https, C2), `Démarche.order`
+- [X] T047 [US5] Déclarer la collection `associations` dans `src/content.config.ts` selon `data-model.md` `Association.activity`, `Association.contacts` (≥ 1 entrée) et `Association.consent` (doit valoir `true`, C8)
+- [X] T048 [US5] Déclarer les collections `salle-des-fetes` et `liens` (loader `file()`) dans `src/content.config.ts` selon `data-model.md` `Salle des fêtes.capacity`, `Salle des fêtes.description`, `Salle des fêtes.conditions`, `Salle des fêtes.rates`, `Salle des fêtes.contact` et `Liens utiles.label`, `Liens utiles.url`, `Liens utiles.theme`
+- [X] T049 [P] [US5] Créer `src/pages/demarches/index.astro` et `src/pages/demarches/[...slug].astro` : explications, pièces utiles, lien vers le service officiel
+- [X] T050 [P] [US5] Créer `src/pages/associations/index.astro` et `src/pages/associations/[...slug].astro` : activité et contacts
+- [X] T051 [P] [US5] Créer `src/pages/salle-des-fetes.astro` : conditions, tarifs, capacité, et contact de la mairie pour demander la location (pas de réservation en ligne)
+- [X] T052 [P] [US5] Créer `src/pages/liens-utiles.astro`, groupés par `Liens utiles.theme`
 - [ ] T053 [US5] Ajouter le contenu initial fourni par la mairie : `src/content/demarches/*.md`, `src/content/associations/*.md` (avec accord de publication), `src/content/donnees/salle-des-fetes.yml`, `src/content/donnees/liens.yml`
-- [ ] T054 [US5] Ajouter démarches, associations, salle des fêtes et liens utiles à `.pages.yml` (libellés français, `Association.consent` présenté comme « J'ai l'accord de l'association »)
-- [ ] T055 [US5] Mettre à jour `src/components/Nav.astro` et `src/pages/index.astro` pour que chaque rubrique soit à deux appuis au plus depuis l'accueil
+- [X] T054 [US5] Ajouter démarches, associations, salle des fêtes et liens utiles à `.pages.yml` (libellés français, `Association.consent` présenté comme « J'ai l'accord de l'association »)
+- [X] T055 [US5] Mettre à jour `src/components/Nav.astro` et `src/pages/index.astro` pour que chaque rubrique soit à deux appuis au plus depuis l'accueil
 
 **Checkpoint**: US1 à US5 fonctionnent
 

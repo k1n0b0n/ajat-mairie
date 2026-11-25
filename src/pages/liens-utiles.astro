@@ -1,0 +1,23 @@
+---
+import { getEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const entree = await getEntry('liens', 'liens');
+const items = entree?.data.items ?? [];
+const themes = [...new Set(items.map((i) => i.theme))];
+---
+<Base titre="Liens utiles" description="Liens vers les services officiels : démarches, département, préfecture.">
+  <h1>Liens utiles</h1>
+  {items.length === 0
+    ? <p>Aucun lien pour le moment.</p>
+    : themes.map((theme) => (
+        <section aria-labelledby={`theme-${theme}`}>
+          <h2 id={`theme-${theme}`}>{theme}</h2>
+          <ul>
+            {items.filter((i) => i.theme === theme).map((i) => (
+              <li><a href={i.url} rel="noopener">{i.label}</a></li>
+            ))}
+          </ul>
+        </section>
+      ))}
+</Base>

@@ -1,0 +1,20 @@
+---
+interface Props {
+  contacts: { type: 'tel' | 'email' | 'adresse' | 'site'; value: string }[];
+}
+
+const { contacts } = Astro.props;
+const telephone = (v: string) => `+33${v.replace(/\s/g, '').replace(/^0/, '')}`;
+const etiquette = { tel: 'Téléphone', email: 'Courriel', adresse: 'Adresse', site: 'Site' } as const;
+---
+<ul class="contacts">
+  {contacts.map((c) => (
+    <li>
+      <span class="meta">{etiquette[c.type]} : </span>
+      {c.type === 'tel' && <a href={`tel:${telephone(c.value)}`}>{c.value}</a>}
+      {c.type === 'email' && <a href={`mailto:${c.value}`}>{c.value}</a>}
+      {c.type === 'site' && <a href={c.value} rel="noopener">{c.value}</a>}
+      {c.type === 'adresse' && <span>{c.value}</span>}
+    </li>
+  ))}
+</ul>

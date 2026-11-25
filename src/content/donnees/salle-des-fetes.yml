@@ -1,0 +1,4 @@
+# Conditions et tarifs à fournir par la mairie (voir docs/contenus-a-fournir.md).
+# Tant que ces champs sont vides, la page invite à contacter la mairie.
+salle:
+  rates: []

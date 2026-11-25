@@ -54,8 +54,9 @@ Tout est fichier dans Git. Les champs « commun » valent pour les collections M
 
 ### Salle des fêtes (`src/content/donnees/salle-des-fetes.yml`)
 
-- `capacity` (entier), `description`, `conditions` (Markdown), `rates` : liste
-  `{label, amount_eur, unit}`, `contact` (renvoie à `mairie` par défaut).
+- `capacity` (entier), `description`, `conditions`, `rates` : liste `{label, amount_eur, unit}`,
+  `contact` (renvoie à `mairie` par défaut). Tous facultatifs tant que la mairie ne les a pas fournis :
+  la page affiche alors « publiés prochainement ».
 
 ### Liens utiles (`src/content/donnees/liens.yml`)
 

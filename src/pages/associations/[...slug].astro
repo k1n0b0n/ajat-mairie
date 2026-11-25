@@ -1,0 +1,23 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Contacts from '../../components/Contacts.astro';
+import { getPublies } from '../../lib/published';
+import { url } from '../../lib/url';
+
+export async function getStaticPaths() {
+  const associations = await getPublies('associations');
+  return associations.map((association) => ({ params: { slug: association.id }, props: { association } }));
+}
+
+const { association } = Astro.props;
+const { Content } = await render(association);
+---
+<Base titre={association.data.title} description={association.data.activity}>
+  <h1>{association.data.title}</h1>
+  <p class="chapo">{association.data.activity}</p>
+  <Content />
+  <h2>Contacter l'association</h2>
+  <Contacts contacts={association.data.contacts} />
+  <p><a href={url('/associations/')}>← Toutes les associations</a></p>
+</Base>
