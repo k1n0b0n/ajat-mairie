@@ -521,3 +521,34 @@ address {
   align-items: center;
   min-height: 2.75rem;
 }
+
+/* Contraste élevé du système : les couleurs sont imposées par le navigateur ; on garde donc
+   des bordures et des repères de forme (jamais la couleur seule). */
+@media (forced-colors: active) {
+  .bouton,
+  .bouton-menu,
+  .tuiles a,
+  .nav a {
+    border: 1px solid ButtonText;
+  }
+
+  /* Le bouton d'appel garde un texte lisible sur le fond imposé par le navigateur */
+  .bouton {
+    background: Canvas;
+    color: LinkText;
+  }
+
+  .nav a[aria-current='page'] {
+    box-shadow: none;
+    border-inline-start-width: 0.3rem;
+  }
+
+  .fermeture {
+    border: 1px solid CanvasText;
+    border-inline-start-width: 0.4rem;
+  }
+
+  .hero-visuel img {
+    forced-color-adjust: none;
+  }
+}

@@ -84,9 +84,10 @@ description: "Liste des tâches : identité visuelle du site de la mairie d'Ajat
 
 **Independent Test**: parcourir accueil, actualité, horaires et salle des fêtes à 200 % et à 320 px, en thème sombre et en contraste élevé, au clavier (`quickstart.md` §3)
 
-- [ ] T023 [US2] Ajouter à `src/styles/global.css` et `src/styles/tokens.css` le bloc `@media (forced-colors: active)` (bordures de boutons, tuiles et menu conservées, focus visible), le respect de `prefers-reduced-motion` et la vérification du focus sur le bouton Menu, les tuiles et chaque entrée de menu
-- [ ] T024 [P] [US2] Créer `tests/themes.spec.ts` : axe sur l'accueil et une page de contenu en `colorScheme: 'dark'` puis en `forcedColors: 'active'`, 0 violation
-- [ ] T025 [US2] Valider US2 (`quickstart.md` §3) : relecture au clavier, zoom 200 %, thème sombre et contraste élevé ; vérifier à l'œil le texte et les tuiles sur toutes les pages types et corriger
+- [X] T023 [US2] Ajouter à `src/styles/global.css` et `src/styles/tokens.css` le bloc `@media (forced-colors: active)` (bordures de boutons, tuiles et menu conservées, focus visible), le respect de `prefers-reduced-motion` et la vérification du focus sur le bouton Menu, les tuiles et chaque entrée de menu
+- [X] T024 [P] [US2] Créer `tests/themes.spec.ts` : axe sur l'accueil et une page de contenu en `colorScheme: 'dark'` puis en `forcedColors: 'active'`, 0 violation
+- [X] T025 [US2] Valider US2 (`quickstart.md` §3) : relecture au clavier, zoom 200 %, thème sombre et contraste élevé ; vérifier à l'œil le texte et les tuiles sur toutes les pages types et corriger
+- [X] T044 [P] [US2] Créer `tests/text-spacing.spec.ts` (RGAA 10.12, WCAG 1.4.12) : sur toutes les pages à 320 px et avec le menu ouvert, imposer interlignage 1,5, espacement des lettres 0,12 em, des mots 0,16 em et des paragraphes 2 em ; aucun défilement horizontal et aucun texte coupé (hors texte réservé aux lecteurs d'écran)
 
 **Checkpoint**: US1 et US2 fonctionnent séparément
 
