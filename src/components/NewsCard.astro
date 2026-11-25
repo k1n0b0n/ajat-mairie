@@ -14,6 +14,6 @@ const date = dateDe(actualite.data);
 ---
 <article class="actualite">
   <Titre><a href={url(`/actualites/${actualite.id}/`)}>{actualite.data.title}</a></Titre>
-  {date && <p class="date"><time datetime={dateIso(date)}>{formaterDate(date)}</time></p>}
+  {date && <p class="date"><time class="chiffres" datetime={dateIso(date)}>{formaterDate(date)}</time></p>}
   <p>{actualite.data.summary}</p>
 </article>

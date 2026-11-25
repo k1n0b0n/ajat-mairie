@@ -21,6 +21,7 @@
   /* Typographie */
   --police-titre: 'Fraunces', Georgia, 'Times New Roman', serif;
   --police-texte: 'Atkinson Hyperlegible', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --police-chiffres: var(--police-titre);
   --taille-base: 1.0625rem;
   --interligne: 1.6;
   --interligne-titre: 1.2;

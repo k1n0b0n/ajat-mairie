@@ -109,7 +109,7 @@ description: "Liste des tâches : personnalité du site de la mairie d'Ajat"
 **Independent Test**: sur captures, aucun zéro barré sur le téléphone, les horaires, les dates et le code postal (`quickstart.md` §4)
 
 - [ ] T025 [US4] Appliquer la classe `.chiffres` (Fraunces) au téléphone, aux heures, aux dates et au code postal dans `src/components/LaMairie.astro`, `ContactBlock.astro`, `Hours.astro`, `NewsCard.astro`, `src/pages/actualites/[...slug].astro` et `src/pages/comptes-rendus/index.astro` ; vérifier que Fraunces n'a pas de zéro barré
-- [ ] T026 [P] [US4] Créer `tests/chiffres.spec.ts` : les liens `tel:`, les éléments `time` et le code postal de l'accueil et de `/la-mairie/` ont la police calculée Fraunces (classe `.chiffres`)
+- [X] T026 [P] [US4] Créer `tests/chiffres.spec.ts` : les liens `tel:`, les éléments `time` et le code postal de l'accueil et de `/la-mairie/` ont la police calculée Fraunces (classe `.chiffres`)
 - [ ] T027 [US4] Capturer le téléphone, les horaires, une date et le code postal en clair et en sombre, vérifier qu'aucun zéro n'est barré (SC-008) ; si la limite de `research.md` R6 gêne (un zéro dans une phrase), la consigner et proposer une police de texte à héberger sans paquet npm
 
 **Checkpoint**: US1 à US4 fonctionnent

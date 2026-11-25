@@ -20,7 +20,7 @@ const { cover } = actualite.data;
 <Base titre={actualite.data.title} description={actualite.data.summary}>
   <article class="article">
     <h1>{actualite.data.title}</h1>
-    {date && <p class="date"><time datetime={dateIso(date)}>{formaterDate(date)}</time></p>}
+    {date && <p class="date"><time class="chiffres" datetime={dateIso(date)}>{formaterDate(date)}</time></p>}
     {cover && <Image src={resoudreImage(cover.image)} alt={cover.alt} widths={[400, 800]} sizes="(min-width: 48rem) 46rem, 100vw" />}
     <Content />
   </article>
