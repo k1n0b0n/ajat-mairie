@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import { render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import { dateDe, dateIso, formaterDate } from '../../lib/dates';
+import { resoudreImage } from '../../lib/images';
 import { getPublies } from '../../lib/published';
 import { url } from '../../lib/url';
 
@@ -20,7 +21,7 @@ const { cover } = actualite.data;
   <article class="article">
     <h1>{actualite.data.title}</h1>
     {date && <p class="date"><time datetime={dateIso(date)}>{formaterDate(date)}</time></p>}
-    {cover && <Image src={cover.image} alt={cover.alt} widths={[400, 800]} sizes="(min-width: 48rem) 46rem, 100vw" />}
+    {cover && <Image src={resoudreImage(cover.image)} alt={cover.alt} widths={[400, 800]} sizes="(min-width: 48rem) 46rem, 100vw" />}
     <Content />
   </article>
   <p><a href={url('/actualites/')}>← Toutes les actualités</a></p>

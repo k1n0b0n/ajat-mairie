@@ -1,0 +1,66 @@
+name: Aperçu des brouillons
+
+# Construit le site avec les brouillons (PREVIEW=1) et le publie sur un dépôt d'aperçu distinct,
+# non indexé. Les brouillons ne sont pas confidentiels : le dépôt du site est public.
+on:
+  push:
+    branches: [redaction]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: apercu
+  cancel-in-progress: true
+
+env:
+  DEPOT_APERCU: ${{ github.repository }}-apercu
+
+jobs:
+  apercu:
+    runs-on: ubuntu-latest
+    env:
+      PREVIEW: "1"
+      SITE_URL: https://${{ github.repository_owner }}.github.io
+      SITE_BASE: /${{ github.event.repository.name }}-apercu
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Publier sur le dépôt d'aperçu
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ env.DEPOT_APERCU }}
+          ssh-key: ${{ secrets.APERCU_DEPLOY_KEY }}
+          path: depot-apercu
+      - name: Remplacer le contenu de l'aperçu
+        run: |
+          find depot-apercu -mindepth 1 -maxdepth 1 -not -name .git -exec rm -rf {} +
+          cp -R dist/. depot-apercu/
+          touch depot-apercu/.nojekyll
+          cd depot-apercu
+          git config user.name "apercu-bot"
+          git config user.email "apercu-bot@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Aperçu de ${GITHUB_SHA::7}"
+          git push
+      - name: Indiquer l'adresse de l'aperçu dans la PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          marqueur="<!-- apercu -->"
+          adresse="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}-apercu/"
+          pr=$(gh pr list --head redaction --base main --state open --json number --jq '.[0].number')
+          [ -z "$pr" ] && exit 0
+          deja=$(gh pr view "$pr" --json comments --jq "[.comments[] | select(.body | contains(\"$marqueur\"))] | length")
+          if [ "$deja" = "0" ]; then
+            gh pr comment "$pr" --body "$marqueur
+          **Aperçu (brouillons inclus) :** $adresse
+          Il se met à jour à chaque enregistrement (comptez 1 à 2 minutes). Ne pas y mettre de donnée non publiable."
+          fi

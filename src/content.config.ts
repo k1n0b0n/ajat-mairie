@@ -62,11 +62,10 @@ const mairie = defineCollection({
 // data-model.md : Actualité (summary ≤ 200 car. ; cover.alt obligatoire dès qu'une image est fournie, C3)
 const actualites = defineCollection({
   loader: glob({ pattern: '**/*.md', base: 'src/content/actualites' }),
-  schema: ({ image }) =>
-    schemaCommun.extend({
-      summary: z.string().min(1).max(200),
-      cover: z.object({ image: image(), alt: z.string().min(1) }).optional(),
-    }),
+  schema: schemaCommun.extend({
+    summary: z.string().min(1).max(200),
+    cover: z.object({ image: z.string().min(1), alt: z.string().min(1) }).optional(),
+  }),
 });
 
 export const collections = { mairie, actualites };

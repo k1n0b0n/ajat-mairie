@@ -1,0 +1,36 @@
+name: Nuit
+
+# Reconstruction quotidienne : fait apparaître les publications programmées et retire les
+# fermetures échues. Le lundi, vérification (non bloquante) des liens externes.
+on:
+  schedule:
+    - cron: "17 2 * * *"
+    - cron: "43 3 * * 1"
+  workflow_dispatch:
+
+jobs:
+  reconstruire:
+    if: github.event.schedule != '43 3 * * 1'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/deploy.yml
+
+  liens-externes:
+    if: github.event.schedule == '43 3 * * 1'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --max-concurrency 4 --root-dir "${{ github.workspace }}/dist" "dist/**/*.html"
+          fail: false

@@ -3,6 +3,9 @@ name: CI
 on:
   pull_request:
     branches: [main]
+  # Une PR ouverte par GITHUB_TOKEN ne déclenche pas de workflow : on contrôle aussi le push sur redaction.
+  push:
+    branches: [redaction]
 
 permissions:
   contents: read

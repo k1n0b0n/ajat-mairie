@@ -105,15 +105,15 @@ description: "Liste des tâches : site web de la mairie d'Ajat"
 
 **Dépend de**: US1 (`mairie.yml`) et US2 (collection `actualites`)
 
-- [ ] T031 [US3] Créer `.pages.yml` selon `contracts/pages-cms-config.md` : `media` (PDF vers `public/documents/comptes-rendus`, images vers `src/assets/images`), collection Actualités et fichier Horaires et contact, libellés français sans terme technique, champs obligatoires, `draft` présenté comme « Brouillon (ne pas publier) », message de commit « Modifie {chemin} par {nom} »
+- [X] T031 [US3] Créer `.pages.yml` selon `contracts/pages-cms-config.md` : `media` (PDF vers `public/documents/comptes-rendus`, images vers `src/assets/images`), collection Actualités et fichier Horaires et contact, libellés français sans terme technique, champs obligatoires, `draft` présenté comme « Brouillon (ne pas publier) », message de commit « Modifie {chemin} par {nom} »
 - [ ] T032 [US3] Vérifier sur le dépôt réel les points « à vérifier » de `research.md` R3 : invitation d'un rédacteur sans compte GitHub, écriture sur la branche `redaction`, champs obligatoires, saisie du `alt` des images ; consigner le résultat dans `research.md` R3 et adapter `.pages.yml` ou le plan si un point échoue
-- [ ] T033 [P] [US3] Créer `.github/workflows/pr-redaction.yml` : sur push `redaction`, ouvre ou met à jour la PR vers `main` (droit `pull-requests: write`)
-- [ ] T034 [P] [US3] Créer `.github/workflows/preview.yml` : build avec `PREVIEW=1` (brouillons inclus, `noindex`, `robots.txt` en `Disallow: /`), publication sur le dépôt d'aperçu par clé de déploiement, adresse commentée dans la PR (R6)
-- [ ] T035 [P] [US3] Créer `.github/workflows/nightly.yml` : reconstruction et déploiement quotidiens (publications programmées, R2) et vérification hebdomadaire non bloquante des liens externes
-- [ ] T036 [US3] Rédiger `docs/administration.md` pour l'administrateur technique : création du dépôt d'aperçu et de sa clé de déploiement (seul secret Actions), invitation des rédacteurs, autorisation aux Actions de créer des PR
+- [X] T033 [P] [US3] Créer `.github/workflows/pr-redaction.yml` : sur push `redaction`, ouvre ou met à jour la PR vers `main` (droit `pull-requests: write`)
+- [X] T034 [P] [US3] Créer `.github/workflows/preview.yml` : build avec `PREVIEW=1` (brouillons inclus, `noindex`, `robots.txt` en `Disallow: /`), publication sur le dépôt d'aperçu par clé de déploiement, adresse commentée dans la PR (R6)
+- [X] T035 [P] [US3] Créer `.github/workflows/nightly.yml` : reconstruction et déploiement quotidiens (publications programmées, R2) et vérification hebdomadaire non bloquante des liens externes
+- [X] T036 [US3] Rédiger `docs/administration.md` pour l'administrateur technique : création du dépôt d'aperçu et de sa clé de déploiement (seul secret Actions), invitation des rédacteurs, autorisation aux Actions de créer des PR
 - [ ] T037 [US3] Appliquer et documenter dans `docs/administration.md` la protection de `main` de `contracts/ci-gates.md` : PR obligatoire, 1 approbation hors auteur, revue des propriétaires de code, contrôles requis, pas de push direct ; activer l'analyse de secrets et les alertes Dependabot ; créer la branche `redaction`
-- [ ] T038 [P] [US3] Rédiger le guide d'**une page** pour la personne du conseil dans `docs/aide-redacteur.md` : se connecter à Pages CMS, publier une actualité, ajouter un PDF, corriger une publication ; langage simple, une page A4 imprimable, aucun terme technique, y compris la mention que le brouillon n'est pas confidentiel (dépôt public)
-- [ ] T039 [P] [US3] Rédiger `docs/aide-relecteur.md` : ouvrir l'aperçu, demander une modification, approuver, fusionner, annuler avec « Revert » (R4, R5)
+- [X] T038 [P] [US3] Rédiger le guide d'**une page** pour la personne du conseil dans `docs/aide-redacteur.md` : se connecter à Pages CMS, publier une actualité, ajouter un PDF, corriger une publication ; langage simple, une page A4 imprimable, aucun terme technique, y compris la mention que le brouillon n'est pas confidentiel (dépôt public)
+- [X] T039 [P] [US3] Rédiger `docs/aide-relecteur.md` : ouvrir l'aperçu, demander une modification, approuver, fusionner, annuler avec « Revert » (R4, R5)
 - [ ] T040 [US3] Exécuter le parcours rédacteur → relecteur de `quickstart.md` §3 avec une personne non technique, chronométrer (SC-003), vérifier SC-004 et SC-008, puis corriger `docs/aide-redacteur.md` d'après ses difficultés
 
 **Checkpoint**: US1, US2 et US3 fonctionnent ; le site est maintenable par la mairie
