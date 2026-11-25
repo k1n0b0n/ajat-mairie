@@ -1,6 +1,6 @@
 # Research : personnalité du site de la mairie d'Ajat
 
-Le plan s'arrête ici pour validation : l'audit et la direction précèdent tout choix technique (constitution 1.2.0, principe X). La suite (jetons, polices, composition) vient après ta réponse.
+L'audit (R0) et la direction (R1) précèdent tout choix technique (constitution 1.2.0, principe X). **Les quatre points de R1 n'ont pas reçu de réponse** : R2 retient par défaut les recommandations afin de produire le plan et les tâches ; chacune se change avant l'implémentation, au prix d'une retouche de R3 à R7.
 
 ## R0. Audit unslop de l'accueil, d'une liste et d'un article
 
@@ -57,3 +57,59 @@ Aucun dégradé (0 `gradient(` dans le CSS), aucune lueur ni ombre colorée (3 `
 2. **Chiffres** : chiffres d'affichage en Fraunces (aucune nouvelle dépendance), texte courant en Atkinson (le zéro barré y reste dans les phrases, par exemple une année) ; ou changer aussi la police du texte, ce qui demande d'héberger de nouveaux fichiers de police sans paquet npm ?
 3. **Signature** : B (clocher Saint-Martin), A (forces du blason) ou autre ?
 4. **Test de substitution renforcé** : au moins trois éléments qui ne sont ni le nom ni des coordonnées ?
+
+## R2. Décisions retenues par défaut (à confirmer)
+
+| Point | Retenu | Pourquoi |
+|---|---|---|
+| 1. Accent | **brun tuile** à la place du vert chêne ; plus de vert en surface | la tuile est dans le paysage et sur la photo ; le vert chêne n'évoquait rien de local |
+| 2. Chiffres | **Fraunces** pour tous les chiffres d'affichage (téléphone, horaires, dates, code postal) ; texte courant en Atkinson | aucune nouvelle dépendance ni fichier : Fraunces 600 est déjà chargée ; le zéro barré ne reste que dans les phrases |
+| 3. Signature | **B, le clocher-pignon de l'église Saint-Martin**, silhouette plate | indépendante du statut du blason, lisible en petit |
+| 4. Test de substitution | **renforcé** : au moins trois éléments qui ne sont ni le nom ni des coordonnées | l'ancien test passait sur la lettre |
+
+## R3. Palette « pierre, tuile, ardoise »
+
+Contrastes calculés (formule WCAG) ; tous les couples de texte passent AA :
+
+| Rôle | Clair | Sombre |
+|---|---|---|
+| Fond (chaux, pierre claire) | `#f7f1e4` | `#1c1812` |
+| Fond doux (pierre blonde) | `#e9ddc3` | `#272118` |
+| Texte | `#2a2319` (13,8) | `#f1eadb` (14,8) |
+| Texte doux | `#5b503e` (7,0) | `#bdb3a0` (8,5) |
+| Tuile (accent : liens, boutons, signature) | `#8b3a1f` (6,9 sur fond ; 5,7 sur fond doux) | `#e39a74` (7,7) |
+| Texte sur tuile | `#fbf6ec` (7,2) | `#1c1812` (7,7) |
+| Ardoise (plaque du nom, étiquettes) | `#2e3640`, texte `#fbf6ec` (11,4) | `#3a4652`, texte `#f1eadb` (8,1) |
+| Alerte | fond `#f5e1b8`, bord `#8a5a00` (5,3) | fond `#3a2d12`, bord `#e3b05a` (8,9) |
+| Focus | `#214e7e` (7,6) | `#9cc4f0` (9,7) |
+| Bordure de composant (3:1) | `#7e6f52` (4,4 ; 3,6 sur fond doux) | `#8f8570` (4,8) |
+
+Retirés : `--chene`, `--chene-texte`, `--ocre-texte`, `--ocre-deco`. L'ardoise et la tuile ne se superposent jamais (1,6:1) : le texte de la plaque est crème.
+
+## R4. Composition de l'accueil
+
+- **Ordinateur** (conteneur large de 72 rem) : photo pleine largeur avec la plaque « Ajat » ; dessous, deux zones côte à côte de largeurs différentes, **La mairie** (affiche) à gauche, **À la une** (dernière actualité) à droite ; puis **Le village** (texte local et un lien vers « Découvrir Ajat ») ; puis une phrase de liens courants (démarches, associations, salle des fêtes, comptes rendus), une fois chacun. Aucune grille de blocs identiques, aucune icône.
+- **Téléphone** : photo basse (environ 200 px) avec la plaque, puis l'affiche « La mairie » : phrase d'horaires et téléphone visibles à 360 × 640 px sans défilement ; le reste s'empile.
+- **Liens** : une seule occurrence par destination dans le contenu principal ; la navigation n'est pas comptée (principe X).
+- **Plaque** : bloc plein ardoise, texte crème, posé sur la photo (bas gauche) ; le contraste ne dépend pas de la photo ; aucun dégradé.
+- **Crédit** : texte de 12 px en bas à droite de la photo, sans bande.
+
+## R5. Phrase d'horaires
+
+Fonction pure `phraseHoraires(hours, closures, note)` : regroupe les jours aux plages identiques, ordre de la semaine ; « le » devant chaque jour ; plages « de 9 h à 12 h et de 14 h à 17 h ». Exemple pour les données actuelles : « Ouverte le mardi, le jeudi et le vendredi, de 14 h à 17 h. » Fermeture à venir ou en cours : ajoutée en fin de phrase avec ses dates. Aucun « ouvert maintenant » (site statique). Détail et cas limites : [contracts/phrase-horaires.md](./contracts/phrase-horaires.md).
+
+## R6. Chiffres sans zéro barré
+
+Classe `.chiffres` : Fraunces 600, `font-variant-numeric: lining-nums tabular-nums`, appliquée au téléphone, aux heures, aux dates et au code postal. Aucune dépendance : Fraunces est déjà préchargée. Contrôle : test Playwright sur la police calculée des éléments concernés et revue de captures. **Limite** : un « 0 » dans une phrase de texte courant (une année) reste en Atkinson ; si ce n'est pas acceptable, il faut une nouvelle police de texte (fichiers hébergés, sans paquet npm).
+
+## R7. Détail signature : le clocher de Saint-Martin
+
+Silhouette plate d'un clocher-pignon (pignon pointu, deux baies), tracée une fois en SVG (≤ 2 Ko, une seule couleur), utilisée **une fois par page, sous le titre**, à la place du filet ocre : masque appliqué à un bloc de couleur tuile, aucune requête de plus ni JavaScript. Remplace aussi toute autre décoration de titre.
+
+## R8. Contrôles
+
+`scripts/check-identite.mjs` : aucun dégradé (`gradient(`) dans les styles, composants et pages ; aucun des mots « moderne », « épuré », « premium » dans les textes du site. `tests/home-liens.spec.ts` : une occurrence par destination dans `main` ; pas de tuiles. Tests de chiffres, de plaque et de page « La mairie ». `check-contrast.mjs` mis à jour pour les nouveaux jetons.
+
+## R9. Impact sur les budgets
+
+Aucune dépendance ni police ajoutée ; HTML et CSS de l'accueil à peu près inchangés ; un SVG de 2 Ko ; le tableau d'horaires quitte l'accueil (moins de DOM). Budget attendu : accueil ≤ 120 Ko sur téléphone (72 Ko aujourd'hui).
