@@ -63,6 +63,7 @@ Test `tests/page-budget.spec.ts` (constitution, principe IX) : accueil 120 Ko au
 
 | Date | Page | Score | Note |
 |---|---|---|---|
-| 2026-11-25 | Accueil (page non précisée à la saisie, à confirmer) | 89 / 100 | A (échelle publique d'EcoIndex : A au-dessus de 80) |
+| 2026-11-25 | Accueil | 89 / 100 | A (échelle publique d'EcoIndex : A au-dessus de 80) |
+| 2026-11-25 | Actualités (`/actualites/`) | 92 / 100 | A |
 
-À compléter : une page de texte (par exemple `/actualites/`), puis refaire la mesure à chaque changement significatif.
+Le score d'une page dépend de son contenu : la page des actualités est aujourd'hui presque vide (une seule actualité), son score baissera légèrement quand elle se remplira. À refaire à chaque changement significatif et quand les rubriques (comptes rendus, associations, salle des fêtes) seront remplies ; les budgets de poids et de requêtes contrôlés en continu limitent la dérive.

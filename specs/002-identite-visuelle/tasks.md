@@ -122,7 +122,7 @@ description: "Liste des tâches : identité visuelle du site de la mairie d'Ajat
 - [X] T040 [P] [US4] Rédiger `docs/declaration-ecoconception.md` (modèle de déclaration du RGESN) : périmètre, référent à désigner par la mairie, critères tenus ou non (`contracts/ecoconception.md`), limites (cache de GitHub Pages, source d'énergie de l'hébergeur), mesures de référence (accueil 79 Ko sur téléphone et 230 Ko sur ordinateur, page de texte 58 Ko, 6 à 7 requêtes), date, règle de révision à chaque changement significatif (RGESN 1.4)
 - [X] T041 [US4] Dans `src/components/Hero.astro`, servir deux jeux de variantes avec `getImage()` et des `<source media>` : proportions 2:1 sous 48 rem (largeurs 480 et 768) et 3:1 recadrée dès 48 rem (largeurs 1200 et 1600), AVIF puis WebP ; viser l'accueil sur ordinateur à 150 Ko au plus (FR-024)
 - [X] T042 [P] [US4] Créer `scripts/changement-du-jour.mjs` (liste les contenus dont la date de publication ou de fin de fermeture tombe dans les dernières 24 h) et adapter `.github/workflows/nightly.yml` : un job de contrôle décide, la reconstruction ne s'exécute que s'il y a un changement
-- [ ] T043 [US4] Mesurer l'accueil et une page de texte avec l'outil public EcoIndex, viser la note A ou B (SC-012), et consigner les résultats dans `docs/declaration-ecoconception.md` (2026-11-25 : accueil 89/100, note A ; reste une page de texte)
+- [X] T043 [US4] Mesurer l'accueil et une page de texte avec l'outil public EcoIndex, viser la note A ou B (SC-012), et consigner les résultats dans `docs/declaration-ecoconception.md` (2026-11-25 : accueil 89/100, actualités 92/100, note A)
 
 **Checkpoint**: toutes les user stories fonctionnent
 
