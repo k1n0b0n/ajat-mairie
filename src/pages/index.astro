@@ -5,21 +5,23 @@ import Hero from '../components/Hero.astro';
 import Hours from '../components/Hours.astro';
 import NewsCard from '../components/NewsCard.astro';
 import QuickAccess from '../components/QuickAccess.astro';
+import { getEntry } from 'astro:content';
 import { parDateDecroissante } from '../lib/dates';
 import { getPublies } from '../lib/published';
 import { url } from '../lib/url';
 
+const texteAccueil = (await getEntry('accueil', 'accueil'))?.data.village ?? '';
 const dernieres = (await getPublies('actualites')).sort(parDateDecroissante).slice(0, 3);
 ---
 <Base titre="Mairie d'Ajat">
   <Hero slot="pleine-largeur" />
   <h1>Mairie d'Ajat</h1>
-  <p class="chapo">Horaires, démarches, actualités et vie de la commune d'Ajat, en Dordogne</p>
+  <p class="chapo">{texteAccueil}</p>
   <QuickAccess />
   <ContactBlock />
   <Hours />
   <section aria-labelledby="titre-pratique">
-    <h2 id="titre-pratique">Infos pratiques</h2>
+    <h2 id="titre-pratique">Dans la commune</h2>
     <ul class="acces-rapide">
       <li><a href={url('/demarches/')}>Démarches courantes</a></li>
       <li><a href={url('/associations/')}>Associations et contacts</a></li>
@@ -28,7 +30,7 @@ const dernieres = (await getPublies('actualites')).sort(parDateDecroissante).sli
     </ul>
   </section>
   <section aria-labelledby="titre-actualites">
-    <h2 id="titre-actualites">Dernières actualités</h2>
+    <h2 id="titre-actualites">À la une</h2>
     {dernieres.length === 0
       ? <p>Aucune actualité pour le moment.</p>
       : dernieres.map((a) => <NewsCard actualite={a} niveau={3} />)}

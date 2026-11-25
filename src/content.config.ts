@@ -121,6 +121,12 @@ const visuels = defineCollection({
   schema: illustration,
 });
 
+// data-model.md : Texte de l'accueil (Texte de l'accueil.village : 60 à 320 caractères)
+const accueil = defineCollection({
+  loader: file('src/content/donnees/accueil.yml'),
+  schema: z.object({ village: z.string().min(60).max(320) }),
+});
+
 // data-model.md : Démarche (officialUrl en https, C2)
 const demarches = defineCollection({
   loader: glob({ pattern: '**/*.md', base: 'src/content/demarches' }),
@@ -174,4 +180,5 @@ export const collections = {
   liens,
   pages,
   visuels,
+  accueil,
 };

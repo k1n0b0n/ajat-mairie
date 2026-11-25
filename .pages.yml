@@ -389,6 +389,25 @@ content:
           extensions: [jpg, jpeg, png, webp]
           rename: safe
 
+  - name: texte-accueil
+    label: Texte de l'accueil
+    type: file
+    path: src/content/donnees/accueil.yml
+    format: yaml
+    fields:
+      - name: accueil
+        label: Accueil
+        type: object
+        fields:
+          - name: village
+            label: Le village en deux ou trois phrases
+            type: text
+            required: true
+            description: "Entre 60 et 320 caractères. Parlez d'Ajat : le bourg, l'église, le château."
+            options:
+              minlength: 60
+              maxlength: 320
+
   - name: visuel-accueil
     label: Visuel d'accueil
     type: file

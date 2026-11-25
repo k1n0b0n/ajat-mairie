@@ -32,8 +32,8 @@ description: "Liste des tâches : personnalité du site de la mairie d'Ajat"
 **Purpose**: mettre en place les contrôles du principe X avant de changer le rendu
 
 - [X] T001 [P] Créer `scripts/check-identite.mjs` : échoue si `gradient(` apparaît dans `src/styles/`, `src/components/` ou `src/pages/`, ou si « moderne », « épuré » ou « premium » apparaît dans les textes du site (`src/content/`, `src/components/`, `src/pages/`, `src/lib/`) ; l'ajouter au script `check` de `package.json` après `check-contrast.mjs`
-- [ ] T002 [P] Créer `src/lib/horaires-phrase.ts` : fonction pure `phraseHoraires(hours, closures, note, maintenant)` selon `contracts/phrase-horaires.md` (regroupement par plages identiques, fermetures à venir, remarque, aucun « ouvert maintenant »), en réutilisant `formaterHeure`, `JOURS` et `fermetures` de `src/lib/hours.ts`
-- [ ] T003 [P] Créer `tests/horaires-phrase.spec.ts` : cas du contrat (mardi, jeudi, vendredi ; deux groupes ; sept jours ; aucun jour ; fermeture à venir ; remarque) en tests unitaires Playwright sans navigateur
+- [X] T002 [P] Créer `src/lib/horaires-phrase.ts` : fonction pure `phraseHoraires(hours, closures, note, maintenant)` selon `contracts/phrase-horaires.md` (regroupement par plages identiques, fermetures à venir, remarque, aucun « ouvert maintenant »), en réutilisant `formaterHeure`, `JOURS` et `fermetures` de `src/lib/hours.ts`
+- [X] T003 [P] Créer `tests/horaires-phrase.spec.ts` : cas du contrat (mardi, jeudi, vendredi ; deux groupes ; sept jours ; aucun jour ; fermeture à venir ; remarque) en tests unitaires Playwright sans navigateur
 
 ---
 
@@ -76,7 +76,7 @@ description: "Liste des tâches : personnalité du site de la mairie d'Ajat"
 - [ ] T012 [US2] Dans `src/components/Hero.astro`, poser la plaque pleine « Ajat » (le nom, en `h1`, et « Dordogne ») en bas à gauche de la photo ; fond `--ardoise`, texte `--ardoise-texte`, aucun dégradé ni voile ; styles `.plaque` dans `src/styles/global.css` ; reporter le `h1` de `src/pages/index.astro` dans la plaque
 - [ ] T013 [US2] Restyler `.credit-photo` dans `src/styles/global.css` : texte de 12 px en bas à droite de la photo, sans bande de fond, liens conservés (auteur, licence CC BY-SA, mention de modification, source) selon `contracts/accueil-composition.md`
 - [ ] T014 [US2] Dessiner `src/assets/signature-clocher.svg` : silhouette plate du clocher-pignon de l'église Saint-Martin (pignon pointu, deux baies), une couleur, ≤ 2 Ko, sans script ; la vérifier sur capture ; l'utiliser en masque d'un bloc `--tuile` sous les titres (`main h1::after` dans `src/styles/global.css`, data URI), une seule fois par page (`research.md` R7)
-- [ ] T015 [P] [US2] Déclarer la collection `accueil` (loader `file()`) dans `src/content.config.ts` selon `data-model.md` `Texte de l'accueil.village`, créer `src/content/donnees/accueil.yml` (reformulation du texte « Le village d'Ajat », château et église) et ajouter l'entrée « Texte de l'accueil » à `.pages.yml`
+- [X] T015 [P] [US2] Déclarer la collection `accueil` (loader `file()`) dans `src/content.config.ts` selon `data-model.md` `Texte de l'accueil.village`, créer `src/content/donnees/accueil.yml` (reformulation du texte « Le village d'Ajat », château et église) et ajouter l'entrée « Texte de l'accueil » à `.pages.yml`
 - [ ] T016 [P] [US2] Créer `tests/identite.spec.ts` : sur `/`, la plaque contient « Ajat », son fond est opaque, le contraste texte/fond est au moins 4,5, aucun élément de `main` n'a de `background-image` en dégradé, le crédit de la photo est présent (auteur, licence, source)
 - [ ] T017 [US2] Rédiger `specs/003-personnalite-du-site/substitution.md` : test de substitution de l'accueil, au moins trois éléments qui ne sont ni le nom ni des coordonnées (photo du bourg, blason, signature clocher, texte local, matières de la palette) et la preuve qu'ils deviennent faux pour un autre village
 
