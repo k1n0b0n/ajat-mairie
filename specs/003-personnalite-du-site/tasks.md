@@ -58,10 +58,10 @@ description: "Liste des tâches : personnalité du site de la mairie d'Ajat"
 
 **Independent Test**: à 360 × 640 px, la phrase d'horaires et le téléphone sont visibles sans défiler ; l'appel est proposé (`quickstart.md` §2)
 
-- [ ] T008 [US1] Créer `src/components/LaMairie.astro` : affiche « La mairie » avec la phrase de `phraseHoraires` (données de `src/lib/mairie.ts`), le téléphone en lien `tel:` (`.chiffres`), l'adresse, et **un seul** lien « Tous les horaires » vers `/la-mairie/`
-- [ ] T009 [US1] Ajouter à `src/styles/global.css` les styles de l'affiche (`.affiche` : bordure forte, fond doux, étiquette en `--ardoise`, téléphone et phrase en gros, sans icône ni dégradé) selon `contracts/accueil-composition.md`
-- [ ] T010 [US1] Dans `src/pages/index.astro`, placer `LaMairie` juste sous `Hero` et retirer `ContactBlock` et `Hours` de l'accueil ; réduire la photo mobile à environ 200 px de haut dans `src/styles/global.css` pour que l'affiche tienne dans 560 px à 360 × 640
-- [ ] T011 [P] [US1] Mettre à jour `tests/home-viewport.spec.ts` : à 360 × 640 px, la phrase d'horaires et le lien `tel:` sont visibles et leur bas est à moins de 560 px ; le lien « Tous les horaires » pointe vers `/la-mairie/`
+- [X] T008 [US1] Créer `src/components/LaMairie.astro` : affiche « La mairie » avec la phrase de `phraseHoraires` (données de `src/lib/mairie.ts`), le téléphone en lien `tel:` (`.chiffres`), l'adresse, et **un seul** lien « Tous les horaires » vers `/la-mairie/`
+- [X] T009 [US1] Ajouter à `src/styles/global.css` les styles de l'affiche (`.affiche` : bordure forte, fond doux, étiquette en `--ardoise`, téléphone et phrase en gros, sans icône ni dégradé) selon `contracts/accueil-composition.md`
+- [X] T010 [US1] Dans `src/pages/index.astro`, placer `LaMairie` juste sous `Hero` et retirer `ContactBlock` et `Hours` de l'accueil ; réduire la photo mobile à environ 200 px de haut dans `src/styles/global.css` pour que l'affiche tienne dans 560 px à 360 × 640
+- [X] T011 [P] [US1] Mettre à jour `tests/home-viewport.spec.ts` : à 360 × 640 px, la phrase d'horaires et le lien `tel:` sont visibles et leur bas est à moins de 560 px ; le lien « Tous les horaires » pointe vers `/la-mairie/`
 
 **Checkpoint**: US1 est autonome ; l'affiche répond à la première question des habitants
 
@@ -90,13 +90,13 @@ description: "Liste des tâches : personnalité du site de la mairie d'Ajat"
 
 **Independent Test**: à 1280 px, plusieurs zones côte à côte ; dans `main`, chaque destination une seule fois (`quickstart.md` §3)
 
-- [ ] T018 [US3] Créer `src/components/AlaUne.astro` : la dernière actualité (titre en lien, date en `.chiffres`, résumé) et **un** lien « Toutes les actualités » ; créer `src/components/DansLaCommune.astro` : une phrase avec les liens démarches, associations, salle des fêtes et comptes rendus, chacun une fois, sans bouton ni icône
-- [ ] T019 [US3] Recomposer `src/pages/index.astro` selon `contracts/accueil-composition.md` : conteneur `--largeur-large`, zones `LaMairie` et `AlaUne` côte à côte (≈ 5/12 et 7/12), puis « Le village » (texte de la collection `accueil` et **un** lien vers `/decouvrir/`), puis `DansLaCommune` ; styles de la grille de zones dans `src/styles/global.css`
-- [ ] T020 [US3] Supprimer `src/components/QuickAccess.astro`, la section « Infos pratiques » de l'accueil et les règles `.tuiles`, `.acces-rapide` de `src/styles/global.css` ; plus aucune icône décorative hors fonction (le bouton Menu garde la sienne)
-- [ ] T021 [P] [US3] Créer `tests/home-liens.spec.ts` : dans `main` de `/`, chaque destination de lien apparaît une seule fois (navigation, en-tête et pied de page exclus), aucune `.tuiles`, aucun `svg[aria-hidden]` ni `table` dans `main`, et à 1280 px `main` occupe plus de 60 % de la largeur
-- [ ] T022 [P] [US3] Restyler les listes (`.liste-documents`, `.actualite` dans `src/styles/global.css` et `src/components/NewsCard.astro`) en lignes séparées par des filets, avec la date ou le type en marge sur ordinateur, au lieu de cartes de fond identiques ; une liste se distingue par son contenu
-- [ ] T023 [P] [US3] Retoucher l'article (`src/pages/actualites/[...slug].astro` et `src/pages/[...slug].astro`) : date en marge sur ordinateur, mesure de lecture soignée, lien de retour une seule fois, plus de vide sous le texte
-- [ ] T024 [P] [US3] Mettre l'en-tête sur une seule rangée sur ordinateur (`src/components/Header.astro`, `src/components/Nav.astro`, `src/styles/global.css`) : marque à gauche, entrées à droite, graisse de navigation allégée, hauteur réduite
+- [X] T018 [US3] Créer `src/components/AlaUne.astro` : la dernière actualité (titre en lien, date en `.chiffres`, résumé) et **un** lien « Toutes les actualités » ; créer `src/components/DansLaCommune.astro` : une phrase avec les liens démarches, associations, salle des fêtes et comptes rendus, chacun une fois, sans bouton ni icône
+- [X] T019 [US3] Recomposer `src/pages/index.astro` selon `contracts/accueil-composition.md` : conteneur `--largeur-large`, zones `LaMairie` et `AlaUne` côte à côte (≈ 5/12 et 7/12), puis « Le village » (texte de la collection `accueil` et **un** lien vers `/decouvrir/`), puis `DansLaCommune` ; styles de la grille de zones dans `src/styles/global.css`
+- [X] T020 [US3] Supprimer `src/components/QuickAccess.astro`, la section « Infos pratiques » de l'accueil et les règles `.tuiles`, `.acces-rapide` de `src/styles/global.css` ; plus aucune icône décorative hors fonction (le bouton Menu garde la sienne)
+- [X] T021 [P] [US3] Créer `tests/home-liens.spec.ts` : dans `main` de `/`, chaque destination de lien apparaît une seule fois (navigation, en-tête et pied de page exclus), aucune `.tuiles`, aucun `svg[aria-hidden]` ni `table` dans `main`, et à 1280 px `main` occupe plus de 60 % de la largeur
+- [X] T022 [P] [US3] Restyler les listes (`.liste-documents`, `.actualite` dans `src/styles/global.css` et `src/components/NewsCard.astro`) en lignes séparées par des filets, avec la date ou le type en marge sur ordinateur, au lieu de cartes de fond identiques ; une liste se distingue par son contenu
+- [X] T023 [P] [US3] Retoucher l'article (`src/pages/actualites/[...slug].astro` et `src/pages/[...slug].astro`) : date en marge sur ordinateur, mesure de lecture soignée, lien de retour une seule fois, plus de vide sous le texte
+- [X] T024 [P] [US3] Mettre l'en-tête sur une seule rangée sur ordinateur (`src/components/Header.astro`, `src/components/Nav.astro`, `src/styles/global.css`) : marque à gauche, entrées à droite, graisse de navigation allégée, hauteur réduite
 
 **Checkpoint**: US1 à US3 fonctionnent ; l'accueil et les pages de contenu n'ont plus de signe de gabarit
 
@@ -122,9 +122,9 @@ description: "Liste des tâches : personnalité du site de la mairie d'Ajat"
 
 **Independent Test**: depuis l'accueil, un lien mène au tableau ; l'accueil n'en contient plus (`quickstart.md` §5)
 
-- [ ] T028 [US5] Créer `src/pages/la-mairie.astro` : titre, coordonnées (`ContactBlock`), tableau jour par jour (`Hours`) avec fermetures exceptionnelles et remarque, adresse et lien vers la carte, à partir de `mairie.yml`
-- [ ] T029 [US5] Ajouter « La mairie : horaires et accès » à `liensPied` de `src/lib/nav.ts` et à `src/pages/plan-du-site.astro` ; vérifier que `/la-mairie/` est dans le sitemap
-- [ ] T030 [P] [US5] Créer `tests/la-mairie.spec.ts` : `/la-mairie/` contient un tableau de sept jours, les fermetures et l'adresse ; `/` n'a pas de tableau ; la phrase de l'accueil et le tableau reflètent la même saisie (comparer les jours ouverts)
+- [X] T028 [US5] Créer `src/pages/la-mairie.astro` : titre, coordonnées (`ContactBlock`), tableau jour par jour (`Hours`) avec fermetures exceptionnelles et remarque, adresse et lien vers la carte, à partir de `mairie.yml`
+- [X] T029 [US5] Ajouter « La mairie : horaires et accès » à `liensPied` de `src/lib/nav.ts` et à `src/pages/plan-du-site.astro` ; vérifier que `/la-mairie/` est dans le sitemap
+- [X] T030 [P] [US5] Créer `tests/la-mairie.spec.ts` : `/la-mairie/` contient un tableau de sept jours, les fermetures et l'adresse ; `/` n'a pas de tableau ; la phrase de l'accueil et le tableau reflètent la même saisie (comparer les jours ouverts)
 
 **Checkpoint**: toutes les user stories fonctionnent
 

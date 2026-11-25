@@ -1,35 +1,34 @@
 import { expect, test } from '@playwright/test';
 
-// Spec 002, US1 : à 360 × 640 px, le visuel, le titre et les trois accès rapides sont visibles sans défilement.
+// Spec 003, US1 : à 360 × 640 px, la phrase d'horaires et le téléphone sont visibles juste sous la photo.
 test.use({ viewport: { width: 360, height: 640 } });
 
-test('accueil : visuel et accès rapides visibles sans défilement (360 × 640)', async ({ page }) => {
+test('accueil : horaires en une phrase, téléphone et adresse visibles sans défilement (360 × 640)', async ({ page }) => {
   await page.goto('/');
-  // Mesurer avec les vraies polices : les polices de repli (Linux) sont plus larges et allongent le texte
   await page.evaluate(() => document.fonts.ready);
-  const tuiles = page.getByRole('navigation', { name: 'Accès rapides' }).getByRole('link');
-  await expect(tuiles).toHaveCount(3);
-  for (const tuile of await tuiles.all()) {
-    const boite = await tuile.boundingBox();
-    expect(boite, 'tuile visible').not.toBeNull();
-    // PROVISOIRE (spec 003, T011) : 700 px tant que les tuiles existent ; remplacé par le test de l'affiche « La mairie » (560 px)
-    expect(boite!.y + boite!.height).toBeLessThanOrEqual(700);
-    expect(boite!.height).toBeGreaterThanOrEqual(44);
+  const phrase = page.locator('.affiche-horaires');
+  const telephone = page.locator('.affiche a[href^="tel:"]');
+  await expect(phrase).toBeVisible();
+  await expect(telephone).toBeVisible();
+  // 560 px : marge pour la barre d'adresse du navigateur sur 640 px de hauteur
+  for (const element of [phrase, telephone]) {
+    const boite = (await element.boundingBox())!;
+    expect(boite.y + boite.height).toBeLessThanOrEqual(560);
   }
+  expect(((await telephone.boundingBox())!).height).toBeGreaterThanOrEqual(44);
+  expect(await phrase.textContent()).toMatch(/^Ouverte /);
   const visuel = page.locator('.hero-visuel img');
   await expect(visuel).toBeVisible();
   expect(await visuel.getAttribute('alt')).toBeTruthy();
-  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Ajat');
 });
 
-test('accueil : chaque accès rapide mène à la bonne destination', async ({ page }) => {
+test('accueil : un seul lien mène au détail des horaires', async ({ page }) => {
   await page.goto('/');
-  const tuiles = page.getByRole('navigation', { name: 'Accès rapides' });
-  await expect(tuiles.getByRole('link', { name: 'Horaires' })).toHaveAttribute('href', '#horaires');
-  await expect(tuiles.getByRole('link', { name: 'Actualités' })).toHaveAttribute('href', '/actualites/');
-  await expect(tuiles.getByRole('link', { name: 'Salle des fêtes' })).toHaveAttribute('href', '/salle-des-fetes/');
-  await tuiles.getByRole('link', { name: 'Horaires' }).click();
-  await expect(page.locator('#horaires')).toBeInViewport();
+  const lien = page.locator('main a[href="/la-mairie/"]');
+  await expect(lien).toHaveCount(1);
+  await lien.click();
+  await expect(page).toHaveURL(/\/la-mairie\/$/);
 });
 
 test('accueil : le crédit de la photo est affiché avec ses liens', async ({ page }) => {

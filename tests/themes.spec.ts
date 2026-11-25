@@ -19,13 +19,13 @@ for (const [nom, options] of [
       });
     }
 
-    test('le bouton Menu, les tuiles et le menu restent distinguables et utilisables', async ({ page }) => {
+    test("le bouton Menu, l'affiche de la mairie et le menu restent distinguables et utilisables", async ({ page }) => {
       await page.setViewportSize({ width: 360, height: 640 });
       await page.goto('/');
       await expect(page.getByRole('button', { name: 'Menu' })).toBeVisible();
-      await expect(page.getByRole('navigation', { name: 'Accès rapides' }).getByRole('link')).toHaveCount(3);
+      await expect(page.locator('.affiche a[href^="tel:"]')).toBeVisible();
       await page.getByRole('button', { name: 'Menu' }).click();
-      await expect(page.getByRole('navigation', { name: 'Navigation principale' }).getByRole('link')).toHaveCount(8);
+      await expect(page.getByRole('navigation', { name: 'Navigation principale' }).getByRole('link')).toHaveCount(7);
     });
   });
 }

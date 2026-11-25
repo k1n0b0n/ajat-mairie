@@ -1,39 +1,24 @@
 ---
-import Base from '../layouts/Base.astro';
-import ContactBlock from '../components/ContactBlock.astro';
-import Hero from '../components/Hero.astro';
-import Hours from '../components/Hours.astro';
-import NewsCard from '../components/NewsCard.astro';
-import QuickAccess from '../components/QuickAccess.astro';
 import { getEntry } from 'astro:content';
-import { parDateDecroissante } from '../lib/dates';
-import { getPublies } from '../lib/published';
+import Base from '../layouts/Base.astro';
+import AlaUne from '../components/AlaUne.astro';
+import DansLaCommune from '../components/DansLaCommune.astro';
+import Hero from '../components/Hero.astro';
+import LaMairie from '../components/LaMairie.astro';
 import { url } from '../lib/url';
 
-const texteAccueil = (await getEntry('accueil', 'accueil'))?.data.village ?? '';
-const dernieres = (await getPublies('actualites')).sort(parDateDecroissante).slice(0, 3);
+const village = (await getEntry('accueil', 'accueil'))?.data.village ?? '';
 ---
-<Base titre="Mairie d'Ajat">
+<Base titre="Mairie d'Ajat" large>
   <Hero slot="pleine-largeur" />
-  <h1>Mairie d'Ajat</h1>
-  <p class="chapo">{texteAccueil}</p>
-  <QuickAccess />
-  <ContactBlock />
-  <Hours />
-  <section aria-labelledby="titre-pratique">
-    <h2 id="titre-pratique">Dans la commune</h2>
-    <ul class="acces-rapide">
-      <li><a href={url('/demarches/')}>Démarches courantes</a></li>
-      <li><a href={url('/associations/')}>Associations et contacts</a></li>
-      <li><a href={url('/salle-des-fetes/')}>Salle des fêtes : conditions et tarifs</a></li>
-      <li><a href={url('/comptes-rendus/')}>Comptes rendus du conseil municipal</a></li>
-    </ul>
+  <div class="zones">
+    <LaMairie />
+    <AlaUne />
+  </div>
+  <section class="village" aria-labelledby="titre-village">
+    <h2 id="titre-village">Le village</h2>
+    <p>{village}</p>
+    <p><a href={url('/decouvrir/')}>Découvrir Ajat</a></p>
   </section>
-  <section aria-labelledby="titre-actualites">
-    <h2 id="titre-actualites">À la une</h2>
-    {dernieres.length === 0
-      ? <p>Aucune actualité pour le moment.</p>
-      : dernieres.map((a) => <NewsCard actualite={a} niveau={3} />)}
-    <p><a href={url('/actualites/')}>Toutes les actualités</a></p>
-  </section>
+  <DansLaCommune />
 </Base>

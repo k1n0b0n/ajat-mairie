@@ -34,6 +34,6 @@ test('espacement de texte imposé : le menu reste utilisable', async ({ page }) 
   await page.addStyleTag({ content: espacements });
   await page.getByRole('button', { name: 'Menu' }).click();
   const liens = page.getByRole('navigation', { name: 'Navigation principale' }).getByRole('link');
-  await expect(liens).toHaveCount(8);
+  await expect(liens).toHaveCount(7);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth)).toBe(true);
 });

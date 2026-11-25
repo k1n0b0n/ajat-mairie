@@ -5,7 +5,7 @@ const voixDesChiffres = /Fraunces/;
 
 test('accueil : téléphone, heures et code postal en Fraunces', async ({ page }) => {
   await page.goto('/');
-  for (const selecteur of ['a[href^="tel:"]', '#horaires td:not(.ferme)', 'address .chiffres']) {
+  for (const selecteur of ['a[href^="tel:"]', '.affiche-horaires', 'address .chiffres']) {
     const premier = page.locator(selecteur).first();
     await expect(premier, `${selecteur} présent`).toBeVisible();
     expect(await premier.evaluate((el) => getComputedStyle(el).fontFamily), selecteur).toMatch(voixDesChiffres);

@@ -1,0 +1,9 @@
+---
+import { url } from '../lib/url';
+
+// Une phrase, chaque destination une seule fois : pas de boutons ni de pictogrammes.
+---
+<section class="dans-la-commune" aria-labelledby="titre-commune">
+  <h2 id="titre-commune">Dans la commune</h2>
+  <p>Pour une <a href={url('/demarches/')}>démarche</a>, pour joindre une <a href={url('/associations/')}>association</a>, pour louer la <a href={url('/salle-des-fetes/')}>salle des fêtes</a> ou pour relire les <a href={url('/comptes-rendus/')}>comptes rendus du conseil municipal</a>.</p>
+</section>

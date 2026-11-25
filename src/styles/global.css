@@ -27,7 +27,7 @@ main {
 
 .conteneur {
   width: 100%;
-  max-width: var(--largeur);
+  max-width: var(--largeur-large);
   margin-inline: auto;
   padding-inline: var(--espace);
 }
@@ -250,8 +250,29 @@ a:hover {
 
 /* Visuel d'accueil */
 .hero-visuel {
+  position: relative;
   margin: 0;
   background: var(--fond-doux);
+}
+
+.plaque {
+  position: absolute;
+  inset-inline-start: var(--e4);
+  top: var(--e4);
+  padding: var(--e2) var(--e4);
+  background: var(--ardoise);
+  color: var(--ardoise-texte);
+}
+
+.plaque h1 {
+  margin: 0;
+  font-size: var(--h1);
+  line-height: 1;
+}
+
+.plaque p {
+  margin: var(--e1) 0 0;
+  font-size: 0.9rem;
 }
 
 .hero-visuel picture,
@@ -278,45 +299,6 @@ a:hover {
   .hero-visuel img {
     aspect-ratio: 3 / 1;
   }
-}
-
-/* Accès rapides */
-.tuiles ul {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--espace-s);
-  list-style: none;
-  margin: var(--e3) 0;
-  padding: 0;
-}
-
-.tuiles a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--e1);
-  min-height: 4.5rem;
-  height: 100%;
-  padding: var(--e2) var(--e1);
-  border: 1px solid var(--bordure-forte);
-  border-radius: var(--rayon);
-  background: var(--fond-doux);
-  color: var(--texte);
-  font-size: 0.95rem;
-  font-weight: 700;
-  line-height: 1.2;
-  text-align: center;
-  text-decoration: none;
-}
-
-.tuiles a:hover {
-  background: var(--tuile);
-  color: var(--tuile-texte);
-}
-
-.horaires {
-  scroll-margin-top: calc(var(--entete) + var(--espace));
 }
 
 .pied {
@@ -436,16 +418,19 @@ address {
 }
 
 .actualite {
-  margin-block: var(--espace-s);
-  padding: var(--e2) var(--espace) var(--e4);
-  border: 1px solid var(--separateur);
-  border-radius: var(--rayon);
-  background: var(--fond-doux);
+  display: grid;
+  gap: var(--e1) var(--e5);
+  padding-block: var(--e4);
+  border-top: 1px solid var(--separateur);
 }
 
 .actualite h2,
 .actualite h3 {
-  margin-block: var(--e2) var(--e1);
+  margin-block: 0;
+}
+
+.actualite p {
+  margin-block: 0;
 }
 
 .date {
@@ -463,11 +448,8 @@ address {
   display: flex;
   flex-direction: column;
   gap: var(--e1);
-  margin-block: var(--espace-s);
-  padding: var(--e3) var(--espace);
-  border: 1px solid var(--separateur);
-  border-radius: var(--rayon);
-  background: var(--fond-doux);
+  padding-block: var(--e3);
+  border-top: 1px solid var(--separateur);
 }
 
 .liste-documents a {
@@ -506,24 +488,6 @@ address {
   border-bottom: 1px solid var(--separateur);
 }
 
-.acces-rapide {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  gap: var(--e2);
-}
-
-.acces-rapide a {
-  display: flex;
-  align-items: center;
-  min-height: 2.75rem;
-  padding: var(--e2) var(--e4);
-  border: 1px solid var(--bordure-forte);
-  border-radius: var(--rayon);
-  font-weight: 700;
-  text-decoration: none;
-}
-
 .plan,
 .plan ul {
   padding-inline-start: 1.25rem;
@@ -537,6 +501,163 @@ address {
   display: inline-flex;
   align-items: center;
   min-height: 2.75rem;
+}
+
+/* Photo d'illustration d'une page de contenu */
+.illustration {
+  margin: var(--espace) 0;
+}
+
+.illustration picture,
+.illustration img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--rayon) var(--rayon) 0 0;
+}
+
+.illustration .credit-photo {
+  border: 1px solid var(--separateur);
+  border-top: 0;
+  border-radius: 0 0 var(--rayon) var(--rayon);
+  background: var(--fond-doux);
+}
+
+.tarifs thead th {
+  background: var(--fond-doux);
+  font-weight: 700;
+}
+
+/* Colonne de lecture : le texte garde sa mesure, aligné sur le bord gauche de l'en-tête */
+main > .conteneur > * {
+  max-width: var(--largeur);
+}
+
+main > .conteneur-large > * {
+  max-width: none;
+}
+
+/* Accueil : zones de largeurs inégales */
+.zones {
+  display: grid;
+  gap: var(--e5);
+  margin-block: var(--e5);
+}
+
+.affiche {
+  border: 2px solid var(--bordure-forte);
+  background: var(--fond-doux);
+}
+
+.affiche-titre {
+  margin: 0;
+  padding: var(--e2) var(--e4);
+  background: var(--ardoise);
+  color: var(--ardoise-texte);
+  font-size: 1.125rem;
+}
+
+.affiche-corps {
+  padding: var(--e4);
+}
+
+.affiche-corps p,
+.affiche-corps address {
+  margin-block: var(--e3);
+}
+
+.affiche-horaires {
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.affiche .bouton {
+  font-size: 1.25rem;
+}
+
+.a-la-une h2,
+.village h2,
+.dans-la-commune h2 {
+  margin-top: 0;
+}
+
+.a-la-une h3 {
+  margin-block: var(--e2) 0;
+  font-size: var(--h2);
+  font-family: var(--police-titre);
+  font-weight: 600;
+  line-height: var(--interligne-titre);
+}
+
+.a-la-une-resume {
+  font-size: 1.125rem;
+}
+
+.village {
+  margin-block: var(--e6);
+  padding: var(--e5);
+  background: var(--fond-doux);
+}
+
+.village p,
+.dans-la-commune p {
+  max-width: var(--largeur);
+  font-size: 1.125rem;
+}
+
+@media (min-width: 48rem) {
+  .zones {
+    grid-template-columns: 5fr 7fr;
+    align-items: start;
+    gap: var(--e6);
+  }
+
+  .zones-mairie {
+    grid-template-columns: 5fr 6fr;
+  }
+
+  .actualite {
+    grid-template-columns: 10rem 1fr;
+    grid-template-areas:
+      'date titre'
+      'date resume';
+  }
+
+  .actualite-titre {
+    grid-area: titre;
+  }
+
+  .actualite-date {
+    grid-area: date;
+  }
+
+  .actualite-resume {
+    grid-area: resume;
+  }
+}
+
+/* Article : la date dans la marge sur ordinateur, texte à la mesure de lecture */
+.article-date {
+  margin-block: var(--e3) 0;
+}
+
+.article-corps > h1 {
+  margin-top: var(--e1);
+}
+
+@media (min-width: 48rem) {
+  main > .conteneur > .article {
+    display: grid;
+    grid-template-columns: 10rem minmax(0, var(--largeur));
+    gap: var(--e5);
+    max-width: none;
+  }
+
+  .article-date {
+    margin-top: var(--e5);
+    padding-top: var(--e3);
+    border-top: 1px solid var(--separateur);
+  }
 }
 
 /* Contraste élevé du système : les couleurs sont imposées par le navigateur ; on garde donc
@@ -568,29 +689,12 @@ address {
   .hero-visuel img {
     forced-color-adjust: none;
   }
-}
 
-/* Photo d'illustration d'une page de contenu */
-.illustration {
-  margin: var(--espace) 0;
-}
-
-.illustration picture,
-.illustration img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: var(--rayon) var(--rayon) 0 0;
-}
-
-.illustration .credit-photo {
-  border: 1px solid var(--separateur);
-  border-top: 0;
-  border-radius: 0 0 var(--rayon) var(--rayon);
-  background: var(--fond-doux);
-}
-
-.tarifs thead th {
-  background: var(--fond-doux);
-  font-weight: 700;
+  /* Les fonds en ardoise sont remplacés par la couleur système : le texte suit, avec un contour */
+  .plaque,
+  .affiche-titre {
+    background: Canvas;
+    color: CanvasText;
+    border: 1px solid CanvasText;
+  }
 }
