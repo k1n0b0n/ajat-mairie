@@ -1,10 +1,10 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
-// SITE_URL et SITE_BASE permettent le déploiement provisoire sur l'adresse GitHub Pages par défaut.
-// Une fois le domaine personnalisé en place (public/CNAME), SITE_BASE n'est plus défini.
+// Domaine provisoire : ajat.kobbo.fr (voir public/CNAME). Pour en changer, modifier public/CNAME et la valeur par défaut ci-dessous.
+// SITE_URL et SITE_BASE servent uniquement à l'aperçu des brouillons (dépôt séparé).
 export default defineConfig({
-  site: process.env.SITE_URL || 'https://ajat.example',
+  site: process.env.SITE_URL || 'https://ajat.kobbo.fr',
   base: process.env.SITE_BASE || '/',
   output: 'static',
   trailingSlash: 'always',

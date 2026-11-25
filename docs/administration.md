@@ -49,3 +49,13 @@ GitHub Pages n'a pas de redirections serveur. Pour déplacer ou renommer une pag
 ## 8. Transfert à la mise en production
 
 Le dépôt est d'abord sous un compte personnel. Au lancement, le transférer à une organisation GitHub de la mairie (Réglages → Transfer). Après transfert : mettre à jour le lien de `docs/aide-redacteur.md`, réinstaller l'application Pages CMS, recréer le secret `APERCU_DEPLOY_KEY` et déplacer le dépôt d'aperçu, vérifier la protection de `main` et `CODEOWNERS`. L'adresse publique du site ne change pas (domaine personnalisé).
+
+## 9. Domaine personnalisé
+
+Domaine provisoire : `ajat.kobbo.fr` (fichier `public/CNAME` et `site` dans `astro.config.mjs`). La zone DNS de `kobbo.fr` est chez Scaleway (serveurs `ns0.online.net` et `ns1.online.net`).
+
+1. **Vérifier le domaine** au niveau du compte ou de l'organisation GitHub (Réglages → Pages → Add a domain, enregistrement TXT `_github-pages-challenge-<compte>`), avant tout enregistrement CNAME : cela empêche un tiers de reprendre le sous-domaine si Pages est un jour désactivé.
+2. **Enregistrement DNS** : `ajat` en CNAME vers `<propriétaire>.github.io.` (aujourd'hui `k1n0b0n.github.io.` ; après transfert du dépôt, le nom de l'organisation).
+3. **Activer Pages** : source « GitHub Actions », puis le domaine personnalisé, puis **Enforce HTTPS** quand le certificat est émis.
+4. Réactiver `deploy.yml` et `nightly.yml` (`gh workflow enable`).
+5. Changer de domaine plus tard : modifier `public/CNAME` et la valeur par défaut de `site`, mettre à jour l'enregistrement DNS, ressaisir le domaine dans Pages.
