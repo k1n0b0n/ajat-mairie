@@ -43,7 +43,7 @@ h3 {
 
 h1 {
   font-size: var(--h1);
-  margin-top: 1rem;
+  margin-top: 0.75rem;
 }
 
 h2 {
@@ -255,15 +255,16 @@ a:hover {
 
 .hero-visuel img {
   height: auto;
-  aspect-ratio: 2 / 1;
+  aspect-ratio: 2.2 / 1;
   object-fit: cover;
   object-position: 50% 45%;
 }
 
 .credit-photo {
-  padding: 0.5rem var(--espace);
+  padding: 0.35rem var(--espace);
   color: var(--texte-doux);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  line-height: 1.4;
 }
 
 @media (min-width: 48rem) {
@@ -278,7 +279,7 @@ a:hover {
   grid-template-columns: repeat(3, 1fr);
   gap: var(--espace-s);
   list-style: none;
-  margin: var(--espace) 0;
+  margin: 0.75rem 0;
   padding: 0;
 }
 
@@ -487,7 +488,8 @@ address {
 }
 
 .chapo {
-  font-size: 1.15em;
+  font-size: 1.1em;
+  line-height: 1.5;
   color: var(--texte-doux);
 }
 
