@@ -66,7 +66,7 @@ img {
 }
 
 a {
-  color: var(--chene);
+  color: var(--tuile);
   text-underline-offset: 0.15em;
 }
 
@@ -83,8 +83,8 @@ a:hover {
   position: absolute;
   inset-inline-start: var(--espace);
   top: -4rem;
-  background: var(--chene);
-  color: var(--chene-texte);
+  background: var(--tuile);
+  color: var(--tuile-texte);
   padding: var(--e3) var(--e4);
   border-radius: var(--rayon);
   z-index: 10;
@@ -191,12 +191,12 @@ a:hover {
 }
 
 .nav a:hover {
-  background: var(--chene);
-  color: var(--chene-texte);
+  background: var(--tuile);
+  color: var(--tuile-texte);
 }
 
 .nav a[aria-current='page'] {
-  box-shadow: inset 0.25rem 0 0 var(--chene);
+  box-shadow: inset 0.25rem 0 0 var(--tuile);
 }
 
 @media (min-width: 48rem) {
@@ -236,7 +236,7 @@ a:hover {
   }
 
   .nav a[aria-current='page'] {
-    box-shadow: inset 0 -0.25rem 0 var(--chene);
+    box-shadow: inset 0 -0.25rem 0 var(--tuile);
     border-radius: 0;
   }
 }
@@ -304,8 +304,8 @@ a:hover {
 }
 
 .tuiles a:hover {
-  background: var(--chene);
-  color: var(--chene-texte);
+  background: var(--tuile);
+  color: var(--tuile-texte);
 }
 
 .tuiles svg {
@@ -374,8 +374,8 @@ a:hover {
   min-height: 2.75rem;
   padding: var(--e2) 1.25rem;
   border-radius: var(--rayon);
-  background: var(--chene);
-  color: var(--chene-texte);
+  background: var(--tuile);
+  color: var(--tuile-texte);
   font-weight: 700;
   text-decoration: none;
 }
@@ -576,17 +576,6 @@ address {
   .hero-visuel img {
     forced-color-adjust: none;
   }
-}
-
-/* Filet ocre sous les titres de page : repère de l'identité, purement décoratif */
-main h1::after {
-  content: '';
-  display: block;
-  width: 3rem;
-  height: 0.25rem;
-  margin-top: var(--e2);
-  border-radius: 0.125rem;
-  background: var(--ocre-deco);
 }
 
 /* Photo d'illustration d'une page de contenu */

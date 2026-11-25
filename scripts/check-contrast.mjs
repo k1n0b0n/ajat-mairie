@@ -23,24 +23,22 @@ const rapport = (a, b) => {
   return (haut + 0.05) / (bas + 0.05);
 };
 
-// [premier plan, arrière-plan, seuil]
+// [premier plan, arrière-plan, seuil] (contrat specs/003-personnalite-du-site/contracts/jetons-v3.md)
 const couples = [
   ['texte', 'fond', 4.5],
   ['texte', 'fond-doux', 4.5],
   ['texte-doux', 'fond', 4.5],
   ['texte-doux', 'fond-doux', 4.5],
-  ['chene', 'fond', 4.5],
-  ['chene', 'fond-doux', 4.5],
-  ['chene-texte', 'chene', 4.5],
-  ['ocre-texte', 'fond', 4.5],
-  ['ocre-texte', 'fond-doux', 4.5],
+  ['tuile', 'fond', 4.5],
+  ['tuile', 'fond-doux', 4.5],
+  ['tuile-texte', 'tuile', 4.5],
+  ['ardoise-texte', 'ardoise', 4.5],
   ['texte', 'alerte-fond', 4.5],
   ['alerte-bord', 'fond', 3],
   ['focus', 'fond', 3],
   ['focus', 'fond-doux', 3],
   ['bordure-forte', 'fond', 3],
   ['bordure-forte', 'fond-doux', 3],
-  ['ocre-deco', 'fond', 3],
 ];
 
 let echecs = 0;

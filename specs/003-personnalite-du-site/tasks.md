@@ -31,7 +31,7 @@ description: "Liste des tâches : personnalité du site de la mairie d'Ajat"
 
 **Purpose**: mettre en place les contrôles du principe X avant de changer le rendu
 
-- [ ] T001 [P] Créer `scripts/check-identite.mjs` : échoue si `gradient(` apparaît dans `src/styles/`, `src/components/` ou `src/pages/`, ou si « moderne », « épuré » ou « premium » apparaît dans les textes du site (`src/content/`, `src/components/`, `src/pages/`, `src/lib/`) ; l'ajouter au script `check` de `package.json` après `check-contrast.mjs`
+- [X] T001 [P] Créer `scripts/check-identite.mjs` : échoue si `gradient(` apparaît dans `src/styles/`, `src/components/` ou `src/pages/`, ou si « moderne », « épuré » ou « premium » apparaît dans les textes du site (`src/content/`, `src/components/`, `src/pages/`, `src/lib/`) ; l'ajouter au script `check` de `package.json` après `check-contrast.mjs`
 - [ ] T002 [P] Créer `src/lib/horaires-phrase.ts` : fonction pure `phraseHoraires(hours, closures, note, maintenant)` selon `contracts/phrase-horaires.md` (regroupement par plages identiques, fermetures à venir, remarque, aucun « ouvert maintenant »), en réutilisant `formaterHeure`, `JOURS` et `fermetures` de `src/lib/hours.ts`
 - [ ] T003 [P] Créer `tests/horaires-phrase.spec.ts` : cas du contrat (mardi, jeudi, vendredi ; deux groupes ; sept jours ; aucun jour ; fermeture à venir ; remarque) en tests unitaires Playwright sans navigateur
 
@@ -43,10 +43,10 @@ description: "Liste des tâches : personnalité du site de la mairie d'Ajat"
 
 **⚠️ CRITICAL**: aucune user story ne commence avant la fin de cette phase
 
-- [ ] T004 Mettre à jour `src/styles/tokens.css` selon `contracts/jetons-v3.md` et `research.md` R3 : remplacer `--chene`, `--chene-texte` par `--tuile`, `--tuile-texte`, ajouter `--ardoise`, `--ardoise-texte`, supprimer `--ocre-texte` et `--ocre-deco`, nouvelles valeurs claires et sombres de `--fond`, `--fond-doux`, `--texte`, `--texte-doux`, `--alerte-*`, `--focus`, `--bordure-forte` ; ajouter `--police-chiffres` et la classe `.chiffres` (Fraunces 600, `lining-nums tabular-nums`) et le conteneur large `--largeur-large: 72rem`
-- [ ] T005 [P] Mettre à jour `specs/002-identite-visuelle/contracts/design-tokens.md` : tableau des couleurs, renommages et retraits de `contracts/jetons-v3.md`, mention « remplacé par la spec 003 » sur les valeurs de la palette chêne et ocre, jeton `--police-chiffres`
-- [ ] T006 Mettre à jour `scripts/check-contrast.mjs` : couples du contrat `jetons-v3.md` (y compris `ardoise-texte`/`ardoise`) dans les thèmes clair et sombre, sans le couple `ocre`
-- [ ] T007 Adapter `src/styles/global.css` aux jetons renommés (`--chene` vers `--tuile`, `--chene-texte` vers `--tuile-texte`), supprimer les règles `ocre` et le filet `main h1::after` (remplacé par la signature en T017), sans autre changement de mise en page ; vérifier `npm run check`
+- [X] T004 Mettre à jour `src/styles/tokens.css` selon `contracts/jetons-v3.md` et `research.md` R3 : remplacer `--chene`, `--chene-texte` par `--tuile`, `--tuile-texte`, ajouter `--ardoise`, `--ardoise-texte`, supprimer `--ocre-texte` et `--ocre-deco`, nouvelles valeurs claires et sombres de `--fond`, `--fond-doux`, `--texte`, `--texte-doux`, `--alerte-*`, `--focus`, `--bordure-forte` ; ajouter `--police-chiffres` et la classe `.chiffres` (Fraunces 600, `lining-nums tabular-nums`) et le conteneur large `--largeur-large: 72rem`
+- [X] T005 [P] Mettre à jour `specs/002-identite-visuelle/contracts/design-tokens.md` : tableau des couleurs, renommages et retraits de `contracts/jetons-v3.md`, mention « remplacé par la spec 003 » sur les valeurs de la palette chêne et ocre, jeton `--police-chiffres`
+- [X] T006 Mettre à jour `scripts/check-contrast.mjs` : couples du contrat `jetons-v3.md` (y compris `ardoise-texte`/`ardoise`) dans les thèmes clair et sombre, sans le couple `ocre`
+- [X] T007 Adapter `src/styles/global.css` aux jetons renommés (`--chene` vers `--tuile`, `--chene-texte` vers `--tuile-texte`), supprimer les règles `ocre` et le filet `main h1::after` (remplacé par la signature en T017), sans autre changement de mise en page ; vérifier `npm run check`
 
 **Checkpoint**: le site garde sa composition, avec la palette pierre, tuile et ardoise ; `npm run check` est vert
 
