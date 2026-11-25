@@ -1,4 +1,9 @@
-# VALEURS D'EXEMPLE : à remplacer par les informations réelles de la mairie avant toute mise en ligne.
+# DONNÉES À CONFIRMER PAR LA MAIRIE avant toute mise en ligne.
+# Reprises d'annuaires publics (novembre 2026) : annuaire du Département de la Dordogne
+# et fiche de l'Union des maires de Dordogne (renseignée par la commune, mise à jour le 24/08/2026).
+# - Adresse : « Le Bourg » (Département) ; « Place de l'Église » (Union des maires) : à trancher.
+# - Courriel : relevé sur une seule source, adresse en wanadoo.fr, peut-être obsolète.
+# - Horaires : un annuaire privé donne lundi et mardi, contre mardi, jeudi et vendredi ci-dessous.
 # Les horaires se modifient uniquement ici (une seule source pour tout le site).
 mairie:
   name: Mairie d'Ajat
@@ -6,21 +11,18 @@ mairie:
     street: Le Bourg
     postalCode: "24210"
     city: Ajat
-  phone: 05 00 00 00 00
-  email: mairie@ajat.example
+  phone: 05 53 05 25 28
+  email: mairie.ajat@wanadoo.fr
   hours:
-    lundi:
-      - { open: "09:00", close: "12:00" }
-      - { open: "14:00", close: "17:00" }
+    lundi: []
     mardi:
-      - { open: "09:00", close: "12:00" }
+      - { open: "14:00", close: "17:00" }
     mercredi: []
     jeudi:
-      - { open: "09:00", close: "12:00" }
       - { open: "14:00", close: "17:00" }
     vendredi:
-      - { open: "09:00", close: "12:00" }
+      - { open: "14:00", close: "17:00" }
     samedi: []
     dimanche: []
   closures: []
-  hoursNote: ""
+  hoursNote: Le maire reçoit sur rendez-vous.
