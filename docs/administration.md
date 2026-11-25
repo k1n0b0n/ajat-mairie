@@ -59,3 +59,9 @@ Domaine provisoire : `ajat.kobbo.fr` (fichier `public/CNAME` et `site` dans `ast
 3. **Activer Pages** : source « GitHub Actions », puis le domaine personnalisé, puis **Enforce HTTPS** quand le certificat est émis.
 4. Réactiver `deploy.yml` et `nightly.yml` (`gh workflow enable`).
 5. Changer de domaine plus tard : modifier `public/CNAME` et la valeur par défaut de `site`, mettre à jour l'enregistrement DNS, ressaisir le domaine dans Pages.
+
+## 10. Indexation par les moteurs de recherche
+
+Tant que le domaine est provisoire, le site n'est **pas indexable** : balise `noindex, nofollow` sur chaque page, `robots.txt` en `Disallow: /` et aucun sitemap annoncé. C'est le comportement par défaut, même sans configuration.
+
+Pour l'autoriser (au passage au vrai domaine) : `gh variable set INDEXATION --body on`, puis relancer le déploiement (`gh workflow run deploy.yml`). Pour la couper de nouveau : `gh variable delete INDEXATION`, puis redéployer. Après activation, les moteurs mettent quelques jours à semaines à réindexer le site.

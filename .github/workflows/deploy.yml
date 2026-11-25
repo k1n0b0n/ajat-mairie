@@ -22,6 +22,8 @@ jobs:
       # Variables de dépôt facultatives : vides une fois le domaine personnalisé en place.
       SITE_URL: ${{ vars.SITE_URL }}
       SITE_BASE: ${{ vars.SITE_BASE }}
+      # Indexation par les moteurs : désactivée tant que la variable INDEXATION n'est pas à « on ».
+      INDEXATION: ${{ vars.INDEXATION }}
     steps:
       - uses: actions/checkout@v7
       - uses: withastro/action@v6

@@ -14,8 +14,15 @@ for (const f of readdirSync('dist').filter((n) => /^sitemap-\d+\.xml$/.test(n)))
   }
 }
 
+// Site volontairement non indexable (robots.txt en Disallow) : l'audit « is-crawlable » est alors écarté du score SEO.
+const nonIndexable = readFileSync('dist/robots.txt', 'utf8').includes('Disallow: /');
 const env = { ...process.env };
 env.CHROME_PATH ||= chromium.executablePath();
-const args = ['lhci', 'autorun', ...[...pages.values()].map((p) => `--collect.url=${origine}${p}`)];
+const args = [
+  'lhci',
+  'autorun',
+  ...[...pages.values()].map((p) => `--collect.url=${origine}${p}`),
+  ...(nonIndexable ? ['--collect.settings.skipAudits=is-crawlable'] : []),
+];
 const r = spawnSync('npx', args, { stdio: 'inherit', env });
 process.exit(r.status ?? 1);
