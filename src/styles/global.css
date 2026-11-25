@@ -308,21 +308,6 @@ a:hover {
   color: var(--tuile-texte);
 }
 
-.tuiles svg {
-  flex: none;
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
-@media (min-width: 48rem) {
-  .tuiles a {
-    flex-direction: row;
-    gap: var(--e3);
-    min-height: var(--cible);
-    font-size: 1.05rem;
-  }
-}
-
 .horaires {
   scroll-margin-top: calc(var(--entete) + var(--espace));
 }
