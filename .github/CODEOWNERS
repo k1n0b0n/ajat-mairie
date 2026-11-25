@@ -1,0 +1,4 @@
+# Relecteurs du contenu. Remplacer par au moins deux comptes GitHub de la mairie
+# (voir specs/001-site-mairie-ajat/tasks.md, T037).
+/src/content/ @k1n0b0n
+/public/documents/ @k1n0b0n

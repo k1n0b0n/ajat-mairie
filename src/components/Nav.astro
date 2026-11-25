@@ -1,0 +1,19 @@
+---
+import { navPrincipale } from '../lib/nav';
+import { url } from '../lib/url';
+
+const courant = Astro.url.pathname;
+const estCourant = (href: string) => {
+  const cible = url(href);
+  return href === '/' ? courant === cible : courant.startsWith(cible);
+};
+---
+<nav class="nav" aria-label="Navigation principale">
+  <ul>
+    {navPrincipale.map((lien) => (
+      <li>
+        <a href={url(lien.href)} aria-current={estCourant(lien.href) ? 'page' : undefined}>{lien.libelle}</a>
+      </li>
+    ))}
+  </ul>
+</nav>

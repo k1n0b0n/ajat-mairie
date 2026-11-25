@@ -1,0 +1,46 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { estApercu } from '../lib/published';
+
+interface Props {
+  titre: string;
+  description?: string;
+}
+
+const { titre, description = "Site de la mairie d'Ajat (Dordogne) : horaires, démarches, actualités et vie de la commune." } = Astro.props;
+const titreComplet = titre === "Mairie d'Ajat" ? titre : `${titre} · Mairie d'Ajat`;
+const canonique = new URL(Astro.url.pathname, Astro.site);
+// Aucune source tierce ; aucun script (script-src 'none') tant qu'aucun JavaScript client n'est justifié.
+const csp = [
+  "default-src 'none'",
+  "img-src 'self' data:",
+  "style-src 'self' 'unsafe-inline'",
+  "font-src 'self'",
+  "base-uri 'self'",
+  "form-action 'none'",
+  "object-src 'none'",
+].join('; ');
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Security-Policy" content={csp} />
+    <title>{titreComplet}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonique.href} />
+    {estApercu && <meta name="robots" content="noindex, nofollow" />}
+  </head>
+  <body>
+    <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+    {estApercu && <p class="bandeau-apercu" role="note">APERÇU : cette version contient des brouillons, elle n'est pas publique.</p>}
+    <Header />
+    <main id="contenu" class="conteneur" tabindex="-1">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,18 @@
+---
+import { liensPied } from '../lib/nav';
+import { url } from '../lib/url';
+---
+<footer class="pied">
+  <div class="conteneur">
+    <p>Mairie d'Ajat · Dordogne</p>
+    {liensPied.length > 0 && (
+      <nav aria-label="Informations légales">
+        <ul>
+          {liensPied.map((lien) => (
+            <li><a href={url(lien.href)}>{lien.libelle}</a></li>
+          ))}
+        </ul>
+      </nav>
+    )}
+  </div>
+</footer>

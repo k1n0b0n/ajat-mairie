@@ -44,20 +44,20 @@ description: "Liste des tâches : site web de la mairie d'Ajat"
 
 **⚠️ CRITICAL**: aucune user story ne commence avant la fin de cette phase
 
-- [ ] T005 Créer `src/content.config.ts` avec le schéma commun cité par `data-model.md` `Champs communs.title`, `Champs communs.draft`, `Champs communs.publishDate`, `Champs communs.updatedDate`, et `src/lib/published.ts` qui exclut `draft: true` et les `publishDate` futures, sauf si la variable `PREVIEW=1` est définie (aperçu) ; voir R2 dans `research.md`
-- [ ] T006 [P] Créer `src/styles/global.css` : mobile first, polices système, jetons de couleurs à contraste AA, focus visible, cibles tactiles ≥ 44 px, `prefers-reduced-motion`, zoom à 200 % sans perte
-- [ ] T007 [P] Créer `src/layouts/Base.astro` : `lang="fr"`, viewport, CSP par `<meta http-equiv>` (aucune source tierce), lien d'évitement, repères `header`/`nav`/`main`/`footer`, et en mode `PREVIEW=1` un bandeau « APERÇU » + `noindex`
-- [ ] T008 [P] Créer `src/components/Header.astro`, `src/components/Nav.astro` (deux niveaux au plus, sans JavaScript, utilisable au clavier et au toucher) et `src/components/Footer.astro` (liens vers mentions légales, confidentialité, accessibilité, plan du site)
-- [ ] T009 [P] Créer `src/pages/404.astro` en français avec liens vers l'accueil et le plan du site
-- [ ] T010 Créer `playwright.config.ts` (build puis `astro preview`) et `tests/helpers/urls.ts` qui lit toutes les URLs du sitemap
-- [ ] T011 [P] Créer `tests/a11y.spec.ts` : axe sur chaque URL du sitemap, 0 violation (SC-005)
-- [ ] T012 [P] Créer `tests/no-tracking.spec.ts` : échoue sur tout cookie ou toute requête vers un autre domaine, sur chaque URL (SC-007, FR-019)
-- [ ] T013 [P] Créer `tests/mobile-320.spec.ts` : aucun défilement horizontal à 320 px (constitution II)
-- [ ] T014 [P] Créer `lighthouserc.json` : profil mobile, assertions ≥ 0,9 sur performance, accessibilité, bonnes pratiques et SEO (SC-006)
-- [ ] T015 [P] Créer `scripts/check-content.mjs` appliquant `contracts/content-schemas.md` C4 (image Markdown sans description), C5 (PDF existant et en `.pdf`), C6 (PDF > 3 Mo : avertissement, > 10 Mo : échec), C7 (pages légales non brouillon), C10 (slugs uniques) ; doit passer quand les dossiers de contenu sont vides
-- [ ] T016 Créer `.github/workflows/ci.yml` : sur PR vers `main`, build, `scripts/check-content.mjs`, tests Playwright, Lighthouse CI, `lychee` hors ligne sur les liens internes (voir `contracts/ci-gates.md`)
-- [ ] T017 [P] Créer `.github/workflows/deploy.yml` : sur push `main`, action officielle Astro (`withastro/action`) puis `actions/deploy-pages`, avec les droits `pages: write` et `id-token: write`
-- [ ] T018 [P] Créer `.github/CODEOWNERS` : `src/content/**` et `public/documents/**` appartiennent aux relecteurs (comptes à fournir par la mairie)
+- [X] T005 Créer `src/content.config.ts` avec le schéma commun cité par `data-model.md` `Champs communs.title`, `Champs communs.draft`, `Champs communs.publishDate`, `Champs communs.updatedDate`, et `src/lib/published.ts` qui exclut `draft: true` et les `publishDate` futures, sauf si la variable `PREVIEW=1` est définie (aperçu) ; voir R2 dans `research.md`
+- [X] T006 [P] Créer `src/styles/global.css` : mobile first, polices système, jetons de couleurs à contraste AA, focus visible, cibles tactiles ≥ 44 px, `prefers-reduced-motion`, zoom à 200 % sans perte
+- [X] T007 [P] Créer `src/layouts/Base.astro` : `lang="fr"`, viewport, CSP par `<meta http-equiv>` (aucune source tierce), lien d'évitement, repères `header`/`nav`/`main`/`footer`, et en mode `PREVIEW=1` un bandeau « APERÇU » + `noindex`
+- [X] T008 [P] Créer `src/components/Header.astro`, `src/components/Nav.astro` (deux niveaux au plus, sans JavaScript, utilisable au clavier et au toucher) et `src/components/Footer.astro` (liens vers mentions légales, confidentialité, accessibilité, plan du site)
+- [X] T009 [P] Créer `src/pages/404.astro` en français avec liens vers l'accueil et le plan du site
+- [X] T010 Créer `playwright.config.ts` (build puis `astro preview`) et `tests/helpers/urls.ts` qui lit toutes les URLs du sitemap
+- [X] T011 [P] Créer `tests/a11y.spec.ts` : axe sur chaque URL du sitemap, 0 violation (SC-005)
+- [X] T012 [P] Créer `tests/no-tracking.spec.ts` : échoue sur tout cookie ou toute requête vers un autre domaine, sur chaque URL (SC-007, FR-019)
+- [X] T013 [P] Créer `tests/mobile-320.spec.ts` : aucun défilement horizontal à 320 px (constitution II)
+- [X] T014 [P] Créer `lighthouserc.json` : profil mobile, assertions ≥ 0,9 sur performance, accessibilité, bonnes pratiques et SEO (SC-006)
+- [X] T015 [P] Créer `scripts/check-content.mjs` appliquant `contracts/content-schemas.md` C4 (image Markdown sans description), C5 (PDF existant et en `.pdf`), C6 (PDF > 3 Mo : avertissement, > 10 Mo : échec), C7 (pages légales non brouillon), C10 (slugs uniques) ; doit passer quand les dossiers de contenu sont vides
+- [X] T016 Créer `.github/workflows/ci.yml` : sur PR vers `main`, build, `scripts/check-content.mjs`, tests Playwright, Lighthouse CI, `lychee` hors ligne sur les liens internes (voir `contracts/ci-gates.md`)
+- [X] T017 [P] Créer `.github/workflows/deploy.yml` : sur push `main`, action officielle Astro (`withastro/action`) puis `actions/deploy-pages`, avec les droits `pages: write` et `id-token: write`
+- [X] T018 [P] Créer `.github/CODEOWNERS` : `src/content/**` et `public/documents/**` appartiennent aux relecteurs (comptes à fournir par la mairie)
 
 **Checkpoint**: le socle compile, déploie une page vide et la CI est verte
 
