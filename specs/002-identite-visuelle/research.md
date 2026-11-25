@@ -109,7 +109,7 @@ Les cinq fichiers de la catégorie « Ajat » ont été téléchargés et **rega
 
 ## Décisions ouvertes (pour toi)
 
-- **Constitution** : ajouter un principe « Sobriété numérique » (budget de poids, écoconception), version 1.1.0 ? (R11)
+- *(tranchée)* Principe « Sobriété numérique » ajouté à la constitution 1.1.0.
 
 - **Blason** : l'utilise-t-on tel quel ou la mairie a-t-elle son propre logo ? (R4)
 - **Photo d'accueil** : `Ajat bourg.JPG` te convient-elle ? (R3)

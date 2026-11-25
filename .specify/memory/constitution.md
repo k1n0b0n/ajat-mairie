@@ -94,9 +94,29 @@ pour le contenu ni pour sa publication.
 - Les outils et bibliothèques MUST être open source, ou à défaut reposer sur des standards ouverts
   sans verrouillage (export complet possible).
 
+### IX. Sobriété numérique (écoconception)
+
+Le site MUST être conçu pour consommer le moins possible de ressources, côté visiteur, réseau
+et construction, en s'appuyant sur le RGESN (référentiel général d'écoconception de services
+numériques, Arcep, version 2024) comme cadre de bonnes pratiques.
+
+- Chaque page MUST respecter un budget de poids et de requêtes, mesuré sur téléphone et compressé
+  comme sur l'hébergement : 120 Ko pour l'accueil, 100 Ko pour une page de texte, 10 requêtes au plus,
+  trois fichiers de polices au plus. Un dépassement bloque la mise en production.
+- Le site MUST ne lancer aucune animation, vidéo ni son automatiquement, et MUST préférer le contenu
+  le plus léger (texte, puis image optimisée, puis audio ou vidéo uniquement si indispensable).
+- Toute image MUST être servie aux dimensions affichées et dans un format compressé moderne ;
+  tout JavaScript, toute police et toute dépendance ajoutés MUST être justifiés par leur utilité.
+- Une déclaration d'écoconception MUST être tenue à jour dans le dépôt (critères tenus ou non,
+  limites, mesures de référence) et révisée à chaque changement significatif.
+
+Justification : un site de commune doit rester léger pour les habitants à faible débit, pour les
+appareils anciens et pour l'environnement, sans coût d'exploitation supplémentaire. Les budgets
+sont mesurables, donc vérifiables en continu.
+
 ## Contraintes techniques et de conformité
 
-- Les principes I à VIII s'appliquent à toute fonctionnalité, tout gabarit et tout contenu.
+- Les principes I à IX s'appliquent à toute fonctionnalité, tout gabarit et tout contenu.
 - Choix retenus (plan 001) : Astro en mode statique ; édition par Pages CMS (open source) sur une
   branche de rédaction protégée ; hébergement GitHub Pages, hors UE, documenté dans la politique
   de confidentialité. Tout changement de ces choix MUST être justifié au regard des principes ci-dessus.
@@ -110,7 +130,8 @@ pour le contenu ni pour sa publication.
 - Toute modification passe par une branche et une relecture avant fusion sur la branche de production.
 - Les contrôles automatisés suivants MUST s'exécuter à chaque proposition de changement et bloquer
   la fusion en cas d'échec : build, accessibilité (axe ou équivalent), Lighthouse (seuil du
-  principe III), liens cassés, absence de requête vers un domaine tiers.
+  principe III), budgets de poids et de requêtes (principe IX), liens cassés, absence de requête
+  vers un domaine tiers.
 - Chaque spécification et chaque plan MUST contenir une vérification explicite de conformité à
   cette constitution (« Constitution Check »).
 - Toute complexité supplémentaire (dépendance, script, service) MUST être justifiée par écrit.
@@ -126,7 +147,7 @@ Cette constitution prévaut sur toute autre pratique du projet. En cas de confli
   PATCH pour une clarification ou une correction de forme.
 - **Conformité** : chaque revue de changement MUST vérifier le respect des principes ; une
   dérogation n'est possible qu'en amendant la constitution, jamais au cas par cas.
-- **Revue périodique** : la constitution et la déclaration d'accessibilité sont relues au moins
-  une fois par an.
+- **Revue périodique** : la constitution, la déclaration d'accessibilité et la déclaration
+  d'écoconception sont relues au moins une fois par an.
 
-**Version**: 1.0.1 | **Ratified**: 2026-11-25 | **Last Amended**: 2026-11-25
+**Version**: 1.1.0 | **Ratified**: 2026-11-25 | **Last Amended**: 2026-11-25

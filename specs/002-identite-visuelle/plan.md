@@ -36,12 +36,13 @@ Habiller le site existant (Astro statique, CSS simple) d'une identité « pierre
 |---|---|---|
 | I. Accessibilité | ✅ | Tous les couples de couleurs calculés à AA (R1) ; pas de texte sur image ; focus visible ; `forced-colors` ; zoom 200 %. |
 | II. Mobile first | ✅ | Accueil et accès rapides visibles à 360 × 640 px (test Playwright) ; menu téléphone repensé ; cibles ≥ 44 px. |
-| III. Performance | ✅ | Budgets de poids et de requêtes testés en CI (R11), polices ≈ 52 Ko, images ≤ 200 Ko, Lighthouse bloquant. Principe de sobriété numérique non inscrit à la constitution : amendement proposé (research.md, décisions ouvertes). |
+| III. Performance | ✅ | Budgets de poids et de requêtes testés en CI (R11), polices ≈ 52 Ko, images ≤ 200 Ko, Lighthouse bloquant. Couvert par le principe IX (sobriété numérique), ajouté à la constitution 1.1.0. |
 | IV. Aucun traceur | ✅ | Polices embarquées au build ; images et blason locaux ; aucune requête tierce (test existant). |
 | V. RGPD | ✅ | Aucune donnée collectée. Les crédits cités sont des mentions de licence publiques. |
 | VI. Statique | ✅ | Aucun serveur, aucun JavaScript client ; deux dépendances de build épinglées. |
 | VII. Édition sans compétence technique | ✅ | Photo d'accueil et crédit remplaçables dans Pages CMS (R10). |
 | VIII. Contenu ouvert | ✅ | Polices OFL, images CC BY-SA, formats ouverts (AVIF, WebP, SVG). |
+| IX. Sobriété numérique | ✅ | Budgets 120 Ko / 100 Ko, 10 requêtes, 3 polices (tests T032), visuel recadré (T041), déclaration d'écoconception (T040). |
 
 **Points de vigilance (hors principes) :** le statut officiel du blason n'est pas établi ; la licence CC BY-SA des photos impose le crédit et la même licence pour les versions adaptées (R3, R4). **Post-conception** : mêmes résultats.
 
