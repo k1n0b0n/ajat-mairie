@@ -32,3 +32,9 @@ Le site `ajat.fr` indiqué dans les annuaires n'existe plus : demander l'adresse
 ## Écoconception (spec 002)
 
 11. **Référent de l'écoconception** : une personne de la mairie relit chaque année `docs/declaration-ecoconception.md` (RGESN, critère 1.3). **Non désignée à ce jour.**
+
+## Personnalité du site (spec 003)
+
+12. **Texte « Le village »** de l'accueil (`src/content/donnees/accueil.yml`, éditable dans Pages CMS) : deux ou trois phrases sur Ajat, reformulées d'après Wikipédia ; à valider ou à remplacer par le texte de la mairie.
+13. **Signature** : le clocher-pignon de l'église Saint-Martin est dessiné d'après l'église ; à faire valider par la mairie (autre élément possible : les cisailles du blason).
+14. **Phrase d'horaires** : elle est calculée à partir des horaires saisis ; elle sera juste dès que les horaires de `mairie.yml` seront confirmés.

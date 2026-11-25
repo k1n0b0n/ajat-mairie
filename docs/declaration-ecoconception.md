@@ -18,7 +18,7 @@ Mesurées avec `node scripts/mesure-pages.mjs` (Playwright, texte compressé com
 
 | Page | Requêtes | Téléphone 360 px | Ordinateur 1280 px |
 |---|---|---|---|
-| Accueil | 7 | 72 Ko | 141 Ko |
+| Accueil | 7 (6 sur ordinateur) | 72 Ko | 124 Ko |
 | Actualités | 6 | 58 Ko | 58 Ko |
 | Démarches | 6 | 59 Ko | 59 Ko |
 | Salle des fêtes | 6 | 58 Ko | 58 Ko |
@@ -58,6 +58,10 @@ Test `tests/page-budget.spec.ts` (constitution, principe IX) : accueil 120 Ko au
 - **Hébergement** : la source d'énergie des serveurs de GitHub n'est pas maîtrisée par la commune.
 - **Polices** : 52 Ko par première visite ; des polices système seules les supprimeraient, au prix de l'identité visuelle.
 - **Photo d'accueil** : premier poste de poids sur ordinateur (≈ 85 Ko).
+
+## Après la refonte de la personnalité (spec 003, 2026-11-26)
+
+Accueil : 72 Ko sur téléphone, 124 Ko sur ordinateur (avant : 141 Ko). Les pages de texte pèsent 42 Ko sur ordinateur (deux polices chargées au lieu de trois, la graisse 700 n'y servant plus). Aucune dépendance ni police ajoutée ; un SVG de 197 octets (signature).
 
 ## EcoIndex
 
