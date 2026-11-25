@@ -8,7 +8,9 @@ const estCourant = (href: string) => {
   return href === '/' ? courant === cible : courant.startsWith(cible);
 };
 ---
-<nav class="nav" aria-label="Navigation principale">
+<!-- Sous 48 rem : panneau « popover » ouvert par le bouton Menu (sans JavaScript).
+     Dès 48 rem : liste affichée en ligne. Un navigateur sans Popover affiche simplement la liste. -->
+<nav id="menu-principal" class="nav" popover aria-label="Navigation principale">
   <ul>
     {navPrincipale.map((lien) => (
       <li>

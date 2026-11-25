@@ -59,20 +59,20 @@ description: "Liste des tâches : identité visuelle du site de la mairie d'Ajat
 
 **Independent Test**: ouvrir `/` à 360 × 640 px ; visuel, titre et trois tuiles visibles sans défilement, chaque tuile mène à la bonne page, le menu s'ouvre et se ferme (`quickstart.md` §2)
 
-- [ ] T009 [US1] Déclarer la collection `visuels` (loader `file()`) dans `src/content.config.ts` selon `data-model.md` `Visuel.image`, `Visuel.alt`, `Visuel.credit.author`, `Visuel.credit.license`, `Visuel.credit.licenseUrl`, `Visuel.credit.sourceUrl`, `Visuel.credit.modified`, avec la règle : `credit.license` sans `credit.author` ni `credit.licenseUrl` fait échouer le build
-- [ ] T010 [US1] Créer `src/content/donnees/visuels.yml` avec l'entrée `accueil` et la valeur initiale de `data-model.md` (`Ajat bourg.JPG`, Père Igor, CC BY-SA 4.0)
-- [ ] T011 [P] [US1] Créer `src/components/Hero.astro` : `<Picture>` d'Astro (AVIF puis WebP, largeurs 480, 768, 1200, 1600, `sizes` adapté), `fetchpriority="high"`, `loading="eager"`, dimensions renseignées, résolution de l'image par `src/lib/images.ts`, crédit sous l'image selon `contracts/home-layout.md`, bloc `--fond-doux` si l'image est absente
-- [ ] T012 [P] [US1] Créer `src/components/QuickAccess.astro` : `nav` « Accès rapides » avec trois tuiles (Horaires `#horaires`, Actualités `/actualites/`, Salle des fêtes `/salle-des-fetes/` via `src/lib/url.ts`), icône SVG en ligne décorative (`aria-hidden`), libellé texte, hauteur ≥ 2.75rem
-- [ ] T013 [P] [US1] Réécrire `src/components/Nav.astro` selon `contracts/navigation-mobile.md` : `<nav id="menu-principal" popover>` listant `src/lib/nav.ts`, `aria-current`, une seule navigation exposée à la fois
-- [ ] T014 [P] [US1] Réécrire `src/components/Header.astro` : blason `src/assets/blason-ajat.svg` en `alt=""` à côté du nom de la commune, bouton « Menu » (`popovertarget="menu-principal"`) visible sous 48 rem
-- [ ] T015 [US1] Ajouter `id="horaires"` à la section de `src/components/Hours.astro` (cible de la tuile « Horaires »)
-- [ ] T016 [US1] Recomposer `src/pages/index.astro` : `Hero`, titre `h1` et phrase d'accroche, `QuickAccess`, puis contact, horaires, infos pratiques et dernières actualités existants
-- [ ] T017 [US1] Ajouter à `src/styles/global.css` les styles de l'en-tête, du panneau de menu (2 colonnes, plein largeur), du visuel (ratio 2:1, puis 3:1 dès 48 rem), du crédit et des tuiles, selon `contracts/home-layout.md`
-- [ ] T018 [P] [US1] Créer `tests/home-viewport.spec.ts` : à 360 × 640 px, le bas des trois tuiles est dans le viewport, les liens ont les bonnes destinations et le visuel a un `alt` (SC-002, SC-003)
-- [ ] T019 [P] [US1] Créer `tests/nav-mobile.spec.ts` : à 360 px, le menu s'ouvre au clavier, contient 8 liens, se ferme avec Échap et le focus revient au bouton ; à 1024 px, la liste est visible sans bouton
-- [ ] T020 [US1] Ajouter l'entrée « Visuel d'accueil » à `.pages.yml` (fichier `src/content/donnees/visuels.yml`, image envoyée dans `src/assets/images/`, description, crédit facultatif) et la section « Remplacer la photo d'accueil » (4 gestes) à `docs/aide-redacteur.md`
-- [ ] T021 [US1] Ajouter la section « Crédits » à `src/content/pages/mentions-legales.md` : photos (auteur, licence avec lien, fichier source, mention « recadrée et compressée »), blason (Henry Salomé, CC BY-SA 3.0 ou GFDL), polices (Fraunces et Atkinson Hyperlegible, SIL OFL 1.1)
-- [ ] T022 [US1] Valider US1 (`quickstart.md` §2) : captures d'écran de l'accueil à 360 × 640, 768 et 1280 px, image bloquée, menu ouvert ; corriger les défauts
+- [X] T009 [US1] Déclarer la collection `visuels` (loader `file()`) dans `src/content.config.ts` selon `data-model.md` `Visuel.image`, `Visuel.alt`, `Visuel.credit.author`, `Visuel.credit.license`, `Visuel.credit.licenseUrl`, `Visuel.credit.sourceUrl`, `Visuel.credit.modified`, avec la règle : `credit.license` sans `credit.author` ni `credit.licenseUrl` fait échouer le build
+- [X] T010 [US1] Créer `src/content/donnees/visuels.yml` avec l'entrée `accueil` et la valeur initiale de `data-model.md` (`Ajat bourg.JPG`, Père Igor, CC BY-SA 4.0)
+- [X] T011 [P] [US1] Créer `src/components/Hero.astro` : `<Picture>` d'Astro (AVIF puis WebP, largeurs 480, 768, 1200, 1600, `sizes` adapté), `fetchpriority="high"`, `loading="eager"`, dimensions renseignées, résolution de l'image par `src/lib/images.ts`, crédit sous l'image selon `contracts/home-layout.md`, bloc `--fond-doux` si l'image est absente
+- [X] T012 [P] [US1] Créer `src/components/QuickAccess.astro` : `nav` « Accès rapides » avec trois tuiles (Horaires `#horaires`, Actualités `/actualites/`, Salle des fêtes `/salle-des-fetes/` via `src/lib/url.ts`), icône SVG en ligne décorative (`aria-hidden`), libellé texte, hauteur ≥ 2.75rem
+- [X] T013 [P] [US1] Réécrire `src/components/Nav.astro` selon `contracts/navigation-mobile.md` : `<nav id="menu-principal" popover>` listant `src/lib/nav.ts`, `aria-current`, une seule navigation exposée à la fois
+- [X] T014 [P] [US1] Réécrire `src/components/Header.astro` : blason `src/assets/blason-ajat.svg` en `alt=""` à côté du nom de la commune, bouton « Menu » (`popovertarget="menu-principal"`) visible sous 48 rem
+- [X] T015 [US1] Ajouter `id="horaires"` à la section de `src/components/Hours.astro` (cible de la tuile « Horaires »)
+- [X] T016 [US1] Recomposer `src/pages/index.astro` : `Hero`, titre `h1` et phrase d'accroche, `QuickAccess`, puis contact, horaires, infos pratiques et dernières actualités existants
+- [X] T017 [US1] Ajouter à `src/styles/global.css` les styles de l'en-tête, du panneau de menu (2 colonnes, plein largeur), du visuel (ratio 2:1, puis 3:1 dès 48 rem), du crédit et des tuiles, selon `contracts/home-layout.md`
+- [X] T018 [P] [US1] Créer `tests/home-viewport.spec.ts` : à 360 × 640 px, le bas des trois tuiles est dans le viewport, les liens ont les bonnes destinations et le visuel a un `alt` (SC-002, SC-003)
+- [X] T019 [P] [US1] Créer `tests/nav-mobile.spec.ts` : à 360 px, le menu s'ouvre au clavier, contient 8 liens, se ferme avec Échap et le focus revient au bouton ; à 1024 px, la liste est visible sans bouton
+- [X] T020 [US1] Ajouter l'entrée « Visuel d'accueil » à `.pages.yml` (fichier `src/content/donnees/visuels.yml`, image envoyée dans `src/assets/images/`, description, crédit facultatif) et la section « Remplacer la photo d'accueil » (4 gestes) à `docs/aide-redacteur.md`
+- [X] T021 [US1] Ajouter la section « Crédits » à `src/content/pages/mentions-legales.md` : photos (auteur, licence avec lien, fichier source, mention « recadrée et compressée »), blason (Henry Salomé, CC BY-SA 3.0 ou GFDL), polices (Fraunces et Atkinson Hyperlegible, SIL OFL 1.1)
+- [X] T022 [US1] Valider US1 (`quickstart.md` §2) : captures d'écran de l'accueil à 360 × 640, 768 et 1280 px, image bloquée, menu ouvert ; corriger les défauts
 
 **Checkpoint**: US1 est autonome ; l'accueil est déployable comme première version de l'identité
 

@@ -1,0 +1,34 @@
+---
+import { url } from '../lib/url';
+
+// Les trois raccourcis de l'accueil. Les icônes sont décoratives : le libellé porte le sens.
+const acces = [
+  {
+    libelle: 'Horaires',
+    href: '#horaires',
+    icone: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  },
+  {
+    libelle: 'Actualités',
+    href: url('/actualites/'),
+    icone: '<path d="M5 4h11a2 2 0 0 1 2 2v13a1 1 0 0 0 1 1H7a2 2 0 0 1-2-2z"/><path d="M18 8h2a1 1 0 0 1 1 1v9a2 2 0 0 1-2 2"/><path d="M8 8h6M8 12h6M8 16h4"/>',
+  },
+  {
+    libelle: 'Salle des fêtes',
+    href: url('/salle-des-fetes/'),
+    icone: '<path d="M3 21h18M5 21V9l7-5 7 5v12"/><path d="M10 21v-6h4v6"/>',
+  },
+];
+---
+<nav class="tuiles" aria-label="Accès rapides">
+  <ul>
+    {acces.map((a) => (
+      <li>
+        <a href={a.href}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" set:html={a.icone} />
+          <span>{a.libelle}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>

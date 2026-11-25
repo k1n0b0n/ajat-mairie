@@ -1,0 +1,34 @@
+---
+import { Picture } from 'astro:assets';
+import { getEntry } from 'astro:content';
+import { resoudreImage } from '../lib/images';
+
+// Visuel d'accueil : aucun texte n'est posé sur la photo (le contraste ne dépend donc pas de l'image).
+const entree = await getEntry('visuels', 'accueil');
+const visuel = entree?.data;
+const credit = visuel?.credit;
+---
+<figure class="hero-visuel">
+  {visuel && (
+    <Picture
+      src={resoudreImage(visuel.image)}
+      alt={visuel.alt}
+      formats={['avif', 'webp']}
+      fallbackFormat="webp"
+      widths={[480, 768, 1200, 1600]}
+      sizes="100vw"
+      quality={60}
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />
+  )}
+  {credit && (
+    <figcaption class="credit-photo">
+      Photo{credit.author && <> : {credit.author}</>}
+      {credit.license && <>, <a href={credit.licenseUrl} rel="noopener">{credit.license}</a></>}
+      {credit.modified && <>, recadrée et compressée</>}
+      {credit.sourceUrl && <> · <a href={credit.sourceUrl} rel="noopener">Source</a></>}
+    </figcaption>
+  )}
+</figure>

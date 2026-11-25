@@ -1,8 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
 import ContactBlock from '../components/ContactBlock.astro';
+import Hero from '../components/Hero.astro';
 import Hours from '../components/Hours.astro';
 import NewsCard from '../components/NewsCard.astro';
+import QuickAccess from '../components/QuickAccess.astro';
 import { parDateDecroissante } from '../lib/dates';
 import { getPublies } from '../lib/published';
 import { url } from '../lib/url';
@@ -10,7 +12,10 @@ import { url } from '../lib/url';
 const dernieres = (await getPublies('actualites')).sort(parDateDecroissante).slice(0, 3);
 ---
 <Base titre="Mairie d'Ajat">
+  <Hero slot="pleine-largeur" />
   <h1>Mairie d'Ajat</h1>
+  <p class="chapo">Horaires, démarches, actualités et vie de la commune d'Ajat, en Dordogne</p>
+  <QuickAccess />
   <ContactBlock />
   <Hours />
   <section aria-labelledby="titre-pratique">

@@ -103,42 +103,227 @@ a:hover {
 }
 
 .entete {
-  border-bottom: 1px solid var(--separateur);
+  position: sticky;
+  top: 0;
+  z-index: 20;
   background: var(--fond-doux);
+  border-bottom: 1px solid var(--separateur);
 }
 
-.entete .nom-site {
-  display: inline-block;
-  padding-block: 0.75rem;
-  font-size: 1.25rem;
-  font-weight: 700;
+.entete-ligne {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espace);
+  min-height: var(--entete);
+}
+
+.marque {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: var(--cible);
   color: var(--texte);
   text-decoration: none;
 }
 
+.marque img {
+  height: 2.5rem;
+  width: auto;
+}
+
+.nom-site {
+  font-family: var(--police-titre);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.bouton-menu {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: var(--cible);
+  padding-inline: 1rem;
+  border: 1px solid var(--bordure-forte);
+  border-radius: var(--rayon);
+  background: var(--fond);
+  color: var(--texte);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Panneau de menu (téléphone) : sous l'en-tête, pleine largeur, deux colonnes */
+.nav[popover] {
+  position: fixed;
+  inset: var(--entete) 0 auto 0;
+  width: 100%;
+  max-height: calc(100dvh - var(--entete));
+  margin: 0;
+  padding: var(--espace);
+  overflow: auto;
+  border: 0;
+  border-bottom: 2px solid var(--bordure-forte);
+  background: var(--fond);
+  color: var(--texte);
+}
+
 .nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espace-s);
   list-style: none;
   margin: 0;
-  padding: 0 0 0.75rem;
+  padding: 0;
 }
 
 .nav a {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  min-height: 2.75rem;
-  padding-inline: 0.75rem;
+  min-height: var(--cible);
+  padding: 0.5rem 0.75rem;
   border-radius: var(--rayon);
+  background: var(--fond-doux);
+  color: var(--texte);
   font-weight: 700;
   text-decoration: none;
 }
 
-.nav a:hover,
-.nav a[aria-current='page'] {
+.nav a:hover {
   background: var(--chene);
   color: var(--chene-texte);
+}
+
+.nav a[aria-current='page'] {
+  box-shadow: inset 0.3rem 0 0 var(--chene);
+}
+
+@media (min-width: 48rem) {
+  .entete {
+    position: static;
+  }
+
+  .bouton-menu {
+    display: none;
+  }
+
+  .entete-ligne {
+    flex-wrap: wrap;
+    max-width: 72rem;
+    padding-block: 0.5rem;
+  }
+
+  .nav[popover] {
+    position: static;
+    display: block;
+    width: auto;
+    max-height: none;
+    padding: 0;
+    overflow: visible;
+    border: 0;
+    background: transparent;
+  }
+
+  .nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.5rem;
+  }
+
+  .nav a {
+    background: transparent;
+  }
+
+  .nav a[aria-current='page'] {
+    box-shadow: inset 0 -0.2rem 0 var(--chene);
+    border-radius: 0;
+  }
+}
+
+/* Visuel d'accueil */
+.hero-visuel {
+  margin: 0;
+  background: var(--fond-doux);
+}
+
+.hero-visuel picture,
+.hero-visuel img {
+  display: block;
+  width: 100%;
+}
+
+.hero-visuel img {
+  height: auto;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  object-position: 50% 45%;
+}
+
+.credit-photo {
+  padding: 0.5rem var(--espace);
+  color: var(--texte-doux);
+  font-size: 0.85rem;
+}
+
+@media (min-width: 48rem) {
+  .hero-visuel img {
+    aspect-ratio: 3 / 1;
+  }
+}
+
+/* Accès rapides */
+.tuiles ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espace-s);
+  list-style: none;
+  margin: var(--espace) 0;
+  padding: 0;
+}
+
+.tuiles a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  min-height: 4.5rem;
+  height: 100%;
+  padding: 0.5rem 0.25rem;
+  border: 1px solid var(--bordure-forte);
+  border-radius: var(--rayon);
+  background: var(--fond-doux);
+  color: var(--texte);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+}
+
+.tuiles a:hover {
+  background: var(--chene);
+  color: var(--chene-texte);
+}
+
+.tuiles svg {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media (min-width: 48rem) {
+  .tuiles a {
+    flex-direction: row;
+    gap: 0.75rem;
+    min-height: var(--cible);
+    font-size: 1.05rem;
+  }
+}
+
+.horaires {
+  scroll-margin-top: calc(var(--entete) + var(--espace));
 }
 
 .pied {

@@ -1,10 +1,18 @@
 ---
 import Nav from './Nav.astro';
+import blason from '../assets/blason-ajat.svg';
 import { url } from '../lib/url';
 ---
 <header class="entete">
-  <div class="conteneur">
-    <a class="nom-site" href={url('/')}>Mairie d'Ajat</a>
+  <div class="conteneur entete-ligne">
+    <a class="marque" href={url('/')}>
+      <img src={blason.src} width="36" height="40" alt="" />
+      <span class="nom-site">Mairie d'Ajat</span>
+    </a>
+    <button class="bouton-menu" type="button" popovertarget="menu-principal">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+      Menu
+    </button>
     <Nav />
   </div>
 </header>

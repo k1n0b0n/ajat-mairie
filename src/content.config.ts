@@ -94,6 +94,27 @@ const pages = defineCollection({
 
 const urlHttps = z.url().refine((u) => u.startsWith('https://'), { message: "L'adresse doit commencer par https://" });
 
+// data-model.md : Visuel d'accueil (image, alt, crédit). La licence exige l'auteur et le lien de licence.
+const visuels = defineCollection({
+  loader: file('src/content/donnees/visuels.yml'),
+  schema: z.object({
+    image: z.string().min(1),
+    alt: z.string().min(10).max(160),
+    credit: z
+      .object({
+        author: z.string().min(1).optional(),
+        license: z.string().min(1).optional(),
+        licenseUrl: urlHttps.optional(),
+        sourceUrl: urlHttps.optional(),
+        modified: z.boolean().default(true),
+      })
+      .refine((c) => !c.license || (c.author && c.licenseUrl), {
+        message: "Une licence exige l'auteur et le lien vers la licence.",
+      })
+      .optional(),
+  }),
+});
+
 // data-model.md : Démarche (officialUrl en https, C2)
 const demarches = defineCollection({
   loader: glob({ pattern: '**/*.md', base: 'src/content/demarches' }),
@@ -146,4 +167,5 @@ export const collections = {
   'salle-des-fetes': salleDesFetes,
   liens,
   pages,
+  visuels,
 };

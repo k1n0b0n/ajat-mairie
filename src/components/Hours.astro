@@ -6,7 +6,7 @@ const mairie = await getMairie();
 const lignes = lignesHoraires(mairie.hours);
 const aVenir = fermetures(mairie.closures);
 ---
-<section class="horaires" aria-labelledby="titre-horaires">
+<section id="horaires" class="horaires" aria-labelledby="titre-horaires">
   <h2 id="titre-horaires">Horaires d'ouverture</h2>
   {aVenir.length > 0 && (
     <div class="fermeture" role="note">

@@ -26,6 +26,12 @@ Les pages de la rubrique « Découvrir Ajat » sont adaptées de l'article « Aj
 
 Ce site ne dépose aucun cookie et ne collecte aucune donnée personnelle. Pour le détail, consultez la [politique de confidentialité](/confidentialite/).
 
+## Crédits
+
+- **Photo de la page d'accueil** : « Ajat bourg » ([fichier d'origine](https://commons.wikimedia.org/wiki/File:Ajat_bourg.JPG)), Père Igor, licence [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.fr). Image recadrée et compressée.
+- **Blason** : « Blason ville fr Ajat (Dordogne) » ([fichier d'origine](https://commons.wikimedia.org/wiki/File:Blason_ville_fr_Ajat_(Dordogne).svg)), Henry Salomé, licence [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.fr) ou GFDL 1.2 ou ultérieure.
+- **Polices** : Fraunces (Undercase Type) et Atkinson Hyperlegible (Braille Institute), sous licence [SIL Open Font License 1.1](https://openfontlicense.org/), hébergées sur ce site.
+
 ## Liens vers d'autres sites
 
 Le site renvoie vers des sites officiels (Service-Public.fr, ANTS, Département de la Dordogne, etc.) et vers un service de cartographie. La commune n'est pas responsable de leur contenu.

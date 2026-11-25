@@ -46,8 +46,11 @@ const csp = [
     <a class="lien-evitement" href="#contenu">Aller au contenu</a>
     {estApercu && <p class="bandeau-apercu" role="note">APERÇU : cette version contient des brouillons, elle n'est pas publique.</p>}
     <Header />
-    <main id="contenu" class="conteneur" tabindex="-1">
-      <slot />
+    <main id="contenu" tabindex="-1">
+      <slot name="pleine-largeur" />
+      <div class="conteneur">
+        <slot />
+      </div>
     </main>
     <Footer />
   </body>

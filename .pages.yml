@@ -352,6 +352,58 @@ content:
           extensions: [jpg, jpeg, png, webp]
           rename: safe
 
+  - name: visuel-accueil
+    label: Visuel d'accueil
+    type: file
+    path: src/content/donnees/visuels.yml
+    format: yaml
+    fields:
+      - name: accueil
+        label: Photo de la page d'accueil
+        type: object
+        fields:
+          - name: image
+            label: Photo
+            type: image
+            options:
+              media: couvertures
+              extensions: [jpg, jpeg, png, webp]
+              rename: safe
+          - name: alt
+            label: Description de la photo
+            type: text
+            required: true
+            description: Dites ce que montre la photo, en une phrase (10 à 160 caractères).
+            options:
+              minlength: 10
+              maxlength: 160
+          - name: credit
+            label: Crédit de la photo (facultatif pour une photo de la mairie)
+            type: object
+            fields:
+              - name: author
+                label: Auteur
+                type: string
+              - name: license
+                label: Licence (par exemple « CC BY-SA 4.0 »)
+                type: string
+              - name: licenseUrl
+                label: Adresse de la licence (commence par https://)
+                type: string
+                pattern:
+                  regex: "^(https://.+)?$"
+                  message: "L'adresse doit commencer par https://"
+              - name: sourceUrl
+                label: Adresse de la page d'origine de la photo
+                type: string
+                pattern:
+                  regex: "^(https://.+)?$"
+                  message: "L'adresse doit commencer par https://"
+              - name: modified
+                label: La photo a été recadrée ou compressée
+                type: boolean
+                default: true
+
   - name: mairie
     label: Horaires et contact de la mairie
     type: file

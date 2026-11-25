@@ -1,0 +1,11 @@
+# Visuel d'accueil. Pour le remplacer : déposer la nouvelle image dans src/assets/images/
+# (ou passer par l'éditeur « Visuel d'accueil »), puis renseigner la description et le crédit.
+accueil:
+  image: accueil-bourg.jpg
+  alt: "Le bourg d'Ajat sur sa colline, avec son église romane, entouré de bois et de prairies"
+  credit:
+    author: Père Igor
+    license: CC BY-SA 4.0
+    licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Ajat_bourg.JPG
+    modified: true
