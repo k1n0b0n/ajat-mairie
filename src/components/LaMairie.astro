@@ -1,0 +1,27 @@
+---
+import { getMairie } from '../lib/mairie';
+import { telephoneInternational } from '../lib/hours';
+import { phraseHoraires } from '../lib/horaires-phrase';
+import { url } from '../lib/url';
+
+// Affiche « La mairie » : quand elle est ouverte (une phrase), le téléphone, l'adresse.
+const mairie = await getMairie();
+const { street, postalCode, city } = mairie.address;
+const carte = `https://www.openstreetmap.org/search?query=${encodeURIComponent(`${street}, ${postalCode} ${city}`)}`;
+const phrase = phraseHoraires(mairie.hours, mairie.closures, mairie.hoursNote);
+---
+<section class="affiche" aria-labelledby="titre-affiche">
+  <h2 id="titre-affiche" class="affiche-titre">La mairie</h2>
+  <div class="affiche-corps">
+    <p class="affiche-horaires chiffres">{phrase}</p>
+    <p>
+      <a class="bouton chiffres" href={`tel:${telephoneInternational(mairie.phone)}`}>
+        <span class="sr-only">Appeler la mairie au </span>{mairie.phone}
+      </a>
+    </p>
+    <address>
+      {street}, <span class="chiffres">{postalCode}</span> {city}{' · '}<a href={carte} rel="noopener">Plan<span class="sr-only"> d'accès (nouveau site, OpenStreetMap)</span></a>
+    </address>
+    <p><a href={url('/la-mairie/')}>Tous les horaires</a></p>
+  </div>
+</section>

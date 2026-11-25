@@ -27,7 +27,7 @@ main {
 
 .conteneur {
   width: 100%;
-  max-width: var(--largeur);
+  max-width: var(--largeur-large);
   margin-inline: auto;
   padding-inline: var(--espace);
 }
@@ -43,7 +43,7 @@ h3 {
 
 h1 {
   font-size: var(--h1);
-  margin-top: 0.75rem;
+  margin-top: var(--e3);
 }
 
 h2 {
@@ -65,8 +65,15 @@ img {
   height: auto;
 }
 
+/* Chiffres d'affichage (téléphone, heures, dates, code postal) : la voix des titres, sans zéro barré */
+.chiffres {
+  font-family: var(--police-chiffres);
+  font-weight: 600;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
 a {
-  color: var(--chene);
+  color: var(--tuile);
   text-underline-offset: 0.15em;
 }
 
@@ -83,9 +90,9 @@ a:hover {
   position: absolute;
   inset-inline-start: var(--espace);
   top: -4rem;
-  background: var(--chene);
-  color: var(--chene-texte);
-  padding: 0.75rem 1rem;
+  background: var(--tuile);
+  color: var(--tuile-texte);
+  padding: var(--e3) var(--e4);
   border-radius: var(--rayon);
   z-index: 10;
 }
@@ -97,7 +104,7 @@ a:hover {
 .bandeau-apercu {
   background: var(--alerte-fond);
   border-bottom: 3px solid var(--alerte-bord);
-  padding: 0.5rem var(--espace);
+  padding: var(--e2) var(--espace);
   text-align: center;
   font-weight: 700;
 }
@@ -121,7 +128,7 @@ a:hover {
 .marque {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: var(--e3);
   min-height: var(--cible);
   color: var(--texte);
   text-decoration: none;
@@ -142,9 +149,9 @@ a:hover {
 .bouton-menu {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--e2);
   min-height: var(--cible);
-  padding-inline: 1rem;
+  padding-inline: var(--e4);
   border: 1px solid var(--bordure-forte);
   border-radius: var(--rayon);
   background: var(--fond);
@@ -182,21 +189,21 @@ a:hover {
   display: flex;
   align-items: center;
   min-height: var(--cible);
-  padding: 0.5rem 0.75rem;
+  padding: var(--e2) var(--e3);
   border-radius: var(--rayon);
   background: var(--fond-doux);
   color: var(--texte);
-  font-weight: 700;
+  font-weight: 400;
   text-decoration: none;
 }
 
 .nav a:hover {
-  background: var(--chene);
-  color: var(--chene-texte);
+  background: var(--tuile);
+  color: var(--tuile-texte);
 }
 
 .nav a[aria-current='page'] {
-  box-shadow: inset 0.3rem 0 0 var(--chene);
+  box-shadow: inset 0.25rem 0 0 var(--tuile);
 }
 
 @media (min-width: 48rem) {
@@ -211,7 +218,7 @@ a:hover {
   .entete-ligne {
     flex-wrap: wrap;
     max-width: 72rem;
-    padding-block: 0.5rem;
+    padding-block: var(--e2);
   }
 
   .nav[popover] {
@@ -228,7 +235,7 @@ a:hover {
   .nav ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.25rem 0.5rem;
+    gap: var(--e1) var(--e2);
   }
 
   .nav a {
@@ -236,15 +243,36 @@ a:hover {
   }
 
   .nav a[aria-current='page'] {
-    box-shadow: inset 0 -0.2rem 0 var(--chene);
+    box-shadow: inset 0 -0.25rem 0 var(--tuile);
     border-radius: 0;
   }
 }
 
 /* Visuel d'accueil */
 .hero-visuel {
+  position: relative;
   margin: 0;
   background: var(--fond-doux);
+}
+
+.plaque {
+  position: absolute;
+  inset-inline-start: var(--e4);
+  top: var(--e4);
+  padding: var(--e2) var(--e4);
+  background: var(--ardoise);
+  color: var(--ardoise-texte);
+}
+
+.plaque h1 {
+  margin: 0;
+  font-size: var(--h1);
+  line-height: 1;
+}
+
+.plaque p {
+  margin: var(--e1) 0 0;
+  font-size: 0.9rem;
 }
 
 .hero-visuel picture,
@@ -261,10 +289,22 @@ a:hover {
 }
 
 .credit-photo {
-  padding: 0.35rem var(--espace);
+  padding: var(--e1) var(--e4);
   color: var(--texte-doux);
   font-size: 0.8rem;
   line-height: 1.4;
+}
+
+.hero-visuel .credit-photo {
+  position: absolute;
+  inset-inline-end: 0;
+  bottom: 0;
+  width: max-content;
+  max-width: 60%;
+  padding: var(--e1) var(--e2);
+  background: var(--fond);
+  font-size: 0.75rem;
+  text-align: end;
 }
 
 @media (min-width: 48rem) {
@@ -273,77 +313,23 @@ a:hover {
   }
 }
 
-/* Accès rapides */
-.tuiles ul {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--espace-s);
-  list-style: none;
-  margin: 0.75rem 0;
-  padding: 0;
-}
-
-.tuiles a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25rem;
-  min-height: 4.5rem;
-  height: 100%;
-  padding: 0.5rem 0.25rem;
-  border: 1px solid var(--bordure-forte);
-  border-radius: var(--rayon);
-  background: var(--fond-doux);
-  color: var(--texte);
-  font-size: 0.95rem;
-  font-weight: 700;
-  line-height: 1.2;
-  text-align: center;
-  text-decoration: none;
-}
-
-.tuiles a:hover {
-  background: var(--chene);
-  color: var(--chene-texte);
-}
-
-.tuiles svg {
-  flex: none;
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
-@media (min-width: 48rem) {
-  .tuiles a {
-    flex-direction: row;
-    gap: 0.75rem;
-    min-height: var(--cible);
-    font-size: 1.05rem;
-  }
-}
-
-.horaires {
-  scroll-margin-top: calc(var(--entete) + var(--espace));
-}
-
 .pied {
-  margin-top: 3rem;
+  margin-top: var(--e7);
   border-top: 1px solid var(--separateur);
   background: var(--fond-doux);
-  padding-block: 1.5rem;
+  padding-block: var(--e5);
   color: var(--texte-doux);
 }
 
 .pied-marque {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: var(--e3);
 }
 
 .pied-marque img {
   width: auto;
-  height: 1.875rem;
+  height: 2rem;
 }
 
 .pied-marque p {
@@ -355,7 +341,7 @@ a:hover {
 .pied ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem 1rem;
+  gap: var(--e1) var(--e4);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -372,10 +358,10 @@ a:hover {
   align-items: center;
   justify-content: center;
   min-height: 2.75rem;
-  padding: 0.5rem 1.25rem;
+  padding: var(--e2) 1.25rem;
   border-radius: var(--rayon);
-  background: var(--chene);
-  color: var(--chene-texte);
+  background: var(--tuile);
+  color: var(--tuile-texte);
   font-weight: 700;
   text-decoration: none;
 }
@@ -402,7 +388,7 @@ a:hover {
 
 address {
   font-style: normal;
-  margin-block: 1rem;
+  margin-block: var(--e4);
 }
 
 .contact .bouton {
@@ -417,7 +403,7 @@ address {
 .horaires th,
 .horaires td {
   text-align: start;
-  padding: 0.6rem 0.5rem;
+  padding: var(--e3) var(--e2);
   border-bottom: 1px solid var(--separateur);
 }
 
@@ -434,31 +420,34 @@ address {
   background: var(--alerte-fond);
   border-inline-start: 6px solid var(--alerte-bord);
   border-radius: var(--rayon);
-  padding: 0.5rem 1rem;
-  margin-block: 1rem;
+  padding: var(--e2) var(--e4);
+  margin-block: var(--e4);
 }
 
 .fermeture p,
 .fermeture ul {
-  margin-block: 0.25rem;
+  margin-block: var(--e1);
 }
 
 .actualite {
-  margin-block: var(--espace-s);
-  padding: 0.5rem var(--espace) 1rem;
-  border: 1px solid var(--separateur);
-  border-radius: var(--rayon);
-  background: var(--fond-doux);
+  display: grid;
+  gap: var(--e1) var(--e5);
+  padding-block: var(--e4);
+  border-top: 1px solid var(--separateur);
 }
 
 .actualite h2,
 .actualite h3 {
-  margin-block: 0.5rem 0.25rem;
+  margin-block: 0;
+}
+
+.actualite p {
+  margin-block: 0;
 }
 
 .date {
   color: var(--texte-doux);
-  margin-block: 0 0.5rem;
+  margin-block: 0 var(--e2);
   font-size: 0.95rem;
 }
 
@@ -470,16 +459,13 @@ address {
 .liste-documents li {
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
-  margin-block: var(--espace-s);
-  padding: 0.75rem var(--espace);
-  border: 1px solid var(--separateur);
-  border-radius: var(--rayon);
-  background: var(--fond-doux);
+  gap: var(--e1);
+  padding-block: var(--e3);
+  border-top: 1px solid var(--separateur);
 }
 
 .liste-documents a {
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .liste-documents .meta {
@@ -499,7 +485,7 @@ address {
 }
 
 .contacts li {
-  padding-block: 0.25rem;
+  padding-block: var(--e1);
 }
 
 .tarifs {
@@ -510,26 +496,8 @@ address {
 .tarifs th,
 .tarifs td {
   text-align: start;
-  padding: 0.6rem 0.5rem;
+  padding: var(--e3) var(--e2);
   border-bottom: 1px solid var(--separateur);
-}
-
-.acces-rapide {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  gap: 0.5rem;
-}
-
-.acces-rapide a {
-  display: flex;
-  align-items: center;
-  min-height: 2.75rem;
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--bordure-forte);
-  border-radius: var(--rayon);
-  font-weight: 700;
-  text-decoration: none;
 }
 
 .plan,
@@ -538,55 +506,13 @@ address {
 }
 
 .plan li {
-  padding-block: 0.15rem;
+  padding-block: var(--e1);
 }
 
 .plan a {
   display: inline-flex;
   align-items: center;
   min-height: 2.75rem;
-}
-
-/* Contraste élevé du système : les couleurs sont imposées par le navigateur ; on garde donc
-   des bordures et des repères de forme (jamais la couleur seule). */
-@media (forced-colors: active) {
-  .bouton,
-  .bouton-menu,
-  .tuiles a,
-  .nav a {
-    border: 1px solid ButtonText;
-  }
-
-  /* Le bouton d'appel garde un texte lisible sur le fond imposé par le navigateur */
-  .bouton {
-    background: Canvas;
-    color: LinkText;
-  }
-
-  .nav a[aria-current='page'] {
-    box-shadow: none;
-    border-inline-start-width: 0.3rem;
-  }
-
-  .fermeture {
-    border: 1px solid CanvasText;
-    border-inline-start-width: 0.4rem;
-  }
-
-  .hero-visuel img {
-    forced-color-adjust: none;
-  }
-}
-
-/* Filet ocre sous les titres de page : repère de l'identité, purement décoratif */
-main h1::after {
-  content: '';
-  display: block;
-  width: 3rem;
-  height: 0.25rem;
-  margin-top: 0.5rem;
-  border-radius: 0.125rem;
-  background: var(--ocre-deco);
 }
 
 /* Photo d'illustration d'une page de contenu */
@@ -612,4 +538,197 @@ main h1::after {
 .tarifs thead th {
   background: var(--fond-doux);
   font-weight: 700;
+}
+
+/* Colonne de lecture : le texte garde sa mesure, aligné sur le bord gauche de l'en-tête */
+main > .conteneur > * {
+  max-width: var(--largeur);
+}
+
+main > .conteneur-large > * {
+  max-width: none;
+}
+
+/* Accueil : zones de largeurs inégales */
+.zones {
+  display: grid;
+  gap: var(--e5);
+  margin-block: var(--e5);
+}
+
+.affiche {
+  border: 2px solid var(--bordure-forte);
+  background: var(--fond-doux);
+}
+
+.affiche-titre {
+  margin: 0;
+  padding: var(--e2) var(--e4);
+  background: var(--ardoise);
+  color: var(--ardoise-texte);
+  font-size: 1.125rem;
+}
+
+.affiche-corps {
+  padding: var(--e4);
+}
+
+.affiche-corps p,
+.affiche-corps address {
+  margin-block: var(--e3);
+}
+
+.affiche-horaires {
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.affiche .bouton {
+  font-size: 1.25rem;
+}
+
+.a-la-une h2,
+.village h2,
+.dans-la-commune h2 {
+  margin-top: 0;
+}
+
+.a-la-une h3 {
+  margin-block: var(--e2) 0;
+  font-size: var(--h2);
+  font-family: var(--police-titre);
+  font-weight: 600;
+  line-height: var(--interligne-titre);
+}
+
+.a-la-une-resume {
+  font-size: 1.125rem;
+}
+
+.village {
+  margin-block: var(--e6);
+  padding: var(--e5);
+  background: var(--fond-doux);
+}
+
+.village p,
+.dans-la-commune p {
+  max-width: var(--largeur);
+  font-size: 1.125rem;
+}
+
+@media (min-width: 48rem) {
+  .zones {
+    grid-template-columns: 5fr 7fr;
+    align-items: start;
+    gap: var(--e6);
+  }
+
+  .zones-mairie {
+    grid-template-columns: 5fr 6fr;
+  }
+
+  .actualite {
+    grid-template-columns: 10rem 1fr;
+    grid-template-areas:
+      'date titre'
+      'date resume';
+  }
+
+  .actualite-titre {
+    grid-area: titre;
+  }
+
+  .actualite-date {
+    grid-area: date;
+  }
+
+  .actualite-resume {
+    grid-area: resume;
+  }
+}
+
+/* Article : la date dans la marge sur ordinateur, texte à la mesure de lecture */
+.article-date {
+  margin-block: var(--e3) 0;
+}
+
+.article-corps > h1 {
+  margin-top: var(--e1);
+}
+
+@media (min-width: 48rem) {
+  main > .conteneur > .article {
+    display: grid;
+    grid-template-columns: 10rem minmax(0, var(--largeur));
+    gap: var(--e5);
+    max-width: none;
+  }
+
+  .article-date {
+    margin-top: var(--e5);
+    padding-top: var(--e3);
+    border-top: 1px solid var(--separateur);
+  }
+}
+
+/* Contraste élevé du système : les couleurs sont imposées par le navigateur ; on garde donc
+   des bordures et des repères de forme (jamais la couleur seule). */
+@media (forced-colors: active) {
+  .bouton,
+  .bouton-menu,
+  .tuiles a,
+  .nav a {
+    border: 1px solid ButtonText;
+  }
+
+  /* Le bouton d'appel garde un texte lisible sur le fond imposé par le navigateur */
+  .bouton {
+    background: Canvas;
+    color: LinkText;
+  }
+
+  .nav a[aria-current='page'] {
+    box-shadow: none;
+    border-inline-start-width: 0.25rem;
+  }
+
+  .fermeture {
+    border: 1px solid CanvasText;
+    border-inline-start-width: 0.5rem;
+  }
+
+  .hero-visuel img {
+    forced-color-adjust: none;
+  }
+
+  /* Les fonds en ardoise sont remplacés par la couleur système : le texte suit, avec un contour */
+  main h1::after {
+    content: none;
+  }
+
+  .plaque,
+  .affiche-titre {
+    background: Canvas;
+    color: CanvasText;
+    border: 1px solid CanvasText;
+  }
+}
+
+/* Plaque du nom sur ordinateur : en bas à gauche, dans l'alignement du contenu, plus grande */
+@media (min-width: 48rem) {
+  .plaque {
+    top: auto;
+    bottom: var(--e5);
+    inset-inline-start: max(var(--e4), calc((100% - var(--largeur-large)) / 2 + var(--e4)));
+    padding: var(--e3) var(--e5);
+  }
+
+  .plaque h1 {
+    font-size: 3.5rem;
+  }
+
+  .plaque p {
+    font-size: 1.125rem;
+  }
 }

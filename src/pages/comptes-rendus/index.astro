@@ -31,7 +31,7 @@ for (const cr of comptesRendus) {
                   <span class="sr-only"> (PDF, {formaterTaille(tailleKo(cr.data.file))})</span>
                 </a>
                 <span class="meta" aria-hidden="true">
-                  Séance du <time datetime={dateIso(cr.data.meetingDate)}>{formaterDate(cr.data.meetingDate)}</time> · PDF · {formaterTaille(tailleKo(cr.data.file))}
+                  Séance du <time class="chiffres" datetime={dateIso(cr.data.meetingDate)}>{formaterDate(cr.data.meetingDate)}</time> · PDF · {formaterTaille(tailleKo(cr.data.file))}
                 </span>
                 <span class="sr-only">Séance du {formaterDate(cr.data.meetingDate)}.</span>
               </li>

@@ -12,9 +12,10 @@ import { indexable } from '../lib/indexation';
 interface Props {
   titre: string;
   description?: string;
+  large?: boolean;
 }
 
-const { titre, description = "Site de la mairie d'Ajat (Dordogne) : horaires, démarches, actualités et vie de la commune." } = Astro.props;
+const { titre, large = false, description = "Site de la mairie d'Ajat (Dordogne) : horaires, démarches, actualités et vie de la commune." } = Astro.props;
 const titreComplet = titre === "Mairie d'Ajat" ? titre : `${titre} · Mairie d'Ajat`;
 const canonique = new URL(Astro.url.pathname, Astro.site);
 // Aucune source tierce ; aucun script (script-src 'none') tant qu'aucun JavaScript client n'est justifié.
@@ -48,7 +49,7 @@ const csp = [
     <Header />
     <main id="contenu" tabindex="-1">
       <slot name="pleine-largeur" />
-      <div class="conteneur">
+      <div class:list={['conteneur', { 'conteneur-large': large }]}>
         <slot />
       </div>
     </main>

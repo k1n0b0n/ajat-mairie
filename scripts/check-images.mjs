@@ -39,13 +39,14 @@ for (const f of tous('src/assets/images').filter(estImage)) {
   if (taille > 600 * KO) alerte(f, `Source de ${(taille / KO).toFixed(0)} Ko : réduire en dessous de 600 Ko.`);
 }
 
-// 3. Blason : poids et contenu actif
-const blason = 'src/assets/blason-ajat.svg';
-if (existsSync(blason)) {
-  const taille = statSync(blason).size;
-  if (taille > 20 * KO) echec(blason, `SVG de ${(taille / KO).toFixed(0)} Ko (maximum 20 Ko).`);
-  if (/<script|\son[a-z]+\s*=|href\s*=\s*["']?https?:|<image|<foreignObject|javascript:|<!ENTITY/i.test(readFileSync(blason, 'utf8'))) {
-    echec(blason, 'Contenu actif ou référence externe dans le SVG (script, événement, lien, image intégrée).');
+// 3. Blason et signature : poids et contenu actif
+const svg = [['src/assets/blason-ajat.svg', 20], ['src/assets/signature-clocher.svg', 2]];
+for (const [fichier, maxKo] of svg) {
+  if (!existsSync(fichier)) continue;
+  const taille = statSync(fichier).size;
+  if (taille > maxKo * KO) echec(fichier, `SVG de ${(taille / KO).toFixed(1)} Ko (maximum ${maxKo} Ko).`);
+  if (/<script|\son[a-z]+\s*=|href\s*=\s*["']?https?:|<image|<foreignObject|javascript:|<!ENTITY/i.test(readFileSync(fichier, 'utf8'))) {
+    echec(fichier, 'Contenu actif ou référence externe dans le SVG (script, événement, lien, image intégrée).');
   }
 }
 

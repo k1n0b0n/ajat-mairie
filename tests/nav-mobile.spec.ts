@@ -4,7 +4,7 @@ import { expect, test } from '@playwright/test';
 test.describe('téléphone (360 px)', () => {
   test.use({ viewport: { width: 360, height: 640 } });
 
-  test('le menu s’ouvre au clavier, contient 8 liens et se ferme avec Échap', async ({ page }) => {
+  test('le menu s’ouvre au clavier, contient 7 liens et se ferme avec Échap', async ({ page }) => {
     await page.goto('/');
     const menu = page.getByRole('navigation', { name: 'Navigation principale' });
     await expect(menu).toBeHidden();
@@ -13,7 +13,7 @@ test.describe('téléphone (360 px)', () => {
     await bouton.focus();
     await page.keyboard.press('Enter');
     await expect(menu).toBeVisible();
-    await expect(menu.getByRole('link')).toHaveCount(8);
+    await expect(menu.getByRole('link')).toHaveCount(7);
 
     await page.keyboard.press('Tab');
     expect(await page.evaluate(() => document.activeElement?.closest('nav#menu-principal') !== null)).toBe(true);
@@ -48,6 +48,6 @@ test.describe('écran large (1024 px)', () => {
     await expect(page.getByRole('button', { name: 'Menu' })).toBeHidden();
     const menu = page.getByRole('navigation', { name: 'Navigation principale' });
     await expect(menu).toBeVisible();
-    await expect(menu.getByRole('link')).toHaveCount(8);
+    await expect(menu.getByRole('link')).toHaveCount(7);
   });
 });

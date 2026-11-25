@@ -43,3 +43,22 @@ Aucun dégradé (0 `gradient(` dans le CSS), aucune lueur ni ombre colorée (3 `
 
 ### Test de substitution de l'accueil actuel
 Éléments propres à Ajat : la photo, le blason, le nom, le téléphone et l'adresse (cinq). Éléments qui survivent tels quels dans n'importe quelle commune : accroche, tuiles, tableau des horaires, « Infos pratiques », bloc d'actualités (cinq blocs sur huit). Le test de la spec passe sur la lettre mais seules la photo et le blason portent un caractère : **proposition de le renforcer** en exigeant au moins trois éléments qui ne sont ni le nom ni des coordonnées.
+
+## Audit final
+
+Refait après la mise en œuvre (passes espacement, couleur, icônes, textes, typographie, mise en page, détails, visuels), avec la même liste de signes de `references/signs.md`, sur l'accueil, une liste (`/demarches/`) et un article (`/actualites/ouverture-du-nouveau-site/`), à 360 px et 1280 px, en clair et en sombre pour l'accueil. **Aucun signe relevé** (0 sur 19 au départ).
+
+| Catégorie | Constat | Preuve |
+|---|---|---|
+| Surfaces et couleur | aucun dégradé, aucune lueur ni ombre colorée, aucune bordure vive ; trois rôles de texte, un accent (tuile) | `scripts/check-identite.mjs`, `scripts/check-contrast.mjs` |
+| Typographie | Fraunces pour les titres et les chiffres d'affichage, Atkinson pour le texte ; aucune capitale espacée, aucun italique ; plus de zéro barré sur les chiffres d'affichage | `tests/chiffres.spec.ts`, captures |
+| Icônes | aucune icône de décor ; seule l'icône du bouton « Menu » reste, avec son libellé | `tests/home-liens.spec.ts` |
+| Espacement | échelle de 4 px (`--e1` à `--e7`) | passe 1 |
+| Textes | pas de titre générique : « Ajat », « Dordogne », « La mairie », phrase d'horaires, texte local ; aucun des mots interdits | `scripts/check-identite.mjs` |
+| Composants | plus de tuiles, de barres ni de cartes identiques ; listes en filets ; affiche, une et village de formes différentes | `tests/home-liens.spec.ts` |
+| Hero et mise en page | accueil en zones inégales sur 72 rem, nom sur la photo, une seule occurrence par destination de lien | `tests/home-liens.spec.ts`, `tests/identite.spec.ts` |
+| Visuels | une vraie photo du bourg ; crédit en pastille discrète | captures |
+| Animation | aucune | — |
+| Signature | le clocher de Saint-Martin, une fois sous chaque titre de page | captures |
+
+**Points de vigilance, pas des signes** : l'accent tuile sert aussi à tous les liens ; la graisse 700 reste sur les boutons et les en-têtes de tableau ; un « 0 » dans une phrase de texte courant (une année) reste en Atkinson (research.md R6).

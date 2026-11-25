@@ -1,25 +1,27 @@
-/* Jetons de style : palette « pierre et chaux », polices, espacements.
-   Source de vérité du contrat specs/002-identite-visuelle/contracts/design-tokens.md.
+/* Jetons de style : palette « pierre, tuile, ardoise », polices, espacements.
+   Sources de vérité : specs/003-personnalite-du-site/contracts/jetons-v3.md (couleurs, remplace la palette de
+   specs/002-identite-visuelle/contracts/design-tokens.md) ; les autres jetons restent ceux de la spec 002.
    Aucune couleur en dur ailleurs : scripts/check-contrast.mjs le vérifie. */
 :root {
-  /* Couleurs, thème clair */
-  --fond: #fbf6ec;
-  --fond-doux: #efe6d4;
-  --texte: #2a241c;
-  --texte-doux: #5a5144;
-  --chene: #35542f;
-  --chene-texte: #fbf6ec;
-  --ocre-texte: #7a4a06;
-  --ocre-deco: #b9791f;
-  --alerte-fond: #f8e6ba;
+  /* Couleurs, thème clair : chaux et pierre blonde, tuile brune, ardoise du château */
+  --fond: #f7f1e4;
+  --fond-doux: #e9ddc3;
+  --texte: #2a2319;
+  --texte-doux: #5b503e;
+  --tuile: #8b3a1f;
+  --tuile-texte: #fbf6ec;
+  --ardoise: #2e3640;
+  --ardoise-texte: #fbf6ec;
+  --alerte-fond: #f5e1b8;
   --alerte-bord: #8a5a00;
-  --focus: #7a2e1a;
-  --bordure-forte: #8a7d63;
-  --separateur: #b9ac95;
+  --focus: #214e7e;
+  --bordure-forte: #7e6f52;
+  --separateur: #c9bb9a;
 
   /* Typographie */
   --police-titre: 'Fraunces', Georgia, 'Times New Roman', serif;
   --police-texte: 'Atkinson Hyperlegible', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --police-chiffres: var(--police-titre);
   --taille-base: 1.0625rem;
   --interligne: 1.6;
   --interligne-titre: 1.2;
@@ -27,12 +29,20 @@
   --h2: 1.5rem;
   --h3: 1.25rem;
 
-  /* Espacements et formes */
-  --espace: 1rem;
-  --espace-s: 0.5rem;
-  --espace-l: 2rem;
+  /* Espacements : échelle sur 4 px (spec 003, passe espacement) */
+  --e1: 0.25rem;
+  --e2: 0.5rem;
+  --e3: 0.75rem;
+  --e4: 1rem;
+  --e5: 1.5rem;
+  --e6: 2rem;
+  --e7: 3rem;
+  --espace: var(--e4);
+  --espace-s: var(--e2);
+  --espace-l: var(--e6);
   --rayon: 0.5rem;
   --largeur: 46rem;
+  --largeur-large: 72rem;
   --cible: 2.75rem;
   --entete: 3.5rem;
 
@@ -48,17 +58,17 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --fond: #1b1812;
-    --fond-doux: #26221a;
+    --fond: #1c1812;
+    --fond-doux: #272118;
     --texte: #f1eadb;
     --texte-doux: #bdb3a0;
-    --chene: #a9c99b;
-    --chene-texte: #1b1812;
-    --ocre-texte: #e3b05a;
-    --ocre-deco: #e3b05a;
+    --tuile: #e39a74;
+    --tuile-texte: #1c1812;
+    --ardoise: #3a4652;
+    --ardoise-texte: #f1eadb;
     --alerte-fond: #3a2d12;
     --alerte-bord: #e3b05a;
-    --focus: #ffb4a0;
+    --focus: #9cc4f0;
     --bordure-forte: #8f8570;
     --separateur: #5a5242;
   }

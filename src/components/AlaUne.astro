@@ -1,0 +1,22 @@
+---
+import { dateDe, dateIso, formaterDate, parDateDecroissante } from '../lib/dates';
+import { getPublies } from '../lib/published';
+import { url } from '../lib/url';
+
+// La dernière actualité, mise en avant ; un seul lien vers toutes les actualités.
+const une = (await getPublies('actualites')).sort(parDateDecroissante)[0];
+const date = une ? dateDe(une.data) : undefined;
+---
+<section class="a-la-une" aria-labelledby="titre-une">
+  <h2 id="titre-une">À la une</h2>
+  {une
+    ? (
+      <article>
+        <h3><a href={url(`/actualites/${une.id}/`)}>{une.data.title}</a></h3>
+        {date && <p class="date"><time class="chiffres" datetime={dateIso(date)}>{formaterDate(date)}</time></p>}
+        <p class="a-la-une-resume">{une.data.summary}</p>
+      </article>
+    )
+    : <p>Aucune actualité pour le moment.</p>}
+  <p><a href={url('/actualites/')}>Toutes les actualités</a></p>
+</section>
