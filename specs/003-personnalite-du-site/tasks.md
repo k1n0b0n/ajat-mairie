@@ -73,12 +73,12 @@ description: "Liste des tâches : personnalité du site de la mairie d'Ajat"
 
 **Independent Test**: le test de substitution consigné donne au moins trois éléments hors nom et coordonnées ; la plaque reste lisible AA (`quickstart.md` §6)
 
-- [ ] T012 [US2] Dans `src/components/Hero.astro`, poser la plaque pleine « Ajat » (le nom, en `h1`, et « Dordogne ») en bas à gauche de la photo ; fond `--ardoise`, texte `--ardoise-texte`, aucun dégradé ni voile ; styles `.plaque` dans `src/styles/global.css` ; reporter le `h1` de `src/pages/index.astro` dans la plaque
+- [X] T012 [US2] Dans `src/components/Hero.astro`, poser la plaque pleine « Ajat » (le nom, en `h1`, et « Dordogne ») en bas à gauche de la photo ; fond `--ardoise`, texte `--ardoise-texte`, aucun dégradé ni voile ; styles `.plaque` dans `src/styles/global.css` ; reporter le `h1` de `src/pages/index.astro` dans la plaque
 - [X] T013 [US2] Restyler `.credit-photo` dans `src/styles/global.css` : texte de 12 px en bas à droite de la photo, sans bande de fond, liens conservés (auteur, licence CC BY-SA, mention de modification, source) selon `contracts/accueil-composition.md`
 - [X] T014 [US2] Dessiner `src/assets/signature-clocher.svg` : silhouette plate du clocher-pignon de l'église Saint-Martin (pignon pointu, deux baies), une couleur, ≤ 2 Ko, sans script ; la vérifier sur capture ; l'utiliser en masque d'un bloc `--tuile` sous les titres (`main h1::after` dans `src/styles/global.css`, data URI), une seule fois par page (`research.md` R7)
 - [X] T015 [P] [US2] Déclarer la collection `accueil` (loader `file()`) dans `src/content.config.ts` selon `data-model.md` `Texte de l'accueil.village`, créer `src/content/donnees/accueil.yml` (reformulation du texte « Le village d'Ajat », château et église) et ajouter l'entrée « Texte de l'accueil » à `.pages.yml`
-- [ ] T016 [P] [US2] Créer `tests/identite.spec.ts` : sur `/`, la plaque contient « Ajat », son fond est opaque, le contraste texte/fond est au moins 4,5, aucun élément de `main` n'a de `background-image` en dégradé, le crédit de la photo est présent (auteur, licence, source)
-- [ ] T017 [US2] Rédiger `specs/003-personnalite-du-site/substitution.md` : test de substitution de l'accueil, au moins trois éléments qui ne sont ni le nom ni des coordonnées (photo du bourg, blason, signature clocher, texte local, matières de la palette) et la preuve qu'ils deviennent faux pour un autre village
+- [X] T016 [P] [US2] Créer `tests/identite.spec.ts` : sur `/`, la plaque contient « Ajat », son fond est opaque, le contraste texte/fond est au moins 4,5, aucun élément de `main` n'a de `background-image` en dégradé, le crédit de la photo est présent (auteur, licence, source)
+- [X] T017 [US2] Rédiger `specs/003-personnalite-du-site/substitution.md` : test de substitution de l'accueil, au moins trois éléments qui ne sont ni le nom ni des coordonnées (photo du bourg, blason, signature clocher, texte local, matières de la palette) et la preuve qu'ils deviennent faux pour un autre village
 
 **Checkpoint**: US1 et US2 fonctionnent séparément ; l'accueil dit Ajat dès la photo
 
@@ -108,9 +108,9 @@ description: "Liste des tâches : personnalité du site de la mairie d'Ajat"
 
 **Independent Test**: sur captures, aucun zéro barré sur le téléphone, les horaires, les dates et le code postal (`quickstart.md` §4)
 
-- [ ] T025 [US4] Appliquer la classe `.chiffres` (Fraunces) au téléphone, aux heures, aux dates et au code postal dans `src/components/LaMairie.astro`, `ContactBlock.astro`, `Hours.astro`, `NewsCard.astro`, `src/pages/actualites/[...slug].astro` et `src/pages/comptes-rendus/index.astro` ; vérifier que Fraunces n'a pas de zéro barré
+- [X] T025 [US4] Appliquer la classe `.chiffres` (Fraunces) au téléphone, aux heures, aux dates et au code postal dans `src/components/LaMairie.astro`, `ContactBlock.astro`, `Hours.astro`, `NewsCard.astro`, `src/pages/actualites/[...slug].astro` et `src/pages/comptes-rendus/index.astro` ; vérifier que Fraunces n'a pas de zéro barré
 - [X] T026 [P] [US4] Créer `tests/chiffres.spec.ts` : les liens `tel:`, les éléments `time` et le code postal de l'accueil et de `/la-mairie/` ont la police calculée Fraunces (classe `.chiffres`)
-- [ ] T027 [US4] Capturer le téléphone, les horaires, une date et le code postal en clair et en sombre, vérifier qu'aucun zéro n'est barré (SC-008) ; si la limite de `research.md` R6 gêne (un zéro dans une phrase), la consigner et proposer une police de texte à héberger sans paquet npm
+- [X] T027 [US4] Capturer le téléphone, les horaires, une date et le code postal en clair et en sombre, vérifier qu'aucun zéro n'est barré (SC-008) ; si la limite de `research.md` R6 gêne (un zéro dans une phrase), la consigner et proposer une police de texte à héberger sans paquet npm
 
 **Checkpoint**: US1 à US4 fonctionnent
 
