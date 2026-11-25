@@ -1,0 +1,24 @@
+---
+import { getMairie } from '../lib/mairie';
+import { telephoneInternational } from '../lib/hours';
+
+const mairie = await getMairie();
+const { street, postalCode, city } = mairie.address;
+const adresseComplete = `${street}, ${postalCode} ${city}`;
+const carte = `https://www.openstreetmap.org/search?query=${encodeURIComponent(adresseComplete)}`;
+---
+<section class="contact" aria-labelledby="titre-contact">
+  <h2 id="titre-contact">Contacter la mairie</h2>
+  <p>
+    <a class="bouton" href={`tel:${telephoneInternational(mairie.phone)}`}>
+      <span class="sr-only">Appeler la mairie au </span>{mairie.phone}
+    </a>
+  </p>
+  <address>
+    {mairie.name}<br />
+    {street}<br />
+    {postalCode} {city}<br />
+    <a href={carte} rel="noopener">Voir l'adresse sur la carte<span class="sr-only"> (nouveau site, OpenStreetMap)</span></a>
+  </address>
+  <p><a href={`mailto:${mairie.email}`}>{mairie.email}</a></p>
+</section>

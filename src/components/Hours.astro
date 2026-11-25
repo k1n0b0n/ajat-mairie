@@ -1,0 +1,31 @@
+---
+import { getMairie } from '../lib/mairie';
+import { fermetures, formaterPeriode, lignesHoraires } from '../lib/hours';
+
+const mairie = await getMairie();
+const lignes = lignesHoraires(mairie.hours);
+const aVenir = fermetures(mairie.closures);
+---
+<section class="horaires" aria-labelledby="titre-horaires">
+  <h2 id="titre-horaires">Horaires d'ouverture</h2>
+  {aVenir.length > 0 && (
+    <div class="fermeture" role="note">
+      <p><strong>Fermeture exceptionnelle</strong></p>
+      <ul>
+        {aVenir.map((f) => <li>{f.reason}, {formaterPeriode(f)}.</li>)}
+      </ul>
+    </div>
+  )}
+  <table>
+    <caption class="sr-only">Horaires d'ouverture de la mairie, jour par jour</caption>
+    <tbody>
+      {lignes.map((l) => (
+        <tr>
+          <th scope="row">{l.jour.charAt(0).toUpperCase() + l.jour.slice(1)}</th>
+          <td class:list={{ ferme: l.ferme }}>{l.texte}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+  {mairie.hoursNote && <p>{mairie.hoursNote}</p>}
+</section>

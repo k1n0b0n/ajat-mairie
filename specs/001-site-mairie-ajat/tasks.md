@@ -69,12 +69,12 @@ description: "Liste des tâches : site web de la mairie d'Ajat"
 
 **Independent Test**: ouvrir l'accueil à 360 px ; horaires, téléphone et adresse visibles sans clic, numéro appelable, fermeture exceptionnelle signalée (`quickstart.md` §2)
 
-- [ ] T019 [P] [US1] Créer `src/content/donnees/mairie.yml` avec les valeurs fournies par la mairie, conformes à `data-model.md` `Mairie.name`, `Mairie.address`, `Mairie.phone`, `Mairie.email`, `Mairie.hours`, `Mairie.closures`, `Mairie.hoursNote`
-- [ ] T020 [US1] Déclarer la collection `mairie` (loader `file()`) dans `src/content.config.ts` selon `data-model.md` `Mairie.hours` (rejette `close` ≤ `open` et les plages qui se chevauchent, C9) et `Mairie.closures`
-- [ ] T021 [P] [US1] Créer `src/lib/hours.ts` : mise en forme des horaires, indication ouvert/fermé du jour, fermetures en cours ou à venir (dates passées ignorées), sans JavaScript côté client
-- [ ] T022 [P] [US1] Créer `src/components/ContactBlock.astro` : téléphone en lien `tel:`, adresse avec lien vers un service de cartographie (aucune iframe), courriel
-- [ ] T023 [US1] Créer `src/components/Hours.astro` utilisant `src/lib/hours.ts` et affichant une fermeture exceptionnelle de façon visible, jamais par la seule couleur
-- [ ] T024 [US1] Créer `src/pages/index.astro` : bloc contact et horaires en tête de page, avant tout autre contenu
+- [X] T019 [P] [US1] Créer `src/content/donnees/mairie.yml` avec les valeurs fournies par la mairie, conformes à `data-model.md` `Mairie.name`, `Mairie.address`, `Mairie.phone`, `Mairie.email`, `Mairie.hours`, `Mairie.closures`, `Mairie.hoursNote`
+- [X] T020 [US1] Déclarer la collection `mairie` (loader `file()`) dans `src/content.config.ts` selon `data-model.md` `Mairie.hours` (rejette `close` ≤ `open` et les plages qui se chevauchent, C9) et `Mairie.closures`
+- [X] T021 [P] [US1] Créer `src/lib/hours.ts` : mise en forme des horaires, indication ouvert/fermé du jour, fermetures en cours ou à venir (dates passées ignorées), sans JavaScript côté client
+- [X] T022 [P] [US1] Créer `src/components/ContactBlock.astro` : téléphone en lien `tel:`, adresse avec lien vers un service de cartographie (aucune iframe), courriel
+- [X] T023 [US1] Créer `src/components/Hours.astro` utilisant `src/lib/hours.ts` et affichant une fermeture exceptionnelle de façon visible, jamais par la seule couleur
+- [X] T024 [US1] Créer `src/pages/index.astro` : bloc contact et horaires en tête de page, avant tout autre contenu
 
 **Checkpoint**: US1 est autonome ; le site peut être déployé comme première version utile (MVP)
 

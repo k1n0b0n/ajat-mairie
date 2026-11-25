@@ -224,3 +224,58 @@ a:hover {
     font-size: 2.125rem;
   }
 }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+address {
+  font-style: normal;
+  margin-block: 1rem;
+}
+
+.contact .bouton {
+  font-size: 1.25rem;
+}
+
+.horaires table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.horaires th,
+.horaires td {
+  text-align: start;
+  padding: 0.6rem 0.5rem;
+  border-bottom: 1px solid var(--bordure);
+}
+
+.horaires th {
+  font-weight: 600;
+  width: 38%;
+}
+
+.horaires td.ferme {
+  color: var(--texte-doux);
+}
+
+.fermeture {
+  background: var(--alerte-fond);
+  border-inline-start: 6px solid var(--alerte-bord);
+  border-radius: var(--rayon);
+  padding: 0.5rem 1rem;
+  margin-block: 1rem;
+}
+
+.fermeture p,
+.fermeture ul {
+  margin-block: 0.25rem;
+}
