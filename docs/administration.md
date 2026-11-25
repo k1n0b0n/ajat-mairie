@@ -14,6 +14,7 @@ Voir `specs/001-site-mairie-ajat/` pour la conception.
 2. Dépôt `ajat-mairie-apercu` → Réglages → Deploy keys → ajouter `apercu_deploy.pub`, **avec accès en écriture**.
 3. Dépôt `ajat-mairie` → Réglages → Secrets and variables → Actions → nouveau secret `APERCU_DEPLOY_KEY` = contenu de `apercu_deploy` (clé privée).
 4. Supprimer les deux fichiers de clé locaux.
+5. Activer l'aperçu : variable de dépôt `APERCU_ACTIF` = `true` (`gh variable set APERCU_ACTIF --body true`). Tant qu'elle n'existe pas, `preview.yml` ne fait rien.
 
 ## 3. Autorisations GitHub Actions
 
@@ -40,3 +41,7 @@ Réglages → Rules → Rulesets → nouvelle règle sur `main` :
 ## 6. Vérifier avant la mise en service
 
 Dérouler `specs/001-site-mairie-ajat/quickstart.md` §3.
+
+## 7. Transfert à la mise en production
+
+Le dépôt est d'abord sous un compte personnel. Au lancement, le transférer à une organisation GitHub de la mairie (Réglages → Transfer). Après transfert : mettre à jour le lien de `docs/aide-redacteur.md`, réinstaller l'application Pages CMS, recréer le secret `APERCU_DEPLOY_KEY` et déplacer le dépôt d'aperçu, vérifier la protection de `main` et `CODEOWNERS`. L'adresse publique du site ne change pas (domaine personnalisé).

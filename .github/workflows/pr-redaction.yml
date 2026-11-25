@@ -20,7 +20,8 @@ jobs:
           GH_REPO: ${{ github.repository }}
         run: |
           existante=$(gh pr list --head redaction --base main --state open --json number --jq '.[0].number')
-          if [ -z "$existante" ]; then
+          avance=$(gh api "repos/$GH_REPO/compare/main...redaction" --jq .ahead_by)
+          if [ -z "$existante" ] && [ "$avance" -gt 0 ]; then
             gh pr create --head redaction --base main \
               --title "Contenu à relire" \
               --body "Modifications de contenu enregistrées depuis Pages CMS. Ouvrez l'aperçu (commentaire ci-dessous), puis approuvez et fusionnez, ou demandez une modification. Guide : docs/aide-relecteur.md"

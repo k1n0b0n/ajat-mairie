@@ -19,6 +19,8 @@ env:
 
 jobs:
   apercu:
+    # Désactivé tant que le dépôt d'aperçu n'existe pas : définir la variable de dépôt APERCU_ACTIF=true (docs/administration.md).
+    if: vars.APERCU_ACTIF == 'true'
     runs-on: ubuntu-latest
     env:
       PREVIEW: "1"
