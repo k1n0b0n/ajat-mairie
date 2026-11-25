@@ -59,6 +59,10 @@ Test `tests/page-budget.spec.ts` (constitution, principe IX) : accueil 120 Ko au
 - **Polices** : 52 Ko par première visite ; des polices système seules les supprimeraient, au prix de l'identité visuelle.
 - **Photo d'accueil** : premier poste de poids sur ordinateur (≈ 85 Ko).
 
-## À mesurer
+## EcoIndex
 
-- Note **EcoIndex** de l'accueil et d'une page de texte, une fois le site accessible publiquement (objectif A ou B) : à consigner ici.
+| Date | Page | Score | Note |
+|---|---|---|---|
+| 2026-11-25 | Accueil (page non précisée à la saisie, à confirmer) | 89 / 100 | A (échelle publique d'EcoIndex : A au-dessus de 80) |
+
+À compléter : une page de texte (par exemple `/actualites/`), puis refaire la mesure à chaque changement significatif.

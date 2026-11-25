@@ -17,7 +17,7 @@ Exécutée le 2026-11-25 sur la version locale (commit de la phase 6). Elle sera
 | SC-009 texte lisible en moins de 3 s en connexion lente | ✅ | Lighthouse mobile (150 ms de latence, 1,6 Mbit/s) : FCP maximal 755 ms, CLS 0 |
 | SC-010 poids ≤ 120 Ko (accueil) et 100 Ko (page de texte) | ✅ | `tests/page-budget.spec.ts` : 72 Ko et 58 à 80 Ko |
 | SC-011 au plus 10 requêtes et 3 polices | ✅ | même test : 6 à 7 requêtes, 3 fichiers de polices |
-| SC-012 EcoIndex A ou B | ⏳ | à mesurer sur le site public (T043) |
+| SC-012 EcoIndex A ou B | ◐ | 89/100, note A, relevé le 2026-11-25 sur l'accueil (à confirmer) ; reste une page de texte (T043) |
 
 ## Parcours du quickstart
 
