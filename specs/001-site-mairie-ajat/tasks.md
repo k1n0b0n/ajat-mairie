@@ -31,10 +31,10 @@ description: "Liste des tâches : site web de la mairie d'Ajat"
 
 **Purpose**: initialisation du projet et de la chaîne d'outils
 
-- [ ] T001 Initialiser le projet Astro en `output: 'static'` à la racine : `package.json`, `astro.config.mjs` (avec `@astrojs/sitemap`), `tsconfig.json` en mode strict, `.nvmrc` (Node LTS) ; épingler les versions et committer `package-lock.json`
-- [ ] T002 [P] Créer `.gitignore` (`node_modules`, `dist`, `.astro`, `.lighthouseci`, `test-results`) et `public/robots.txt` (autoriser tout, référencer `sitemap-index.xml`)
-- [ ] T003 [P] Créer `.github/dependabot.yml` : npm et GitHub Actions, mensuel, mises à jour groupées
-- [ ] T004 Installer en dépendances de développement `@playwright/test`, `@axe-core/playwright`, `@lhci/cli` et définir les scripts `build`, `preview`, `check`, `lhci` dans `package.json` (voir `quickstart.md` §1)
+- [X] T001 Initialiser le projet Astro en `output: 'static'` à la racine : `package.json`, `astro.config.mjs` (avec `@astrojs/sitemap`), `tsconfig.json` en mode strict, `.nvmrc` (Node LTS) ; épingler les versions et committer `package-lock.json`
+- [X] T002 [P] Créer `.gitignore` (`node_modules`, `dist`, `.astro`, `.lighthouseci`, `test-results`) et `public/robots.txt` (autoriser tout, référencer `sitemap-index.xml`)
+- [X] T003 [P] Créer `.github/dependabot.yml` : npm et GitHub Actions, mensuel, mises à jour groupées
+- [X] T004 Installer en dépendances de développement `@playwright/test`, `@axe-core/playwright`, `@lhci/cli` et définir les scripts `build`, `preview`, `check`, `lhci` dans `package.json` (voir `quickstart.md` §1)
 
 ---
 
