@@ -114,9 +114,43 @@ Justification : un site de commune doit rester léger pour les habitants à faib
 appareils anciens et pour l'environnement, sans coût d'exploitation supplémentaire. Les budgets
 sont mesurables, donc vérifiables en continu.
 
+### X. Identité propre, pas de gabarit
+
+Chaque page MUST appartenir à Ajat et à aucune autre commune : elle s'appuie sur ce qui existe ici
+(pierre et chaux du Périgord, blason, photos et textes du village) et non sur une présentation de
+gabarit qui conviendrait à n'importe quelle mairie.
+
+- **Test de substitution** : si l'on remplace « Ajat » par le nom d'une autre commune, la page MUST
+  cesser de convenir. Chaque type de page MUST porter au moins un élément propre à Ajat (blason,
+  photo ou texte local, matières de la palette).
+- **Interdits**, contrôlés à chaque revue :
+  1. Les grilles ou rangées d'au moins trois blocs de même forme et de même structure (icône, titre,
+     texte) servant de composition principale. Une liste de contenus réels (actualités, démarches,
+     comptes rendus) reste admise si ses entrées se distinguent par leur contenu, pas par un gabarit.
+  2. Les liens répétés : une même destination MUST n'apparaître qu'une fois dans le contenu
+     principal d'une page (l'en-tête, la navigation et le pied de page ne sont pas comptés).
+  3. Les dégradés : aucun dégradé CSS (`linear-gradient`, `radial-gradient`, `conic-gradient`) ni
+     image de dégradé en décor.
+  4. Les icônes génériques en décoration : une icône MUST être fonctionnelle (accompagner un libellé
+     pour signaler une action ou un état) ; les pictogrammes d'usage courant (horloge, enveloppe,
+     maison…) posés comme décor sont interdits.
+  5. Le pastiche « vieux parchemin » : textures de papier ou de manuscrit, polices pseudo-anciennes,
+     bordures et ornements imitant l'ancien. L'ancienneté se montre par de vraies matières (pierre,
+     chaux) et de vraies images, jamais par imitation.
+- **Audit avant code** : toute refonte visuelle (nouvelle mise en page, nouveau composant, changement
+  de palette, de polices ou d'images) MUST d'abord faire l'objet d'un audit avec le skill `unslop` :
+  les signes de sa liste `references/signs.md` sont relevés page par page et consignés dans
+  `specs/<n>-…/audit-unslop.md` ; le plan cite les signes relevés et leur traitement ; aucun code
+  n'est écrit avant. Un audit qui ne relève aucun signe le dit expressément.
+- En cas de conflit, les principes I (accessibilité), III (performance) et IX (sobriété) l'emportent
+  sur toute recommandation de l'audit.
+
+Justification : un site de commune rurale qui ressemble à tous les autres perd la confiance des
+habitants et ne dit rien du lieu ; l'identité vient de ce qui est propre à Ajat, pas d'un modèle.
+
 ## Contraintes techniques et de conformité
 
-- Les principes I à IX s'appliquent à toute fonctionnalité, tout gabarit et tout contenu.
+- Les principes I à X s'appliquent à toute fonctionnalité, tout gabarit et tout contenu.
 - Choix retenus (plan 001) : Astro en mode statique ; édition par Pages CMS (open source) sur une
   branche de rédaction protégée ; hébergement GitHub Pages, hors UE, documenté dans la politique
   de confidentialité. Tout changement de ces choix MUST être justifié au regard des principes ci-dessus.
@@ -134,6 +168,10 @@ sont mesurables, donc vérifiables en continu.
   vers un domaine tiers.
 - Chaque spécification et chaque plan MUST contenir une vérification explicite de conformité à
   cette constitution (« Constitution Check »).
+- Toute refonte visuelle MUST être précédée de l'audit `unslop` du principe X ; un plan visuel sans
+  `audit-unslop.md` est refusé en revue. Les interdits mesurables (dégradés, destinations répétées
+  dans le contenu principal) MUST être contrôlés automatiquement dès la spécification qui met le
+  site en conformité (disposition transitoire de la gouvernance).
 - Toute complexité supplémentaire (dépendance, script, service) MUST être justifiée par écrit.
 
 ## Governance
@@ -147,7 +185,11 @@ Cette constitution prévaut sur toute autre pratique du projet. En cas de confli
   PATCH pour une clarification ou une correction de forme.
 - **Conformité** : chaque revue de changement MUST vérifier le respect des principes ; une
   dérogation n'est possible qu'en amendant la constitution, jamais au cas par cas.
+- **Disposition transitoire (principe X, adopté le 2026-11-26)** : les pages existantes à cette date ne
+  sont pas retirées ; elles MUST être mises en conformité par la première spécification d'identité
+  qui suit, audit `unslop` d'abord. Aucune nouvelle page ni aucun nouveau composant ne MUST
+  contrevenir au principe X.
 - **Revue périodique** : la constitution, la déclaration d'accessibilité et la déclaration
   d'écoconception sont relues au moins une fois par an.
 
-**Version**: 1.1.0 | **Ratified**: 2026-11-25 | **Last Amended**: 2026-11-25
+**Version**: 1.2.0 | **Ratified**: 2026-11-25 | **Last Amended**: 2026-11-26
