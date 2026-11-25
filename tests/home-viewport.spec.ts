@@ -5,6 +5,8 @@ test.use({ viewport: { width: 360, height: 640 } });
 
 test('accueil : visuel et accès rapides visibles sans défilement (360 × 640)', async ({ page }) => {
   await page.goto('/');
+  // Mesurer avec les vraies polices : les polices de repli (Linux) sont plus larges et allongent le texte
+  await page.evaluate(() => document.fonts.ready);
   const tuiles = page.getByRole('navigation', { name: 'Accès rapides' }).getByRole('link');
   await expect(tuiles).toHaveCount(3);
   for (const tuile of await tuiles.all()) {
