@@ -279,3 +279,19 @@ address {
 .fermeture ul {
   margin-block: 0.25rem;
 }
+
+.actualite {
+  border-bottom: 1px solid var(--bordure);
+  padding-block: 0.5rem 1rem;
+}
+
+.actualite h2,
+.actualite h3 {
+  margin-block: 0.5rem 0.25rem;
+}
+
+.date {
+  color: var(--texte-doux);
+  margin-block: 0 0.5rem;
+  font-size: 0.95rem;
+}

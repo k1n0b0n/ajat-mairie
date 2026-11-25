@@ -86,12 +86,12 @@ description: "Liste des tâches : site web de la mairie d'Ajat"
 
 **Independent Test**: avec trois actualités publiées et une en brouillon, la liste est décroissante, chaque actualité s'ouvre, le brouillon est absent
 
-- [ ] T025 [US2] Déclarer la collection `actualites` dans `src/content.config.ts` selon `data-model.md` `Actualité.summary` et `Actualité.cover` (`alt` obligatoire si `image` présent, C3)
-- [ ] T026 [P] [US2] Créer `src/content/actualites/ouverture-du-nouveau-site.md` (première actualité réelle, `draft: false`)
-- [ ] T027 [P] [US2] Créer `src/components/NewsCard.astro` : titre, date, résumé
-- [ ] T028 [US2] Créer `src/pages/actualites/index.astro` : tri décroissant via `src/lib/published.ts`, message explicite si la liste est vide
-- [ ] T029 [US2] Créer `src/pages/actualites/[...slug].astro` : texte complet, image de couverture avec son `alt`, date de publication
-- [ ] T030 [US2] Ajouter à `src/pages/index.astro` les trois dernières actualités, après le bloc contact
+- [X] T025 [US2] Déclarer la collection `actualites` dans `src/content.config.ts` selon `data-model.md` `Actualité.summary` et `Actualité.cover` (`alt` obligatoire si `image` présent, C3)
+- [X] T026 [P] [US2] Créer `src/content/actualites/ouverture-du-nouveau-site.md` (première actualité réelle, `draft: false`)
+- [X] T027 [P] [US2] Créer `src/components/NewsCard.astro` : titre, date, résumé
+- [X] T028 [US2] Créer `src/pages/actualites/index.astro` : tri décroissant via `src/lib/published.ts`, message explicite si la liste est vide
+- [X] T029 [US2] Créer `src/pages/actualites/[...slug].astro` : texte complet, image de couverture avec son `alt`, date de publication
+- [X] T030 [US2] Ajouter à `src/pages/index.astro` les trois dernières actualités, après le bloc contact
 
 **Checkpoint**: US1 et US2 fonctionnent séparément
 

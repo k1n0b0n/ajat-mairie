@@ -1,0 +1,14 @@
+---
+import Base from '../../layouts/Base.astro';
+import NewsCard from '../../components/NewsCard.astro';
+import { parDateDecroissante } from '../../lib/dates';
+import { getPublies } from '../../lib/published';
+
+const actualites = (await getPublies('actualites')).sort(parDateDecroissante);
+---
+<Base titre="Actualités" description="Les actualités de la commune d'Ajat.">
+  <h1>Actualités</h1>
+  {actualites.length === 0
+    ? <p>Aucune actualité pour le moment.</p>
+    : actualites.map((a) => <NewsCard actualite={a} />)}
+</Base>

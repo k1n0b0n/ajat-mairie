@@ -2,9 +2,22 @@
 import Base from '../layouts/Base.astro';
 import ContactBlock from '../components/ContactBlock.astro';
 import Hours from '../components/Hours.astro';
+import NewsCard from '../components/NewsCard.astro';
+import { parDateDecroissante } from '../lib/dates';
+import { getPublies } from '../lib/published';
+import { url } from '../lib/url';
+
+const dernieres = (await getPublies('actualites')).sort(parDateDecroissante).slice(0, 3);
 ---
 <Base titre="Mairie d'Ajat">
   <h1>Mairie d'Ajat</h1>
   <ContactBlock />
   <Hours />
+  <section aria-labelledby="titre-actualites">
+    <h2 id="titre-actualites">Dernières actualités</h2>
+    {dernieres.length === 0
+      ? <p>Aucune actualité pour le moment.</p>
+      : dernieres.map((a) => <NewsCard actualite={a} niveau={3} />)}
+    <p><a href={url('/actualites/')}>Toutes les actualités</a></p>
+  </section>
 </Base>

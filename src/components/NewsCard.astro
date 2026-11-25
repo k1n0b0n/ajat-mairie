@@ -1,0 +1,19 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { dateDe, dateIso, formaterDate } from '../lib/dates';
+import { url } from '../lib/url';
+
+interface Props {
+  actualite: CollectionEntry<'actualites'>;
+  niveau?: 2 | 3;
+}
+
+const { actualite, niveau = 2 } = Astro.props;
+const Titre = `h${niveau}` as 'h2' | 'h3';
+const date = dateDe(actualite.data);
+---
+<article class="actualite">
+  <Titre><a href={url(`/actualites/${actualite.id}/`)}>{actualite.data.title}</a></Titre>
+  {date && <p class="date"><time datetime={dateIso(date)}>{formaterDate(date)}</time></p>}
+  <p>{actualite.data.summary}</p>
+</article>

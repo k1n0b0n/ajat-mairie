@@ -1,8 +1,9 @@
 // Collections du site, ajoutées story par story (voir specs/001-site-mairie-ajat/tasks.md).
 // Schéma commun des contenus Markdown : src/lib/schema-commun.ts.
 import { defineCollection } from 'astro:content';
-import { file } from 'astro/loaders';
+import { file, glob } from 'astro/loaders';
 import { z } from 'astro/zod';
+import { schemaCommun } from './lib/schema-commun';
 
 const heure = z.string().regex(/^([01]\d|2[0-3]):[0-5]\d$/, 'Format attendu : HH:MM');
 const plage = z.object({ open: heure, close: heure });
@@ -58,4 +59,14 @@ const mairie = defineCollection({
   }),
 });
 
-export const collections = { mairie };
+// data-model.md : Actualité (summary ≤ 200 car. ; cover.alt obligatoire dès qu'une image est fournie, C3)
+const actualites = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: 'src/content/actualites' }),
+  schema: ({ image }) =>
+    schemaCommun.extend({
+      summary: z.string().min(1).max(200),
+      cover: z.object({ image: image(), alt: z.string().min(1) }).optional(),
+    }),
+});
+
+export const collections = { mairie, actualites };

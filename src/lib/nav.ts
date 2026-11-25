@@ -4,7 +4,10 @@ export interface LienNav {
 }
 
 // Navigation principale : une entrée par rubrique, ajoutée au fil des user stories.
-export const navPrincipale: LienNav[] = [{ libelle: 'Accueil', href: '/' }];
+export const navPrincipale: LienNav[] = [
+  { libelle: 'Accueil', href: '/' },
+  { libelle: 'Actualités', href: '/actualites/' },
+];
 
 // Liens du pied de page : mentions légales, confidentialité, accessibilité, plan du site (phase 9).
 export const liensPied: LienNav[] = [];
