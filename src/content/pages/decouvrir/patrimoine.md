@@ -4,6 +4,15 @@ description: "Églises romanes, château, chapelle et pigeonnier : le patrimoine
 kind: decouverte
 order: 2
 draft: false
+cover:
+  image: chateau-ajat.jpg
+  alt: "Le château d'Ajat vu de près : tours en pierre, toit d'ardoise et fenêtres à meneaux"
+  credit:
+    author: GuillaumeG
+    license: CC BY-SA 3.0
+    licenseUrl: https://creativecommons.org/licenses/by-sa/3.0/deed.fr
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_d%27Ajat.jpg
+    modified: true
 ---
 Le patrimoine d'Ajat est surtout religieux, avec deux églises romanes protégées au titre des monuments historiques.
 

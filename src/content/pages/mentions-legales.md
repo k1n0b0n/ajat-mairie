@@ -29,6 +29,7 @@ Ce site ne dépose aucun cookie et ne collecte aucune donnée personnelle. Pour 
 ## Crédits
 
 - **Photo de la page d'accueil** : « Ajat bourg » ([fichier d'origine](https://commons.wikimedia.org/wiki/File:Ajat_bourg.JPG)), Père Igor, licence [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.fr). Image recadrée et compressée.
+- **Photo du château (page « Le patrimoine d'Ajat »)** : « Château d'Ajat » ([fichier d'origine](https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_d%27Ajat.jpg)), GuillaumeG, licence [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.fr). Image recadrée et compressée.
 - **Blason** : « Blason ville fr Ajat (Dordogne) » ([fichier d'origine](https://commons.wikimedia.org/wiki/File:Blason_ville_fr_Ajat_(Dordogne).svg)), Henry Salomé, licence [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.fr) ou GFDL 1.2 ou ultérieure.
 - **Polices** : Fraunces (Undercase Type) et Atkinson Hyperlegible (Braille Institute), sous licence [SIL Open Font License 1.1](https://openfontlicense.org/), hébergées sur ce site.
 

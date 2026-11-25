@@ -1,0 +1,21 @@
+---
+interface Props {
+  credit?: {
+    author?: string | undefined;
+    license?: string | undefined;
+    licenseUrl?: string | undefined;
+    sourceUrl?: string | undefined;
+    modified: boolean;
+  } | undefined;
+}
+
+const { credit } = Astro.props;
+---
+{credit && (
+  <figcaption class="credit-photo">
+    Photo{credit.author && <> : {credit.author}</>}
+    {credit.license && <>, <a href={credit.licenseUrl} rel="noopener">{credit.license}</a></>}
+    {credit.modified && <>, recadrée et compressée</>}
+    {credit.sourceUrl && <> · <a href={credit.sourceUrl} rel="noopener">Source</a></>}
+  </figcaption>
+)}

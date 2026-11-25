@@ -1,6 +1,7 @@
 ---
 import { Picture } from 'astro:assets';
 import { getEntry } from 'astro:content';
+import CreditPhoto from './CreditPhoto.astro';
 import { resoudreImage } from '../lib/images';
 
 // Visuel d'accueil : aucun texte n'est posé sur la photo (le contraste ne dépend donc pas de l'image).
@@ -13,6 +14,7 @@ const credit = visuel?.credit;
     <Picture
       src={resoudreImage(visuel.image)}
       alt={visuel.alt}
+      width={1200}
       formats={['avif', 'webp']}
       fallbackFormat="webp"
       widths={[480, 768, 1200, 1600]}
@@ -23,12 +25,5 @@ const credit = visuel?.credit;
       decoding="async"
     />
   )}
-  {credit && (
-    <figcaption class="credit-photo">
-      Photo{credit.author && <> : {credit.author}</>}
-      {credit.license && <>, <a href={credit.licenseUrl} rel="noopener">{credit.license}</a></>}
-      {credit.modified && <>, recadrée et compressée</>}
-      {credit.sourceUrl && <> · <a href={credit.sourceUrl} rel="noopener">Source</a></>}
-    </figcaption>
-  )}
+  <CreditPhoto credit={credit} />
 </figure>

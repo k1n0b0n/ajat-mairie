@@ -334,6 +334,23 @@ a:hover {
   color: var(--texte-doux);
 }
 
+.pied-marque {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pied-marque img {
+  width: auto;
+  height: 1.875rem;
+}
+
+.pied-marque p {
+  margin: 0;
+  font-family: var(--police-titre);
+  font-weight: 600;
+}
+
 .pied ul {
   display: flex;
   flex-wrap: wrap;
@@ -426,8 +443,11 @@ address {
 }
 
 .actualite {
-  border-bottom: 1px solid var(--separateur);
-  padding-block: 0.5rem 1rem;
+  margin-block: var(--espace-s);
+  padding: 0.5rem var(--espace) 1rem;
+  border: 1px solid var(--separateur);
+  border-radius: var(--rayon);
+  background: var(--fond-doux);
 }
 
 .actualite h2,
@@ -450,8 +470,11 @@ address {
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
-  padding-block: 0.75rem;
-  border-bottom: 1px solid var(--separateur);
+  margin-block: var(--espace-s);
+  padding: 0.75rem var(--espace);
+  border: 1px solid var(--separateur);
+  border-radius: var(--rayon);
+  background: var(--fond-doux);
 }
 
 .liste-documents a {
@@ -551,4 +574,40 @@ address {
   .hero-visuel img {
     forced-color-adjust: none;
   }
+}
+
+/* Filet ocre sous les titres de page : repère de l'identité, purement décoratif */
+main h1::after {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 0.25rem;
+  margin-top: 0.5rem;
+  border-radius: 0.125rem;
+  background: var(--ocre-deco);
+}
+
+/* Photo d'illustration d'une page de contenu */
+.illustration {
+  margin: var(--espace) 0;
+}
+
+.illustration picture,
+.illustration img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--rayon) var(--rayon) 0 0;
+}
+
+.illustration .credit-photo {
+  border: 1px solid var(--separateur);
+  border-top: 0;
+  border-radius: 0 0 var(--rayon) var(--rayon);
+  background: var(--fond-doux);
+}
+
+.tarifs thead th {
+  background: var(--fond-doux);
+  font-weight: 700;
 }

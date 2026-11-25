@@ -338,6 +338,43 @@ content:
       - name: order
         label: Ordre d'affichage (1 = en premier)
         type: number
+      - name: cover
+        label: Photo de la page (facultative)
+        type: object
+        fields:
+          - name: image
+            label: Photo
+            type: image
+            options:
+              media: couvertures
+              extensions: [jpg, jpeg, png, webp]
+              rename: safe
+          - name: alt
+            label: Description de la photo
+            type: text
+            description: Dites ce que montre la photo, en une phrase (10 à 160 caractères). Obligatoire si vous mettez une photo.
+            options:
+              maxlength: 160
+          - name: credit
+            label: Crédit de la photo (facultatif pour une photo de la mairie)
+            type: object
+            fields:
+              - name: author
+                label: Auteur
+                type: string
+              - name: license
+                label: Licence (par exemple « CC BY-SA 4.0 »)
+                type: string
+              - name: licenseUrl
+                label: Adresse de la licence (commence par https://)
+                type: string
+              - name: sourceUrl
+                label: Adresse de la page d'origine de la photo
+                type: string
+              - name: modified
+                label: La photo a été recadrée ou compressée
+                type: boolean
+                default: true
       - name: draft
         label: Brouillon (ne pas publier)
         type: boolean

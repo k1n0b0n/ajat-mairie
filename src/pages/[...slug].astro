@@ -2,6 +2,7 @@
 import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import ContactBlock from '../components/ContactBlock.astro';
+import Illustration from '../components/Illustration.astro';
 import { getPublies } from '../lib/published';
 
 // Pages de la collection « pages » (découverte du village, mentions légales, etc.).
@@ -16,6 +17,7 @@ const { Content } = await render(page);
 <Base titre={page.data.title} description={page.data.description}>
   <h1>{page.data.title}</h1>
   {page.data.description && <p class="chapo">{page.data.description}</p>}
+  {page.data.cover && <Illustration image={page.data.cover.image} alt={page.data.cover.alt} credit={page.data.cover.credit} />}
   <Content />
   {['legal', 'confidentialite', 'accessibilite'].includes(page.data.kind) && <ContactBlock />}
 </Base>

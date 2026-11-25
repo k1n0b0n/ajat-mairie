@@ -1,0 +1,29 @@
+---
+import { Picture } from 'astro:assets';
+import CreditPhoto from './CreditPhoto.astro';
+import { resoudreImage } from '../lib/images';
+
+// Photo d'illustration d'une page de contenu : chargée à la demande, avec son crédit.
+interface Props {
+  image: string;
+  alt: string;
+  credit?: Parameters<typeof CreditPhoto>[0]['credit'];
+}
+
+const { image, alt, credit } = Astro.props;
+---
+<figure class="illustration">
+  <Picture
+    src={resoudreImage(image)}
+    alt={alt}
+    width={720}
+    formats={['avif', 'webp']}
+    fallbackFormat="webp"
+    widths={[480, 720]}
+    sizes="(min-width: 48rem) 46rem, 100vw"
+    quality={55}
+    loading="lazy"
+    decoding="async"
+  />
+  <CreditPhoto credit={credit} />
+</figure>

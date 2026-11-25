@@ -20,5 +20,6 @@ export const liensPied: LienNav[] = [
   { libelle: 'Mentions légales', href: '/mentions-legales/' },
   { libelle: 'Politique de confidentialité', href: '/confidentialite/' },
   { libelle: 'Accessibilité', href: '/accessibilite/' },
+  { libelle: 'Crédits', href: '/mentions-legales/#crédits' },
   { libelle: 'Plan du site', href: '/plan-du-site/' },
 ];

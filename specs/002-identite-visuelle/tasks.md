@@ -99,11 +99,11 @@ description: "Liste des tâches : identité visuelle du site de la mairie d'Ajat
 
 **Independent Test**: comparer côte à côte toutes les pages types (`quickstart.md` §4)
 
-- [ ] T026 [US3] Mettre en forme dans `src/styles/global.css` les composants récurrents selon `contracts/design-tokens.md` : boutons, liens, tableaux d'horaires et de tarifs, listes de documents, cartes d'actualité, encadré d'alerte (libellé « Fermeture exceptionnelle » en gras + bord épais), page 404 et plan du site
-- [ ] T027 [US3] Mettre à jour `src/components/Footer.astro` : blason, liens légaux, lien « Crédits » vers la section de `/mentions-legales/`
-- [ ] T028 [US3] Ajouter un `cover` facultatif (image, description et crédit) à la collection `pages` de `src/content.config.ts`, l'afficher dans `src/pages/[...slug].astro` avec `<Picture>`, et documenter `Page.cover` dans `specs/002-identite-visuelle/data-model.md`
-- [ ] T029 [US3] Ajouter la photo du château (`src/assets/images/chateau-ajat.jpg`, GuillaumeG, CC BY-SA 3.0, recadrée et compressée) comme `cover` de `src/content/pages/decouvrir/patrimoine.md`, et la citer dans la section « Crédits » de `src/content/pages/mentions-legales.md`
-- [ ] T030 [US3] Valider US3 (`quickstart.md` §4) : captures de toutes les pages types, comparaison, ajout d'une fermeture exceptionnelle de test (libellé + bord), correction des écarts
+- [X] T026 [US3] Mettre en forme dans `src/styles/global.css` les composants récurrents selon `contracts/design-tokens.md` : boutons, liens, tableaux d'horaires et de tarifs, listes de documents, cartes d'actualité, encadré d'alerte (libellé « Fermeture exceptionnelle » en gras + bord épais), page 404 et plan du site
+- [X] T027 [US3] Mettre à jour `src/components/Footer.astro` : blason, liens légaux, lien « Crédits » vers la section de `/mentions-legales/`
+- [X] T028 [US3] Ajouter un `cover` facultatif (image, description et crédit) à la collection `pages` de `src/content.config.ts`, l'afficher dans `src/pages/[...slug].astro` avec `<Picture>`, et documenter `Page.cover` dans `specs/002-identite-visuelle/data-model.md`
+- [X] T029 [US3] Ajouter la photo du château (`src/assets/images/chateau-ajat.jpg`, GuillaumeG, CC BY-SA 3.0, recadrée et compressée) comme `cover` de `src/content/pages/decouvrir/patrimoine.md`, et la citer dans la section « Crédits » de `src/content/pages/mentions-legales.md`
+- [X] T030 [US3] Valider US3 (`quickstart.md` §4) : captures de toutes les pages types, comparaison, ajout d'une fermeture exceptionnelle de test (libellé + bord), correction des écarts
 
 **Checkpoint**: US1 à US3 fonctionnent
 

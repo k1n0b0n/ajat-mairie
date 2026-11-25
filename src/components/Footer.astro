@@ -1,10 +1,14 @@
 ---
+import blason from '../assets/blason-ajat.svg';
 import { liensPied } from '../lib/nav';
 import { url } from '../lib/url';
 ---
 <footer class="pied">
   <div class="conteneur">
-    <p>Mairie d'Ajat · Dordogne</p>
+    <div class="pied-marque">
+      <img src={blason.src} width="27" height="30" alt="" />
+      <p>Mairie d'Ajat · Dordogne</p>
+    </div>
     {liensPied.length > 0 && (
       <nav aria-label="Informations légales">
         <ul>
