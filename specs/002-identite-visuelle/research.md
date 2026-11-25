@@ -87,7 +87,29 @@ Les cinq fichiers de la catégorie « Ajat » ont été téléchargés et **rega
 
 - **Decision**: collection de données `visuels` (`src/content/donnees/visuels.yml`) : image, description, crédit. Entrée « Visuel d'accueil » dans Pages CMS (envoi dans `src/assets/images/`). Le guide du rédacteur explique le remplacement en 4 gestes. Une photo de la mairie sans exigence de crédit passe par le même formulaire (crédit facultatif).
 
+## R11 — Écoconception (RGESN)
+
+- **Cadre**: le RGESN 2024 est publié par l'Arcep avec l'Arcom, l'ADEME, la DINUM, la CNIL et Inria : 78 critères en 9 catégories (stratégie, spécifications, architecture, UX/UI, contenus, frontend, backend, hébergement, algorithmie). Il n'est **pas une obligation légale** pour une commune de cette taille (la loi REEN impose une stratégie numérique responsable aux communes de plus de 50 000 habitants) : c'est un cadre de bonnes pratiques. Sources : [site MiNumEco](https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/), [présentation Arcep](https://www.arcep.fr/uploads/tx_gspublication/presentation_referentiel_general_ecoconception_des_services_numeriques_version_2024.pdf). **Seuls les critères lus sont cités** (1.1 à 4.8) ; les catégories contenus, frontend, backend et hébergement n'ont pas été relues dans le détail.
+- **Mesure de départ** (Playwright, compressé gzip comme GitHub Pages) :
+
+| Page | Requêtes | Téléphone 360 px | Ordinateur 1280 px |
+|---|---|---|---|
+| Accueil | 7 | 79 Ko | 230 Ko |
+| Page de texte (actualités, démarches, légales) | 6 | 58 Ko | 58 Ko |
+
+  Les polices (52 Ko) représentent 90 % du poids d'une page de texte ; HTML et CSS pèsent 3 à 5 Ko ; le site n'a aucun JavaScript.
+- **Decision**: budgets **120 Ko** (accueil) et **100 Ko** (page de texte) sur téléphone, **10 requêtes** au plus, trois fichiers de polices au plus (4.8 : deux polices et quatre variantes, ou environ 400 Ko). Aujourd'hui : trois fichiers, deux familles, 52 Ko.
+- **Decision**: **direction artistique du visuel** : sur ordinateur, servir une variante recadrée en 3:1 plutôt que l'image 16:9 entière (≈ 40 % d'octets en moins : 230 Ko vers moins de 150 Ko).
+- **Decision**: garder trois polices (identité, lisibilité basse vision). Alternative écartée : polices système seules (−52 Ko, mais pas d'identité) ; elle reste une option si un budget plus strict est voulu.
+- **Déjà conforme**: aucun contenu tiers ni traceur (1.6, 4.4), aucune animation ni vidéo automatique (4.1), aucun défilement infini (4.2), composants natifs, par exemple le menu `popover` sans JavaScript (4.5), responsive (2.5), HTTPS (3.3), code ouvert (1.8), thème sombre automatique (économie sur écrans OLED).
+- **Limites à déclarer**: GitHub Pages fixe la mise en cache (10 minutes) et la source d'énergie des serveurs ; aucun des deux n'est réglable. La déclaration le dit.
+- **Decision (CI)**: la reconstruction nocturne ne tourne que si un contenu change de statut dans les 24 dernières heures (actualité programmée, fermeture qui expire). Les contrôles de PR restent complets.
+- **Decision (gouvernance)**: tenir une **déclaration d'écoconception** (`docs/declaration-ecoconception.md`), modèle RGESN, révisée à chaque changement significatif (1.4).
+- **Rationale**: le site est déjà très sobre ; le gain restant est dans les polices, le visuel d'accueil sur grand écran et la CI.
+
 ## Décisions ouvertes (pour toi)
+
+- **Constitution** : ajouter un principe « Sobriété numérique » (budget de poids, écoconception), version 1.1.0 ? (R11)
 
 - **Blason** : l'utilise-t-on tel quel ou la mairie a-t-elle son propre logo ? (R4)
 - **Photo d'accueil** : `Ajat bourg.JPG` te convient-elle ? (R3)

@@ -114,6 +114,12 @@ Un habitant en zone rurale, avec une connexion lente, ouvre le site. Le visuel d
 - **FR-018**: Le visuel d'accueil MUST indiquer son auteur et sa licence lorsqu'elles l'exigent, dans un endroit accessible du site.
 - **FR-019**: Le site MUST conserver ses engagements existants : aucun cookie ni traceur, aucune ressource tierce, aucun JavaScript non justifié, et des scores Lighthouse supérieurs à 90.
 - **FR-020**: L'identité visuelle MUST s'appliquer à toutes les pages existantes sans en modifier le contenu ni l'organisation de l'information.
+- **FR-021** *(sobriété numérique, RGESN)*: Le site MUST respecter un budget de poids par page, mesuré sur téléphone et compressé comme sur l'hébergement : 120 Ko au plus pour l'accueil et 100 Ko au plus pour une page de texte, au premier chargement.
+- **FR-022**: Une page MUST nécessiter 10 requêtes au plus, et le site MUST charger au plus deux familles de polices et trois fichiers de polices, pour 400 Ko au plus.
+- **FR-023**: Le site MUST ne lancer aucune animation, vidéo ni son automatiquement, et ne MUST charger aucun contenu tiers.
+- **FR-024**: Chaque image MUST être adaptée à l'écran : sur grand écran, le visuel d'accueil MUST être recadré aux proportions affichées plutôt que d'envoyer l'image entière.
+- **FR-025**: Le thème sombre MUST suivre automatiquement la préférence du système (économie d'énergie sur les écrans qui s'y prêtent), sans interrupteur ni script.
+- **FR-026**: Une déclaration d'écoconception MUST être tenue à jour dans le dépôt : périmètre, critères du RGESN tenus ou non, limites connues, mesures de référence ; elle est révisée à chaque changement significatif.
 
 ### Key Entities *(include if feature involves data)*
 
@@ -135,9 +141,14 @@ Un habitant en zone rurale, avec une connexion lente, ouvre le site. Le visuel d
 - **SC-007**: Aucune page n'a de défilement horizontal à 320 px de large ni à un zoom de 200 %.
 - **SC-008**: Parmi au moins 5 habitants ou élus interrogés, au moins 4 décrivent le site comme « accueillant » ou « chaleureux » et en même temps « sérieux » ou « fiable ».
 - **SC-009**: Sur une connexion mobile lente simulée, le texte de l'accueil est lisible en moins de 3 secondes, sans saut de mise en page à l'arrivée des polices ou du visuel.
+- **SC-010**: Le poids transféré au premier chargement reste inférieur ou égal à 120 Ko pour l'accueil et à 100 Ko pour une page de texte, sur téléphone.
+- **SC-011**: Aucune page ne dépasse 10 requêtes ni trois fichiers de polices.
+- **SC-012**: L'accueil et une page de texte obtiennent la note A ou B à l'outil public EcoIndex.
 
 ## Assumptions
 
+- Le RGESN (Référentiel général d'écoconception de services numériques, Arcep, version 2024) n'est pas une obligation légale pour une commune de cette taille ; il sert ici de cadre de bonnes pratiques, et les critères cités sont ceux qui s'appliquent à un site statique.
+- L'hébergeur (GitHub Pages) n'est pas maîtrisé : la durée de mise en cache et la source d'énergie des serveurs sont des limites à déclarer, pas des exigences du site.
 - La mairie fournit une photo du village pour l'accueil, ou une photo sous licence libre est retenue avec mention de l'auteur ; tant que ce n'est pas fait, l'accueil utilise un fond de la palette (FR-011).
 - Aucun logo ni blason n'est créé dans cette fonctionnalité ; si la mairie en fournit un, il pourra s'ajouter à l'en-tête sans changer le reste.
 - Les polices retenues ont une licence qui permet de les héberger sur le site, et seules les graisses et les caractères nécessaires au français sont fournis.

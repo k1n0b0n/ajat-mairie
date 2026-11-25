@@ -110,13 +110,18 @@ description: "Liste des tâches : identité visuelle du site de la mairie d'Ajat
 
 ## Phase 6: User Story 4 - Un site qui reste rapide malgré le visuel (Priority: P3)
 
-**Goal**: images ≤ 200 Ko, polices légères, aucun domaine tiers, Lighthouse > 90 (FR-017, FR-019, SC-004 à SC-006, SC-009)
+**Goal**: images ≤ 200 Ko, polices légères, aucun domaine tiers, Lighthouse > 90 et sobriété numérique du RGESN : budgets de poids et de requêtes, visuel recadré, déclaration d'écoconception (FR-017, FR-019, FR-021 à FR-026, SC-004 à SC-006, SC-009 à SC-012)
 
 **Independent Test**: Lighthouse mobile et chargement en connexion lente simulée (`quickstart.md` §5)
 
 - [ ] T031 [US4] Régler la qualité et les largeurs des variantes de `src/components/Hero.astro` et de la couverture de `src/pages/[...slug].astro` jusqu'à ce que `scripts/check-images.mjs` soit vert (toute image servie ≤ 200 Ko), en gardant la netteté
-- [ ] T032 [P] [US4] Créer `tests/home-weight.spec.ts` : la somme des octets transférés par l'accueil (polices et visuel compris) est inférieure à 1 Mo (SC-005) ; aucune requête hors domaine (SC-006)
+- [ ] T032 [P] [US4] Créer `tests/page-budget.spec.ts` selon `contracts/ecoconception.md` : à 360 px, l'accueil pèse 120 Ko au plus et une page de texte 100 Ko au plus (octets transférés compressés gzip, comme sur GitHub Pages), 10 requêtes au plus, 3 fichiers de polices au plus et 400 Ko de polices, aucun script, aucune requête hors domaine (SC-006, SC-010, SC-011)
 - [ ] T033 [US4] Exécuter `npm run lhci` sur toutes les pages types ; corriger jusqu'à > 90 sur les quatre catégories en mobile, LCP < 2,5 s (préchargement, tailles d'image, décalages de mise en page)
+- [ ] T039 [P] [US4] Créer `scripts/mesure-pages.mjs` (Playwright) : pour chaque page type, sur téléphone 360 px et ordinateur 1280 px, nombre de requêtes et poids compressé par type (HTML, CSS, polices, images), affiché en tableau
+- [ ] T040 [P] [US4] Rédiger `docs/declaration-ecoconception.md` (modèle de déclaration du RGESN) : périmètre, référent à désigner par la mairie, critères tenus ou non (`contracts/ecoconception.md`), limites (cache de GitHub Pages, source d'énergie de l'hébergeur), mesures de référence (accueil 79 Ko sur téléphone et 230 Ko sur ordinateur, page de texte 58 Ko, 6 à 7 requêtes), date, règle de révision à chaque changement significatif (RGESN 1.4)
+- [ ] T041 [US4] Dans `src/components/Hero.astro`, servir deux jeux de variantes avec `getImage()` et des `<source media>` : proportions 2:1 sous 48 rem (largeurs 480 et 768) et 3:1 recadrée dès 48 rem (largeurs 1200 et 1600), AVIF puis WebP ; viser l'accueil sur ordinateur à 150 Ko au plus (FR-024)
+- [ ] T042 [P] [US4] Créer `scripts/changement-du-jour.mjs` (liste les contenus dont la date de publication ou de fin de fermeture tombe dans les dernières 24 h) et adapter `.github/workflows/nightly.yml` : un job de contrôle décide, la reconstruction ne s'exécute que s'il y a un changement
+- [ ] T043 [US4] Mesurer l'accueil et une page de texte avec l'outil public EcoIndex, viser la note A ou B (SC-012), et consigner les résultats dans `docs/declaration-ecoconception.md`
 
 **Checkpoint**: toutes les user stories fonctionnent
 
@@ -127,7 +132,7 @@ description: "Liste des tâches : identité visuelle du site de la mairie d'Ajat
 **Purpose**: documentation, déploiement et validations humaines
 
 - [ ] T034 [P] Mettre à jour `docs/contenus-a-fournir.md` : confirmer le blason ou fournir un logo, fournir une photo d'accueil de la mairie (remplacement par Pages CMS), vérifier les crédits
-- [ ] T035 Exécuter `quickstart.md` en entier (§1 à §6) et cocher chaque critère SC-001 à SC-007 et SC-009
+- [ ] T035 Exécuter `quickstart.md` en entier (§1 à §6) et cocher chaque critère SC-001 à SC-007 et SC-009 à SC-012
 - [ ] T036 Pousser `main` et vérifier le site déployé sur `ajat.kobbo.fr` : accueil, menu téléphone, polices servies par le domaine, aucun domaine tiers, `noindex` toujours présent
 - [ ] T037 Faire confirmer par la mairie le statut officiel du blason (ou récupérer son logo) et, selon la réponse, adapter `src/assets/blason-ajat.svg` et la section « Crédits »
 - [ ] T038 Réaliser le test de perception de SC-008 auprès de 5 habitants ou élus et noter les résultats

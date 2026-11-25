@@ -33,7 +33,9 @@ Comparer côte à côte accueil, actualités, une actualité, comptes rendus, d�
 
 1. Lighthouse mobile sur `/` : > 90 partout, LCP < 2,5 s (SC-004).
 2. Onglet Réseau, connexion lente simulée : texte lisible avant l'image, polices servies par le site, **aucun domaine tiers** (SC-006, SC-009).
-3. Poids de l'accueil < 1 Mo, aucune image > 200 Ko (SC-005).
+3. Budgets (SC-010, SC-011) : accueil ≤ 120 Ko et page de texte ≤ 100 Ko sur téléphone, 10 requêtes au plus, 3 fichiers de polices ; aucune image > 200 Ko (`tests/page-budget.spec.ts`).
+4. `node scripts/mesure-pages.mjs` : tableau de poids par page, à comparer à `docs/declaration-ecoconception.md`.
+5. Note EcoIndex de l'accueil et d'une page de texte : A ou B (SC-012).
 
 ## 6. Remplacement de la photo (R10)
 
