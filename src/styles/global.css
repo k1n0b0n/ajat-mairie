@@ -264,6 +264,22 @@ a:hover {
   color: var(--ardoise-texte);
 }
 
+/* Signature d'Ajat : le clocher-pignon de Saint-Martin, une fois sous le titre de page */
+main h1::after {
+  content: '';
+  display: block;
+  width: 1.5rem;
+  height: 2rem;
+  margin-top: var(--e2);
+  background: var(--tuile);
+  -webkit-mask: url('../assets/signature-clocher.svg') no-repeat center / contain;
+  mask: url('../assets/signature-clocher.svg') no-repeat center / contain;
+}
+
+.plaque h1::after {
+  content: none;
+}
+
 .plaque h1 {
   margin: 0;
   font-size: var(--h1);
@@ -289,10 +305,22 @@ a:hover {
 }
 
 .credit-photo {
-  padding: var(--e1) var(--espace);
+  padding: var(--e1) var(--e4);
   color: var(--texte-doux);
   font-size: 0.8rem;
   line-height: 1.4;
+}
+
+.hero-visuel .credit-photo {
+  position: absolute;
+  inset-inline-end: 0;
+  bottom: 0;
+  width: max-content;
+  max-width: 60%;
+  padding: var(--e1) var(--e2);
+  background: var(--fond);
+  font-size: 0.75rem;
+  text-align: end;
 }
 
 @media (min-width: 48rem) {
@@ -691,6 +719,10 @@ main > .conteneur-large > * {
   }
 
   /* Les fonds en ardoise sont remplacés par la couleur système : le texte suit, avec un contour */
+  main h1::after {
+    content: none;
+  }
+
   .plaque,
   .affiche-titre {
     background: Canvas;
