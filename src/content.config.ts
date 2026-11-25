@@ -77,6 +77,21 @@ const comptesRendus = defineCollection({
   }),
 });
 
+// data-model.md : Page (kind ; une page légale ou la déclaration d'accessibilité ne peut pas rester en brouillon, C7)
+const pages = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: 'src/content/pages' }),
+  schema: schemaCommun
+    .extend({
+      slug: z.string().regex(/^[a-z0-9-]+(\/[a-z0-9-]+)*$/).optional(),
+      kind: z.enum(['decouverte', 'legal', 'confidentialite', 'accessibilite', 'libre']).default('libre'),
+      description: z.string().max(200).optional(),
+      order: z.number().int().optional(),
+    })
+    .refine((p) => !(['legal', 'accessibilite'].includes(p.kind) && p.draft), {
+      message: "Une page légale ou la déclaration d'accessibilité ne peut pas rester en brouillon.",
+    }),
+});
+
 const urlHttps = z.url().refine((u) => u.startsWith('https://'), { message: "L'adresse doit commencer par https://" });
 
 // data-model.md : Démarche (officialUrl en https, C2)
@@ -130,4 +145,5 @@ export const collections = {
   associations,
   'salle-des-fetes': salleDesFetes,
   liens,
+  pages,
 };

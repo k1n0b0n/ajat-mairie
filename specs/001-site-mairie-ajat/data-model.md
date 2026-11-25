@@ -40,7 +40,9 @@ Tout est fichier dans Git. Les champs « commun » valent pour les collections M
 
 ### Page (`src/content/pages/*.md`)
 
-- `slug`, `kind` : `decouverte` | `legal` | `confidentialite` | `accessibilite` | `libre`.
+- `slug` (facultatif), `kind` : `decouverte` | `legal` | `confidentialite` | `accessibilite` | `libre` (défaut `libre`),
+  `description` (≤ 200 car., facultatif), `order` (entier, facultatif). Les pages « Découvrir » sont celles du dossier
+  `src/content/pages/decouvrir/`.
 - Les pages `legal` et `accessibilite` ne peuvent pas être `draft: true` (échec CI).
 
 ## Données uniques (YAML)

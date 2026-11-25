@@ -163,11 +163,11 @@ description: "Liste des tâches : site web de la mairie d'Ajat"
 
 **Independent Test**: depuis l'accueil, atteindre la présentation en deux appuis au plus ; les photos ont une description
 
-- [ ] T056 [US6] Déclarer la collection `pages` dans `src/content.config.ts` selon `data-model.md` `Page.slug` et `Page.kind` (une page `legal` ou `accessibilite` ne peut pas être en brouillon, C7)
-- [ ] T057 [P] [US6] Créer `src/pages/[...slug].astro` qui affiche les pages de la collection `pages` avec le gabarit de lecture
+- [X] T056 [US6] Déclarer la collection `pages` dans `src/content.config.ts` selon `data-model.md` `Page.slug` et `Page.kind` (une page `legal` ou `accessibilite` ne peut pas être en brouillon, C7)
+- [X] T057 [P] [US6] Créer `src/pages/[...slug].astro` qui affiche les pages de la collection `pages` avec le gabarit de lecture
 - [ ] T058 [P] [US6] Ajouter le contenu fourni par la mairie : `src/content/pages/village.md`, `patrimoine.md`, `environs.md` (`Page.kind` = `decouverte`) et photos optimisées dans `src/assets/images/`, avec leur description alternative
-- [ ] T059 [US6] Ajouter la collection Pages à `.pages.yml` en masquant le type des pages légales
-- [ ] T060 [US6] Ajouter l'entrée « Découvrir Ajat » dans `src/components/Nav.astro`
+- [X] T059 [US6] Ajouter la collection Pages à `.pages.yml` en masquant le type des pages légales
+- [X] T060 [US6] Ajouter l'entrée « Découvrir Ajat » dans `src/components/Nav.astro`
 
 **Checkpoint**: toutes les user stories fonctionnent
 

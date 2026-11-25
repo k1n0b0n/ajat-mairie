@@ -311,6 +311,47 @@ content:
                 type: string
                 required: true
 
+  - name: decouvrir
+    label: Découvrir Ajat
+    type: collection
+    path: src/content/pages/decouvrir
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    subfolders: false
+    view:
+      primary: title
+      sort: order
+      order: asc
+    fields:
+      - name: title
+        label: Titre
+        type: string
+        required: true
+        options:
+          minlength: 3
+          maxlength: 120
+      - name: description
+        label: Résumé (une phrase)
+        type: text
+        options:
+          maxlength: 200
+      - name: order
+        label: Ordre d'affichage (1 = en premier)
+        type: number
+      - name: draft
+        label: Brouillon (ne pas publier)
+        type: boolean
+        default: true
+      - name: body
+        label: Texte
+        type: rich-text
+        options:
+          format: markdown
+          media: images-texte
+          path: public/images
+          extensions: [jpg, jpeg, png, webp]
+          rename: safe
+
   - name: mairie
     label: Horaires et contact de la mairie
     type: file

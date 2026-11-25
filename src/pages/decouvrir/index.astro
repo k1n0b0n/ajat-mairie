@@ -1,0 +1,25 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getPublies } from '../../lib/published';
+import { url } from '../../lib/url';
+
+const pages = (await getPublies('pages'))
+  .filter((p) => p.id.startsWith('decouvrir/'))
+  .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999) || a.data.title.localeCompare(b.data.title, 'fr'));
+---
+<Base titre="Découvrir Ajat" description="Le village d'Ajat, son patrimoine et ses environs, en Dordogne.">
+  <h1>Découvrir Ajat</h1>
+  <p>Ajat est un village du Périgord noir, en Dordogne. Découvrez son histoire, son patrimoine et ses environs.</p>
+  {pages.length === 0
+    ? <p>Cette rubrique sera bientôt publiée.</p>
+    : (
+      <ul class="liste-documents">
+        {pages.map((p) => (
+          <li>
+            <a href={url(`/${p.data.slug ?? p.id}/`)}>{p.data.title}</a>
+            {p.data.description && <span class="meta">{p.data.description}</span>}
+          </li>
+        ))}
+      </ul>
+    )}
+</Base>
