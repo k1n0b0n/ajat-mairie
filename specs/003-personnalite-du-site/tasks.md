@@ -139,7 +139,7 @@ description: "Liste des tâches : personnalité du site de la mairie d'Ajat"
 - [X] T033 Prendre des captures de l'accueil, d'une liste et d'un article (360 px et 1280 px, clair et sombre, menu ouvert), les relire et corriger les défauts
 - [X] T034 Refaire l'audit `unslop` (liste de signes de `references/signs.md`) de l'accueil, d'une liste et d'un article et l'ajouter à `specs/003-personnalite-du-site/audit-unslop.md` sous « Audit final » : aucun signe relevé (SC-002, FR-016) ; sinon corriger et refaire
 - [X] T035 Exécuter `quickstart.md` en entier et consigner les résultats dans `specs/003-personnalite-du-site/validation.md` (SC-001 à SC-011)
-- [ ] T036 Ouvrir la PR, vérifier le contrôle de la CI, fusionner, puis vérifier le site déployé sur `ajat.kobbo.fr` (accueil, `/la-mairie/`, plaque, phrase, chiffres)
+- [X] T036 Ouvrir la PR, vérifier le contrôle de la CI, fusionner, puis vérifier le site déployé sur `ajat.kobbo.fr` (accueil, `/la-mairie/`, plaque, phrase, chiffres)
 - [ ] T037 Test de perception auprès de 5 personnes : retrouver en moins de 3 secondes quand la mairie est ouverte, le téléphone et l'adresse (SC-004) ; noter les résultats dans `validation.md`
 
 ---

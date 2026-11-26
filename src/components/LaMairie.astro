@@ -15,7 +15,7 @@ const phrase = phraseHoraires(mairie.hours, mairie.closures, mairie.hoursNote);
   <div class="affiche-corps">
     <p class="affiche-horaires chiffres">{phrase}</p>
     <p>
-      <a class="bouton chiffres" href={`tel:${telephoneInternational(mairie.phone)}`}>
+      <a class="bouton numero" href={`tel:${telephoneInternational(mairie.phone)}`}>
         <span class="sr-only">Appeler la mairie au </span>{mairie.phone}
       </a>
     </p>

@@ -100,7 +100,9 @@ Fonction pure `phraseHoraires(hours, closures, note)` : regroupe les jours aux p
 
 ## R6. Chiffres sans zéro barré
 
-Classe `.chiffres` : Fraunces 600, `font-variant-numeric: lining-nums tabular-nums`, appliquée au téléphone, aux heures, aux dates et au code postal. Aucune dépendance : Fraunces est déjà préchargée. Contrôle : test Playwright sur la police calculée des éléments concernés et revue de captures. **Limite** : un « 0 » dans une phrase de texte courant (une année) reste en Atkinson ; si ce n'est pas acceptable, il faut une nouvelle police de texte (fichiers hébergés, sans paquet npm).
+Classe `.chiffres` : Fraunces 600, `font-variant-numeric: lining-nums tabular-nums`, appliquée au téléphone, aux heures, aux dates et au code postal. Aucune dépendance : Fraunces est déjà préchargée. Contrôle : test Playwright sur la police calculée des éléments concernés et revue de captures. **Retour d'usage (2026-11-26)** : le numéro de téléphone en Fraunces gras était peu lisible (chiffres serrés). Comparaison de trois rendus : police du système en 700, espacée, retenue (zéro ordinaire, aucun octet de police en plus) ; Atkinson 700 écartée (zéro barré). Classe `.numero`, jeton `--police-numero`. Les dates et la phrase d'horaires restent en Fraunces.
+
+**Limite** : un « 0 » dans une phrase de texte courant (une année) reste en Atkinson ; si ce n'est pas acceptable, il faut une nouvelle police de texte (fichiers hébergés, sans paquet npm).
 
 ## R7. Détail signature : le clocher de Saint-Martin
 

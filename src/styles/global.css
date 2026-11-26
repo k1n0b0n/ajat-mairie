@@ -65,6 +65,18 @@ img {
   height: auto;
 }
 
+/* Numéro de téléphone : police du système en gras, espacée (retour d'usage : Fraunces était peu lisible) */
+.numero {
+  font-family: var(--police-numero);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.bouton.numero {
+  font-size: 1.375rem;
+}
+
 /* Chiffres d'affichage (téléphone, heures, dates, code postal) : la voix des titres, sans zéro barré */
 .chiffres {
   font-family: var(--police-chiffres);
@@ -581,10 +593,6 @@ main > .conteneur-large > * {
 .affiche-horaires {
   font-size: 1.25rem;
   line-height: 1.4;
-}
-
-.affiche .bouton {
-  font-size: 1.25rem;
 }
 
 .a-la-une h2,
