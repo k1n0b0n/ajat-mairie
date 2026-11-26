@@ -55,6 +55,10 @@ Types : `feat`, `fix`, `docs`, `refactor`, `test`, `chore`. Un commit = un chang
 
 Une PR est relue sur : la conformité à la constitution, les contrôles verts, le rendu (joindre des captures pour tout changement visible, mobile et ordinateur) et l'absence de régression d'accessibilité ou de poids. Un relecteur ne valide pas sa propre PR. Tant que la commune n'a pas deux relecteurs, l'administrateur peut fusionner avec le contournement prévu : [`docs/administration.md`](docs/administration.md) §4.
 
+## Licence de vos contributions
+
+En contribuant, vous acceptez que votre code soit diffusé sous licence [MIT](LICENSE) et vos textes et contenus sous [CC BY-SA 4.0](LICENSE-CONTENU.md), le titulaire des droits étant « Commune d'Ajat et contributeurs ». N'ajoutez pas d'élément (photo, texte, police) dont vous ne maîtrisez pas la licence : créditez-le et indiquez sa licence, comme dans la page « Mentions légales ».
+
 ## Code de conduite
 
 Participer à ce projet implique de respecter le [code de conduite](CODE_OF_CONDUCT.md).

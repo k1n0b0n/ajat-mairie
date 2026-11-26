@@ -10,6 +10,7 @@
 [![Accessibilité](https://img.shields.io/badge/accessibilit%C3%A9-RGAA%20%C2%B7%20WCAG%20AA-2e3640)](docs/declaration-ecoconception.md)
 [![Écoconception](https://img.shields.io/badge/%C3%A9coconception-RGESN-2e3640)](docs/declaration-ecoconception.md)
 [![Lighthouse](https://img.shields.io/badge/Lighthouse-%3E%2090-2e3640?logo=lighthouse&logoColor=white)](#qualité-et-contrôles)
+[![Licence](https://img.shields.io/badge/licence-MIT%20%C2%B7%20CC%20BY--SA%204.0-2e3640)](#licences-et-crédits)
 [![Constitution](https://img.shields.io/badge/constitution-1.2.0-8b3a1f)](.specify/memory/constitution.md)
 
 </div>
@@ -227,9 +228,17 @@ Le dépôt est public : il ne contient **aucun secret ni donnée personnelle non
 
 ## Licences et crédits
 
-**Licence du code et du contenu propre au site : à définir par la commune.** Tant qu'aucune licence n'est publiée, les droits d'auteur sont réservés ; la mairie choisira une licence (code, textes) avant l'ouverture au public.
+**Titulaire des droits : Commune d'Ajat et contributeurs.**
 
-Éléments tiers, tous crédités dans la page « Mentions légales » du site :
+| Quoi | Licence |
+|---|---|
+| **Code** (composants, scripts, tests, styles, configuration) | [MIT](LICENSE) |
+| **Textes et contenus de la commune** | [CC BY-SA 4.0](LICENSE-CONTENU.md) : citer la source, partager les adaptations dans les mêmes conditions |
+| **Éléments tiers** (photos, blason, polices, textes adaptés de Wikipédia) | leur propre licence, ci-dessous |
+
+Le détail, les exceptions et la mention sur le blason et le nom de la commune sont dans [`LICENSE-CONTENU.md`](LICENSE-CONTENU.md).
+
+Éléments tiers, tous crédités dans la page « Mentions légales » du site (et tenant leur propre licence) :
 
 | Élément | Auteur | Licence |
 |---|---|---|

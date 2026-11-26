@@ -24,5 +24,6 @@
     "@lhci/cli": "0.16.1",
     "@playwright/test": "1.65.1",
     "yaml": "2.9.1"
-  }
+  },
+  "license": "MIT"
 }
