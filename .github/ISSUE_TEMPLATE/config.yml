@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Signaler une faille de sécurité
+    url: https://github.com/k1n0b0n/ajat-mairie/security/advisories/new
+    about: Ne publiez pas de faille dans un ticket : utilisez le signalement privé.

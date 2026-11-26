@@ -1,0 +1,38 @@
+name: Signaler une anomalie
+description: Un défaut d'affichage, d'accessibilité, de performance ou de fonctionnement du site.
+title: "[Anomalie] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: constat
+    attributes:
+      label: Ce que vous constatez
+      description: Décrivez le problème et ce que vous attendiez.
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Page concernée
+      placeholder: https://ajat.kobbo.fr/…
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Comment le reproduire
+      placeholder: "1. Ouvrir la page… 2. Appuyer sur… 3. Constater…"
+  - type: dropdown
+    id: appareil
+    attributes:
+      label: Appareil
+      options: [Téléphone, Tablette, Ordinateur]
+  - type: input
+    id: navigateur
+    attributes:
+      label: Navigateur et système
+      placeholder: Firefox 160 sur macOS, Safari sur iPhone…
+  - type: checkboxes
+    id: accessibilite
+    attributes:
+      label: Accessibilité
+      options:
+        - label: Je rencontre ce problème avec une aide technique (lecteur d'écran, zoom, clavier seul…)
