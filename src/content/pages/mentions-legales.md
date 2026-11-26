@@ -18,7 +18,7 @@ GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis
 
 ## Propriété intellectuelle
 
-Les textes et documents publiés par la mairie sont reproductibles à condition d'en citer la source, sauf mention contraire.
+Les textes et contenus rédigés par la commune d'Ajat et ses contributeurs sont diffusés sous licence [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.fr) : vous pouvez les copier et les adapter en citant la source (« Commune d'Ajat ») et en partageant vos adaptations dans les mêmes conditions. Le code source du site est publié sous licence MIT sur [GitHub](https://github.com/k1n0b0n/ajat-mairie). Les éléments crédités ci-dessous gardent leur propre licence.
 
 Les pages de la rubrique « Découvrir Ajat » sont adaptées de l'article « Ajat » de Wikipédia et sont diffusées sous licence [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.fr).
 

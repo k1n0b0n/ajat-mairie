@@ -11,6 +11,7 @@ Index de la documentation du site de la mairie d'Ajat. Le point d'entrée géné
 | [../CONTRIBUTING.md](../CONTRIBUTING.md) | Flux de contribution, règles, convention de commits |
 | [../.specify/memory/constitution.md](../.specify/memory/constitution.md) | Les dix principes non négociables |
 | [../specs/](../specs) | Spécifications, plans, contrats et tâches (001 à 003) |
+| [../LICENSE](../LICENSE), [../LICENSE-CONTENU.md](../LICENSE-CONTENU.md) | Licences du code (MIT) et du contenu (CC BY-SA 4.0) |
 
 ## Pour administrer
 

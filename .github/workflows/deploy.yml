@@ -9,6 +9,8 @@ on:
       - CONTRIBUTING.md
       - SECURITY.md
       - CODE_OF_CONDUCT.md
+      - LICENSE
+      - LICENSE-CONTENU.md
       - docs/**
       - specs/**
       - .specify/**
