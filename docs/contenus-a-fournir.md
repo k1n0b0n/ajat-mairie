@@ -20,7 +20,7 @@ Le site `ajat.fr` indiqué dans les annuaires n'existe plus : demander l'adresse
 3. **Salle des fêtes** : capacité, conditions de location, tarifs (habitants, extérieurs, associations, caution).
 4. **Découverte du village** : textes et photos (avec leur description) ; les faits de base (patrimoine, environs) sont repris de sources publiques et seront reformulés avec mention de la source (spec 001, T058).
 5. **Mentions légales et confidentialité** : confirmer le directeur de la publication (indiqué : le maire, Didier Clerjoux, d'après des annuaires publics) et indiquer s'il existe un délégué ou référent à la protection des données, à ajouter à la politique de confidentialité.
-6. **Piscine municipale** : la page « La piscine municipale » ne donne que les faits concordants des annuaires (juillet et août, du mardi au dimanche, fermée le lundi). À fournir : dates d'ouverture de la saison, horaires exacts (les sources varient : matin 10 h à 12 h ou 12 h 30, après-midi 15 h à 19 h 30), tarifs (2 € et 1 € ou 2,50 € et 1,50 € selon les sources), téléphone, conditions des cours de natation.
+6. **Piscine municipale** : horaires (10 h à 12 h) et tarifs (2 € et 1 €) fournis par Max ; la mairie confirme, ainsi que la tranche d'âge « enfant », les horaires d'après-midi s'il y en a, le téléphone et les cours de natation.
 7. **Démarches locales** (urbanisme, cimetière, etc.) : à ajouter par la mairie via l'éditeur ; cinq démarches nationales sont déjà présentes, avec lien vers leur fiche officielle.
 
 ## Identité visuelle (spec 002)
