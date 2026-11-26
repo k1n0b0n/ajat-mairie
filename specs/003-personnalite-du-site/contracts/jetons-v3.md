@@ -14,7 +14,7 @@ Remplace les jetons de couleur de [../../002-identite-visuelle/contracts/design-
 
 ## Chiffres
 
-`--police-chiffres` : `var(--police-titre)` ; classe `.chiffres` : `font-family: var(--police-chiffres)`, `font-weight: 600`, `font-variant-numeric: lining-nums tabular-nums`.
+`--police-chiffres` : `var(--police-numero)` (police du système ; Fraunces n'est plus utilisée pour les chiffres : `unicode-range` sans U+0030-0039 dans `src/styles/fonts.css`) ; classe `.chiffres` : `font-family: var(--police-chiffres)`, `font-weight: 600`, `font-variant-numeric: lining-nums tabular-nums`.
 
 ## Couples vérifiés par `scripts/check-contrast.mjs` (clair et sombre)
 
