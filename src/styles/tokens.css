@@ -19,9 +19,9 @@
   --separateur: #c9bb9a;
 
   /* Typographie */
-  --police-titre: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --police-titre: 'Fraunces', 'Chiffres', Georgia, 'Times New Roman', serif;
   --police-texte: 'Atkinson Hyperlegible', system-ui, 'Segoe UI', Roboto, sans-serif;
-  --police-chiffres: var(--police-titre);
+  --police-chiffres: var(--police-numero);
   /* Numéro de téléphone : police du système, très lisible, zéro ordinaire, aucun octet de police en plus */
   --police-numero: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --taille-base: 1.0625rem;
