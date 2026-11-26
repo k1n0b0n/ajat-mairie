@@ -19,10 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-Cette licence couvre le code source du dépôt (composants, scripts, tests, styles,
-configuration). Les textes et contenus publiés par la commune relèvent de
-LICENSE-CONTENU.md ; les éléments tiers (photos, blason, polices, textes adaptés de
-Wikipédia) gardent leur propre licence, indiquée dans LICENSE-CONTENU.md.
