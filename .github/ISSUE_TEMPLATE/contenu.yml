@@ -1,0 +1,32 @@
+name: Demander une modification de contenu
+description: Une information du site est fausse, périmée ou manquante (horaires, tarifs, contact, démarche…).
+title: "[Contenu] "
+labels: ["contenu"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Les agents et élus modifient le contenu directement depuis Pages CMS (voir le guide du rédacteur). Ce formulaire sert à **demander** une correction.
+        Merci de ne pas publier ici de données personnelles qui ne sont pas déjà publiques.
+  - type: input
+    id: page
+    attributes:
+      label: Page concernée
+      placeholder: https://ajat.kobbo.fr/…
+    validations:
+      required: true
+  - type: textarea
+    id: actuel
+    attributes:
+      label: Ce qui est écrit aujourd'hui
+  - type: textarea
+    id: souhaite
+    attributes:
+      label: Ce qui devrait être écrit
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source de l'information
+      description: Document, délibération, personne à contacter à la mairie.
