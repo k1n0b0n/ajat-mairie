@@ -22,6 +22,8 @@
   --police-titre: 'Fraunces', Georgia, 'Times New Roman', serif;
   --police-texte: 'Atkinson Hyperlegible', system-ui, 'Segoe UI', Roboto, sans-serif;
   --police-chiffres: var(--police-titre);
+  /* Numéro de téléphone : police du système, très lisible, zéro ordinaire, aucun octet de police en plus */
+  --police-numero: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --taille-base: 1.0625rem;
   --interligne: 1.6;
   --interligne-titre: 1.2;

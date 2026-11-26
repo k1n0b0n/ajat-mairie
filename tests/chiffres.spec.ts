@@ -5,10 +5,19 @@ const voixDesChiffres = /Fraunces/;
 
 test('accueil : téléphone, heures et code postal en Fraunces', async ({ page }) => {
   await page.goto('/');
-  for (const selecteur of ['a[href^="tel:"]', '.affiche-horaires', 'address .chiffres']) {
+  for (const selecteur of ['.affiche-horaires', 'address .chiffres']) {
     const premier = page.locator(selecteur).first();
     await expect(premier, `${selecteur} présent`).toBeVisible();
     expect(await premier.evaluate((el) => getComputedStyle(el).fontFamily), selecteur).toMatch(voixDesChiffres);
+  }
+});
+
+test('le numéro de téléphone est dans une police lisible, sans zéro barré', async ({ page }) => {
+  for (const chemin of ['/', '/la-mairie/']) {
+    await page.goto(chemin);
+    const famille = await page.locator('a[href^="tel:"]').first().evaluate((el) => getComputedStyle(el).fontFamily);
+    expect(famille, chemin).toMatch(/system-ui/);
+    expect(famille, chemin).not.toMatch(/Atkinson/);
   }
 });
 
