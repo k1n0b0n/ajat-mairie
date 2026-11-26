@@ -1,8 +1,7 @@
 ---
 title: "La piscine municipale"
 description: "La piscine en plein air d'Ajat est ouverte l'été, de juillet à août."
-kind: decouverte
-order: 4
+kind: libre
 draft: false
 ---
 Ajat dispose d'une piscine municipale en plein air, rue de la Piscine, dans le bourg. Elle ouvre pendant l'été.

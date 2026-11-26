@@ -389,6 +389,31 @@ content:
           extensions: [jpg, jpeg, png, webp]
           rename: safe
 
+  - name: piscine
+    label: Piscine municipale
+    type: file
+    path: src/content/pages/piscine.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Titre
+        type: string
+        required: true
+      - name: description
+        label: Résumé (une phrase)
+        type: text
+        options:
+          maxlength: 200
+      - name: draft
+        label: Brouillon (ne pas publier)
+        type: boolean
+        default: false
+      - name: body
+        label: Texte (saison, jours, horaires, tarifs)
+        type: rich-text
+        options:
+          format: markdown
+
   - name: texte-accueil
     label: Texte de l'accueil
     type: file

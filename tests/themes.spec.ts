@@ -25,7 +25,7 @@ for (const [nom, options] of [
       await expect(page.getByRole('button', { name: 'Menu' })).toBeVisible();
       await expect(page.locator('.affiche a[href^="tel:"]')).toBeVisible();
       await page.getByRole('button', { name: 'Menu' }).click();
-      await expect(page.getByRole('navigation', { name: 'Navigation principale' }).getByRole('link')).toHaveCount(7);
+      await expect(page.getByRole('navigation', { name: 'Navigation principale' }).getByRole('link')).toHaveCount(8);
     });
   });
 }

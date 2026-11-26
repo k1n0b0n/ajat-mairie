@@ -12,6 +12,7 @@ export const navPrincipale: LienNav[] = [
   { libelle: 'Démarches', href: '/demarches/' },
   { libelle: 'Associations', href: '/associations/' },
   { libelle: 'Salle des fêtes', href: '/salle-des-fetes/' },
+  { libelle: 'Piscine', href: '/piscine/' },
 ];
 
 // Liens du pied de page : mentions légales, confidentialité, accessibilité, plan du site.
