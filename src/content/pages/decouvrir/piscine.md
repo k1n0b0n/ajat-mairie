@@ -11,12 +11,12 @@ Ajat dispose d'une piscine municipale en plein air, rue de la Piscine, dans le b
 
 - **Saison** : juillet et août.
 - **Jours** : du mardi au dimanche. La piscine est fermée le lundi.
-- **Horaires** : de 10 h à 12 h.
+- **Horaires** : de 10 h à 12 h, puis de 15 h à 19 h 30.
 
 ## Tarifs
 
 - **Adulte** : 2 €
-- **Enfant** : 1 €
+- **Enfant, jusqu'à 12 ans** : 1 €
 
 Les horaires et les tarifs peuvent changer d'une année à l'autre. En cas de doute, renseignez-vous auprès de la mairie.
 
