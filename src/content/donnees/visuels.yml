@@ -1,5 +1,5 @@
-# Visuel d'accueil. Pour le remplacer : déposer la nouvelle image dans src/assets/images/
-# (ou passer par l'éditeur « Visuel d'accueil »), puis renseigner la description et le crédit.
+# Photos du site (accueil, mairie, salle des fêtes). Pour en remplacer une : déposer la nouvelle image dans src/assets/images/
+# (ou passer par l'éditeur « Photos du site »), puis renseigner la description et le crédit.
 accueil:
   image: accueil-bourg.jpg
   alt: "Le bourg d'Ajat sur sa colline, avec son église romane, entouré de bois et de prairies"
@@ -8,4 +8,22 @@ accueil:
     license: CC BY-SA 4.0
     licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
     sourceUrl: https://commons.wikimedia.org/wiki/File:Ajat_bourg.JPG
+    modified: true
+mairie:
+  image: mairie-ajat.jpg
+  alt: "La mairie d'Ajat : une maison en pierre claire, son escalier extérieur et ses volets verts, au bord de la route"
+  credit:
+    author: Père Igor
+    license: CC BY-SA 4.0
+    licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Ajat_mairie.JPG
+    modified: true
+salle:
+  image: salle-des-fetes-ajat.jpg
+  alt: "L'entrée de la salle des fêtes d'Ajat, bâtiment en pierre sous la neige, avec sa rampe d'accès"
+  credit:
+    author: marcel ruessaf
+    license: CC BY-SA 3.0
+    licenseUrl: https://creativecommons.org/licenses/by-sa/3.0/deed.fr
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Salle_des_f%C3%AAtes_d%27Ajat_-_panoramio.jpg
     modified: true
