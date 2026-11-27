@@ -23,7 +23,7 @@ media:
     output: /images
     extensions: [jpg, jpeg, png, webp]
     rename: safe
-  - name: comptes-rendus
+  - name: pdf-comptes-rendus
     label: Comptes rendus (PDF)
     input: public/documents/comptes-rendus
     output: /documents/comptes-rendus
@@ -124,7 +124,7 @@ content:
         required: true
         description: Un seul fichier PDF. Évitez les fichiers de plus de 3 Mo.
         options:
-          media: comptes-rendus
+          media: pdf-comptes-rendus
           extensions: [pdf]
           rename: safe
       - name: draft
