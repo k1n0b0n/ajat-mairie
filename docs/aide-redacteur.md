@@ -28,11 +28,14 @@ Cliquez sur **Horaires et contact de la mairie**. Pour chaque jour, ajoutez une 
 - **Après publication :** faites la même chose : la correction repasse par le relecteur.
 - **Une publication à retirer vite :** appelez le relecteur, il peut l'annuler en un clic.
 
-## 6. Remplacer la photo d'accueil
-1. Cliquez sur **Visuel d'accueil**.
+## 6. Remplacer une photo (accueil, mairie, salle des fêtes)
+1. Cliquez sur **Photos du site**, puis ouvrez la photo voulue (accueil, « La mairie » ou « Salle des fêtes »).
 2. Cliquez sur **Photo**, envoyez la nouvelle image depuis votre ordinateur (de préférence une photo large, en paysage).
 3. Écrivez la **Description de la photo** : ce qu'elle montre, en une phrase.
 4. Si la photo n'est pas de la mairie, renseignez le **Crédit** (auteur, licence, adresse de la licence). Enregistrez, puis demandez la relecture comme d'habitude.
+
+## 7. Modifier une page légale
+**Mentions légales**, **Politique de confidentialité** et **Déclaration d'accessibilité** se modifient comme une actualité, mais ne peuvent pas rester en brouillon. Relisez deux fois : ces textes engagent la commune.
 
 ## À retenir
 - Ne mettez jamais dans un brouillon une information qui ne doit pas être publique : les brouillons ne sont pas confidentiels.
