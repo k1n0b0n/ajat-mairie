@@ -1,5 +1,6 @@
 # Interface d'édition (Pages CMS) : voir specs/001-site-mairie-ajat/contracts/pages-cms-config.md
 # La configuration est lue par branche : la branche « redaction » doit contenir ce fichier à jour.
+# Pages CMS ne relit ce fichier que si un commit poussé le modifie : après un changement, mettre à jour « redaction » avec ce commit.
 settings:
   hide: true
   commit:
