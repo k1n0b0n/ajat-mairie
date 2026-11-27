@@ -2,14 +2,23 @@
 import { getEntry, render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import ContactBlock from '../components/ContactBlock.astro';
+import Illustration from '../components/Illustration.astro';
 
 const entree = await getEntry('salle-des-fetes', 'salle');
 const salle = entree?.data ?? { rates: [] };
 const eur = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' });
+const photo = {
+  author: 'marcel ruessaf',
+  license: 'CC BY-SA 3.0',
+  licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/deed.fr',
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Salle_des_f%C3%AAtes_d%27Ajat_-_panoramio.jpg',
+  modified: true,
+};
 const renseignee = Boolean(salle.capacity || salle.description || salle.conditions || salle.rates.length > 0);
 ---
 <Base titre="Salle des fêtes" description="Conditions et tarifs de location de la salle des fêtes d'Ajat.">
   <h1>Salle des fêtes</h1>
+  <Illustration image="salle-des-fetes-ajat.jpg" alt="L'entrée de la salle des fêtes d'Ajat, bâtiment en pierre sous la neige, avec sa rampe d'accès" credit={photo} />
   {salle.description && <p class="chapo">{salle.description}</p>}
   {!renseignee && <p>Les conditions et les tarifs de location seront publiés prochainement.</p>}
   {salle.capacity && <p><strong>Capacité :</strong> {salle.capacity} personnes.</p>}

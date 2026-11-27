@@ -4,6 +4,15 @@ description: "Ajat, village du Périgord noir : situation, paysage et un peu d'h
 kind: decouverte
 order: 1
 draft: false
+cover:
+  image: village-ajat.jpg
+  alt: "Le bourg d'Ajat sous la neige : l'église, le château et la route qui monte au village"
+  credit:
+    author: marcel ruessaf
+    license: CC BY-SA 3.0
+    licenseUrl: https://creativecommons.org/licenses/by-sa/3.0/deed.fr
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Le_bourg_d%27Ajat_-_panoramio.jpg
+    modified: true
 ---
 Ajat est une commune de Dordogne, en Nouvelle-Aquitaine, dans l'arrondissement de Sarlat-la-Canéda. Son bourg se trouve à environ 5 km au nord-ouest de Thenon. Elle comptait 307 habitants en 2023, les Ajacois, sur un territoire de 22 km².
 

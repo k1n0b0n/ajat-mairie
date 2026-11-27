@@ -4,6 +4,15 @@ description: "Nature, accès et communes voisines : où se promener et comment v
 kind: decouverte
 order: 3
 draft: false
+cover:
+  image: causse-thenon.jpg
+  alt: "Un chemin de terre sous les chênes du causse de Thenon, près d'Ajat"
+  credit:
+    author: Père Igor
+    license: CC BY-SA 3.0
+    licenseUrl: https://creativecommons.org/licenses/by-sa/3.0/deed.fr
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Limeyrat_causse_pr%C3%A8s_Peyre_Levade.JPG
+    modified: true
 ---
 ## Une nature riche
 
