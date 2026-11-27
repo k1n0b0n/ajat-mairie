@@ -2,9 +2,19 @@
 import Base from '../layouts/Base.astro';
 import ContactBlock from '../components/ContactBlock.astro';
 import Hours from '../components/Hours.astro';
+import Illustration from '../components/Illustration.astro';
+
+const photo = {
+  author: 'Père Igor',
+  license: 'CC BY-SA 4.0',
+  licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/deed.fr',
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Ajat_mairie.JPG',
+  modified: true,
+};
 ---
 <Base titre="La mairie : horaires et accès" description="Horaires d'ouverture, téléphone, adresse et accès à la mairie d'Ajat." large>
   <h1>La mairie</h1>
+  <Illustration image="mairie-ajat.jpg" alt="La mairie d'Ajat : une maison en pierre claire, son escalier extérieur et ses volets verts, au bord de la route" credit={photo} />
   <div class="zones zones-mairie">
     <ContactBlock />
     <Hours />

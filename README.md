@@ -244,6 +244,10 @@ Le détail, les exceptions et la mention sur le blason et le nom de la commune s
 |---|---|---|
 | Photo d'accueil « Ajat bourg » | Père Igor | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.fr) |
 | Photo « Château d'Ajat » | GuillaumeG | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.fr) |
+| Photo « Le bourg d'Ajat » | marcel ruessaf | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.fr) |
+| Photo « Limeyrat causse près Peyre Levade » | Père Igor | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.fr) |
+| Photo « Ajat mairie » | Père Igor | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.fr) |
+| Photo « Salle des fêtes d'Ajat » | marcel ruessaf | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.fr) |
 | Blason d'Ajat (statut officiel à confirmer) | Henry Salomé | CC BY-SA 3.0 ou GFDL 1.2+ |
 | Textes de « Découvrir Ajat » (adaptés de Wikipédia) | Contributeurs de Wikipédia | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.fr) |
 | Polices Fraunces et Atkinson Hyperlegible | Undercase Type ; Braille Institute | [SIL OFL 1.1](https://openfontlicense.org/) |
