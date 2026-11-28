@@ -29,7 +29,7 @@ Réglages → Rules → Rulesets → nouvelle règle sur `main` :
 - Require status checks to pass : `controles` ; **Require branches to be up to date**.
 - Block force pushes. Pas d'exception de contournement, sauf l'administrateur pour un retrait d'urgence.
 - Activer **Secret scanning** et les alertes **Dependabot** (Réglages → Code security).
-- Créer la branche `redaction` à partir de `main`. Après tout changement de `.pages.yml` sur `main`, la ramener dans `redaction` (Pages CMS lit la configuration par branche).
+- Créer la branche `redaction` à partir de `main`. Chaque fusion dans `main` qui ne vient pas de `redaction` y est ramenée automatiquement (`sync-redaction.yml`), car Pages CMS lit la configuration par branche.
 - `.github/CODEOWNERS` : remplacer le compte provisoire par au moins deux relecteurs.
 
 ### État appliqué (2026-11-25)
@@ -50,6 +50,10 @@ Règle « Protection de main » (ruleset GitHub n° 28117604), active :
 1. Installer l'application GitHub « Pages CMS » sur le dépôt `ajat-mairie` uniquement.
 2. Inviter chaque rédacteur par courriel (Collaborators) et lui donner le lien de `docs/aide-redacteur.md`. Si le propriétaire du dépôt change, mettre à jour le lien dans ce guide.
 3. Un rédacteur n'a **pas** de droit d'écriture sur `main` : la protection ci-dessus l'en empêche.
+4. Pages CMS écrit uniquement sur la branche `redaction`. Chaque enregistrement y crée un commit, et la PR vers `main` s'ouvre seule. Un relecteur la fusionne après le contrôle.
+5. **Retirer un rédacteur** : le supprimer des Collaborators du dépôt. Ses commits restent dans l'historique.
+6. **Un changement n'apparaît pas dans Pages CMS** (nouvelle collection, libellé modifié) : lancer le workflow « Synchroniser redaction » (Actions → Run workflow) s'il a échoué, puis recharger la page. Si l'interface affiche une erreur de configuration, une valeur de `.pages.yml` contient sans doute « : » sans guillemets (voir `docs/developpement.md`).
+7. Le détail des rubriques proposées aux rédacteurs est dans [`aide-redacteur.md`](aide-redacteur.md) ; la source de vérité reste `.pages.yml`.
 
 ## 6. Vérifier avant la mise en service
 
