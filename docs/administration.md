@@ -50,6 +50,10 @@ Règle « Protection de main » (ruleset GitHub n° 28117604), active :
 1. Installer l'application GitHub « Pages CMS » sur le dépôt `ajat-mairie` uniquement.
 2. Inviter chaque rédacteur par courriel (Collaborators) et lui donner le lien de `docs/aide-redacteur.md`. Si le propriétaire du dépôt change, mettre à jour le lien dans ce guide.
 3. Un rédacteur n'a **pas** de droit d'écriture sur `main` : la protection ci-dessus l'en empêche.
+4. Pages CMS écrit uniquement sur la branche `redaction`. Chaque enregistrement y crée un commit, et la PR vers `main` s'ouvre seule. Un relecteur la fusionne après le contrôle.
+5. **Retirer un rédacteur** : le supprimer des Collaborators du dépôt. Ses commits restent dans l'historique.
+6. **Un changement n'apparaît pas dans Pages CMS** (nouvelle collection, libellé modifié) : ramener `main` dans `redaction`, puis recharger la page. Si l'interface affiche une erreur de configuration, une valeur de `.pages.yml` contient sans doute « : » sans guillemets (voir `docs/developpement.md`).
+7. Le détail des rubriques proposées aux rédacteurs est dans [`aide-redacteur.md`](aide-redacteur.md) ; la source de vérité reste `.pages.yml`.
 
 ## 6. Vérifier avant la mise en service
 
