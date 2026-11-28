@@ -81,4 +81,4 @@ Variables utiles : `PREVIEW=1 npm run build` (brouillons visibles), `INDEXATION=
 
 ## Publier
 
-Toute modification passe par une PR vers `main`. À la fusion, `deploy.yml` publie le site (les changements de documentation seule ne redéploient pas). Après un changement de `.pages.yml`, ramener `main` dans la branche `redaction`.
+Toute modification passe par une PR vers `main`. À la fusion, `deploy.yml` publie le site (les changements de documentation seule ne redéploient pas). `sync-redaction.yml` ramène ensuite `main` dans `redaction` ; s'il échoue (conflit), résoudre à la main.
