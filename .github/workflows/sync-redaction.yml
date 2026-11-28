@@ -1,0 +1,32 @@
+name: Synchroniser redaction
+
+# Chaque fusion dans main qui ne vient pas de la branche « redaction » est ramenée dans
+# « redaction » : Pages CMS lit sa configuration (.pages.yml) par branche.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  synchroniser:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ramener main dans redaction
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+        run: |
+          origine=$(gh api "repos/$GH_REPO/commits/$SHA/pulls" --jq '.[0].head.ref // ""')
+          if [ "$origine" = "redaction" ]; then
+            echo "Fusion issue de redaction : rien à faire."
+            exit 0
+          fi
+          gh api -X POST "repos/$GH_REPO/merges" \
+            -f base=redaction -f head=main \
+            -f commit_message="chore: ramène main dans redaction" \
+            --silent && echo "redaction à jour."

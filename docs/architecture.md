@@ -74,7 +74,7 @@ sequenceDiagram
     Note over R,L: Le rédacteur ne peut jamais écrire sur main.<br/>Une publication s'annule avec « Revert ».
 ```
 
-- La configuration de Pages CMS est lue **par branche** : après toute modification de `.pages.yml` sur `main`, la ramener dans `redaction`.
+- La configuration de Pages CMS est lue **par branche** : `sync-redaction.yml` ramène automatiquement dans `redaction` chaque fusion dans `main` qui ne vient pas d'elle.
 - Les commits portent le **nom** du rédacteur mais pas son courriel (`commit.identity: app`) : le dépôt est public.
 - L'aperçu des brouillons (`preview.yml`, dépôt `-apercu` séparé) est prêt mais désactivé : il s'active avec la variable `APERCU_ACTIF`.
 
