@@ -23,18 +23,33 @@ Ouvrez ce lien (mettez-le en favori). Vous arrivez sur la version de travail du 
 ## 4. Modifier les horaires
 Cliquez sur **Horaires et contact de la mairie**. Pour chaque jour, ajoutez une plage par période d'ouverture (par exemple 09:00 à 12:00). Pas de plage = fermé. Une fermeture exceptionnelle (congés) se saisit plus bas ; elle disparaît seule après la date.
 
-## 5. Corriger une erreur
+## 5. Les autres contenus
+Dans le menu, chaque entrée correspond à une page du site. Les entrées « liste » (Démarches, Associations, Découvrir Ajat) permettent d'**Ajouter** un élément ; les autres sont une page unique qu'on ouvre et qu'on modifie.
+
+| Entrée | Ce que vous faites |
+|---|---|
+| **Piscine municipale** | Modifiez le **Texte** : saison, jours, horaires, tarifs. Indiquez les dates exactes de la saison. |
+| **Démarches** | Une fiche par démarche : titre, résumé d'une phrase, **adresse de la fiche officielle** (commence par `https://`), pièces utiles. **Ordre d'affichage** : 1 = en premier. |
+| **Associations** | Nom, activité, au moins un contact. Cochez **« J'ai l'accord de l'association »** : sans accord, ne publiez pas les coordonnées. |
+| **Salle des fêtes** | Présentation, capacité, conditions de location et **tarifs** (prestation, montant en euros, unité). Séparez les paragraphes par une ligne vide. |
+| **Liens utiles** | Pour chaque lien : texte, adresse (`https://`) et thème (par exemple « Démarches »). |
+| **Découvrir Ajat** | Une page par sujet (village, environs…), avec une photo facultative et son ordre d'affichage. |
+| **Texte de l'accueil** | « Le village » en deux ou trois phrases (60 à 320 caractères). |
+
+Une erreur de saisie est signalée en rouge à l'enregistrement : corrigez le champ indiqué.
+
+## 6. Corriger une erreur
 - **Avant relecture :** rouvrez l'actualité, corrigez, enregistrez.
 - **Après publication :** faites la même chose : la correction repasse par le relecteur.
 - **Une publication à retirer vite :** appelez le relecteur, il peut l'annuler en un clic.
 
-## 6. Remplacer une photo (accueil, mairie, salle des fêtes)
+## 7. Remplacer une photo (accueil, mairie, salle des fêtes)
 1. Cliquez sur **Photos du site**, puis ouvrez la photo voulue (accueil, « La mairie » ou « Salle des fêtes »).
 2. Cliquez sur **Photo**, envoyez la nouvelle image depuis votre ordinateur (de préférence une photo large, en paysage).
 3. Écrivez la **Description de la photo** : ce qu'elle montre, en une phrase.
 4. Si la photo n'est pas de la mairie, renseignez le **Crédit** (auteur, licence, adresse de la licence). Enregistrez, puis demandez la relecture comme d'habitude.
 
-## 7. Modifier une page légale
+## 8. Modifier une page légale
 **Mentions légales**, **Politique de confidentialité** et **Déclaration d'accessibilité** se modifient comme une actualité, mais ne peuvent pas rester en brouillon. Relisez deux fois : ces textes engagent la commune.
 
 ## À retenir
